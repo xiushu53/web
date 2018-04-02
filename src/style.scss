@@ -1,32 +1,40 @@
+// WebFonts notosans
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+ 
+body {
+     font-family: 'Noto Sans JP', sans-serif;
+     font-size: 100%;
+}
 
+// Common Settings
 body,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,p {
     margin: 0;
     padding: 0;
+    font-size: 100%;
+    font-weight: 400;
 }
-#wrapper {
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.main-intro {
-    background: #f0f0f0;
-    /*
-    .intro-cover {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(44,168,200,.2),rgba(44,168,200,1));
-        h1 {
-            font-size: 15px;
-        }
+a {
+    text-decoration: none;
+    color: #08BAD0;
+    &:hover {
+        text-decoration: underline;
     }
-    */
+}
+.module {
+    border-bottom: 1px solid #EFEFEF;
+    .module-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 90px 15px;
+    }
+    h2 {
+        padding-bottom: 10px;
+        font-size: 32px;
+    }
 }
 
-
-.main-menu {
+// Menu
+.top-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -34,10 +42,10 @@ body,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,p {
     background-color: #fff;
     display: none;
     ul {
-    display: flex;
-    max-width:960px;
-    margin: 0 auto;
-    padding: 12px 0;
+        display: flex;
+        max-width:960px;
+        margin: 0 auto;
+        padding: 12px 0;
     }
     li {
         list-style: none;
@@ -52,4 +60,222 @@ body,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,p {
     }
 }
 
+//Firstview
+.main-intro {
+    width: 100%;
+    height: 100vh;
+    .intro-news {
+        max-width: 800px;
+        margin: 0 auto;
+        border-top: 1px solid #EFEFEF; //TODO ボーダーの付け方
+        h2 {
+            color: #FAC646;
+            font-size: 100%;
+        }
+        dt, dd {
+            display: inline-block;
+        }
+        dt {
+            padding-right: .8em;
+        }
+    }
+}
 
+
+//main-about
+.main-about {
+    background: linear-gradient(#ffc632, #ffdc4d);
+    color: #fff;
+    padding: 120px 0 365px;
+    text-align: center;
+    font-weight: bold;
+    h2 {
+        font-size: 40px;
+    }
+    img {
+        width: 100%;
+        max-width: 576px;
+        padding-top: 120px;
+    }
+    p {
+        padding-top: 30px;
+        font-size: 20px;
+    }
+}
+
+//main-appInfo
+.main-appInfo {
+    position: relative;
+    .appInfo-video {
+        position: absolute;
+        top: -250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1110px;
+        height: 586px;
+        background: url('./images/bg-video.png') no-repeat;
+        background-size: 1110px 586px;
+
+    }
+    .module-inner {
+        padding-top: 400px;
+    }
+    h2 {
+        font-weight: bold;
+    }
+    h3 {
+        padding-bottom: 50px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    p {
+        padding-bottom: .8em;
+    }
+    .appInfo-howToUse {
+        padding: 40px 0 15px;
+        font-weight: normal;
+        font-size: 100%;
+    }
+    .appInfo-downloadLink {
+        display: flex;
+        margin: 0 -10px;
+        text-align: center;
+        a {
+            display: block;
+            margin: 0 10px;
+            padding: 1em 0;
+            flex: 1;
+            background-color: #08BAD0;
+            border-radius: 4px;
+            color: #fff;
+        }
+    }
+    .appInfo-aboutDV {
+        display: flex;
+        width: 100%;
+        background-color: #F7F7F7;
+        margin: 30px 0 60px;
+        padding: 10px;
+        overflow: hidden;
+        dt {
+            margin-right: 10px;
+        }
+    }
+}
+.main-case {
+    h2 {
+        text-align: center;
+        .case-title {
+            display: inline-block;
+            position: relative;
+            background-color: #7d7d7d;
+            padding: 4px 8px;
+            border-radius: 18px;
+            font-size: 16px;
+            color: #fff;
+            line-height: 1;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                right: 10px;
+                width: 10px;
+                height: 10px;
+                background-color: #7d7d7d;
+            }
+        }
+    }
+    .case-wrap {
+        padding: 60px 0;
+        h3 {
+            padding-bottom: 20px;
+            font-size: 26px;
+        }
+    }
+}
+
+.main-workshop {
+    .module-inner {
+        padding-bottom: 120px;
+        background: url(./images/bg-workshop.png) no-repeat 100% 100%;
+        background-size: 50%;
+    }
+}
+
+.main-development {
+    .module-inner {
+        padding-bottom: 120px;
+        background: url(./images/bg-development.png) no-repeat 100% 100%;
+        background-size: 50%;
+    }
+    dl {
+        margin-top: 20px;
+        background: #fafafa;
+        dt, dd {
+            padding: 5px 15px;
+        }
+        dd {
+            border-top: 1px solid #F0F0F0;
+            font-size: 15px;
+            a {
+                display: block;
+                color: #000;
+                &:after {
+                    content: ">"
+                }
+            }
+        }
+    }
+}
+.main-eventInfo {
+    background: linear-gradient(#77D3DE, #34CEDC);
+    border-bottom: 0;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    h2 {
+        font-weight: bold;
+    }
+    h3 {
+        padding-bottom: 50px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    ul {
+        padding: 30px 0;
+        li {
+            padding-bottom: 20px;
+            a {
+                display: block;
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+.main-snsLink {
+    background-color: #fafafa;
+    border-bottom: 0;
+}
+
+.main-joinus {
+    background-color: #62BA62;
+    border-bottom: 0;
+    color: #fff;
+    .module-inner {
+        background: url(./images/bg-interview.png) no-repeat 100% 100%;
+        background-size: 50%;
+    }
+}
+.main-interview {
+    background-color: #58B058;
+    border-bottom: 0;
+    color: #fff;
+}
+
+.footer {
+    padding: 40px 0;
+    background-color: #3a3a3a;
+    border-bottom: 0;
+    text-align: center;
+    color: #fff;
+}
