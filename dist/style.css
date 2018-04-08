@@ -16,9 +16,20 @@ ul, li {
   list-style: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 a {
   text-decoration: none;
-  color: #08BAD0;
+  color: #FFBE20;
 }
 
 a:hover {
@@ -126,7 +137,7 @@ a:hover {
   margin: 0 30px 30px 0;
 }
 
-.main-intro .intro-grove {
+.main-intro .intro-globe {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -148,9 +159,8 @@ a:hover {
 }
 
 .main-intro .intro-news h2 {
-  color: #FAC646;
-  font-size: 100%;
   padding: 0;
+  font-size: 100%;
 }
 
 .main-intro .intro-news dt, .main-intro .intro-news dd {
@@ -172,9 +182,9 @@ a:hover {
 }
 
 .main-about {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffc632), to(#ffdc4d));
-  background: -o-linear-gradient(#ffc632, #ffdc4d);
-  background: linear-gradient(#ffc632, #ffdc4d);
+  background: -webkit-gradient(linear, left top, left bottom, from(#28B8D8), to(#34CEDC));
+  background: -o-linear-gradient(#28B8D8, #34CEDC);
+  background: linear-gradient(#28B8D8, #34CEDC);
   color: #fff;
   padding-bottom: 240px;
   text-align: center;
@@ -195,6 +205,7 @@ a:hover {
 .main-about p {
   padding-top: 30px;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .main-appInfo {
@@ -239,51 +250,42 @@ a:hover {
   padding-bottom: .8em;
 }
 
-.main-appInfo .appInfo-howToUse {
-  padding: 40px 0 15px;
+.main-appInfo .appInfo-download {
+  background-color: #f7f7f7;
+  margin-top: 30px;
+  padding: 25px;
+  text-align: center;
+}
+
+.main-appInfo .appInfo-download .download-title {
+  padding-bottom: 25px;
   font-weight: normal;
   font-size: 100%;
 }
 
-.main-appInfo .appInfo-downloadLink {
+.main-appInfo .appInfo-download .download-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -10px;
-  text-align: center;
+  margin: 0 -15px;
 }
 
-.main-appInfo .appInfo-downloadLink a {
+.main-appInfo .appInfo-download .download-link a {
   display: block;
-  margin: 0 10px;
+  margin: 0 15px;
   padding: 1em 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #08BAD0;
-  border-radius: 4px;
+  background-color: #FCBA13;
+  border-radius: 6px;
   color: #fff;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
 }
 
-.main-appInfo .appInfo-downloadLink a:nth-child(3) {
+.main-appInfo .appInfo-download .download-link a:nth-child(3) {
   padding: 1.8em 0 0;
-}
-
-.main-appInfo .appInfo-aboutDV {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  background-color: #F7F7F7;
-  margin-top: 50px;
-  padding: 15px 20px;
-  overflow: hidden;
-  line-height: 2;
-}
-
-.main-appInfo .appInfo-aboutDV dt {
-  margin-right: 10px;
-  white-space: nowrap;
 }
 
 .main-case .case-head {
@@ -323,7 +325,106 @@ a:hover {
 .main-case .case-wrap .case-body {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
+}
+
+.case-body.sample-run .controlPanel {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.case-body.sample-run .controlPanel p {
+  margin: 10px 0;
+  text-align: left;
+  font-size: 15px;
+}
+
+.case-body.sample-run .controlPanel table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.case-body.sample-run .controlPanel table th, .case-body.sample-run .controlPanel table td {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  border-right: 1px solid #dadada;
+}
+
+.case-body.sample-run .controlPanel table th:last-child, .case-body.sample-run .controlPanel table td:last-child {
+  border-right: 0;
+}
+
+.case-body.sample-run .controlPanel table th {
+  padding: 6px 0;
   background-color: #f0f0f0;
+  color: #333;
+  font-weight: normal;
+}
+
+.case-body.sample-run .controlPanel table th.em {
+  background-color: #E8E8E8;
+  color: #286D29;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.case-body.sample-run .controlPanel table th.em.row {
+  width: 220px;
+}
+
+.case-body.sample-run .controlPanel table th.em.col {
+  width: 60px;
+}
+
+.case-body.sample-run .controlPanel table td {
+  background-color: #fafafa;
+  color: #9b9b9b;
+}
+
+.case-body.sample-run .controlPanel table td.empty {
+  background-color: transparent;
+}
+
+.case-body.sample-run .controlPanel table td.inputArea {
+  position: relative;
+}
+
+.case-body.sample-run .controlPanel table td.inputArea input {
+  width: 100%;
+  height: 56px;
+  border: 4px solid #62BA62;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 25px;
+  color: #333;
+}
+
+.case-body.sample-run .controlPanel table td.inputArea:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  background-color: #62BA62;
+  width: 14px;
+  height: 14px;
+}
+
+.case-body.sample-run .controlPanel button {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  padding: 0 40px;
+  border-radius: 20px;
+  background-color: #FCBA13;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .main-download .module-inner {
@@ -353,10 +454,18 @@ a:hover {
   font-weight: bold;
 }
 
+.main-workshop {
+  background-color: #fafafa;
+}
+
 .main-workshop .module-inner {
   padding-bottom: 120px;
   background: url(./images/bg-workshop.png) no-repeat 100% 100%;
   background-size: 478px auto;
+}
+
+.main-development {
+  background-color: #fafafa;
 }
 
 .main-development .module-inner {
@@ -367,10 +476,10 @@ a:hover {
 
 .main-development dl {
   margin: 20px 60px 0 0;
-  background: #fafafa;
+  background: #fff;
 }
 
-.main-development dl dt, .main-development dl dd {
+.main-development dl dt {
   padding: 5px 15px;
 }
 
@@ -382,15 +491,29 @@ a:hover {
 .main-development dl dd a {
   position: relative;
   display: block;
+  padding: 5px 15px;
   color: #000;
+}
+
+.main-development dl dd a:hover {
+  text-decoration: none;
 }
 
 .main-development dl dd a:after {
   content: ">";
   position: absolute;
-  right: 0;
-  color: #aaa;
+  right: 15px;
+  color: #E5E5E5;
   font-weight: bold;
+}
+
+.main-development dl dd a[href]:hover {
+  text-decoration: underline;
+  background-color: #fafafa;
+}
+
+.main-development dl dd a[href]:after {
+  color: #FCBA13;
 }
 
 .main-eventInfo {
@@ -445,7 +568,10 @@ a:hover {
 }
 
 .main-eventInfo ul.eventInfo-coming a .event-date {
-  padding: 20px 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 175px;
+  padding: 20px 10px 20px 25px;
   border-right: 1px solid #d7d7d7;
 }
 
@@ -453,6 +579,15 @@ a:hover {
   display: block;
   margin-bottom: .2em;
   font-size: 20px;
+}
+
+.main-eventInfo ul.eventInfo-coming a .event-date .date-place {
+  display: block;
+  width: 139px;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 
 .main-eventInfo ul.eventInfo-coming a .event-description {
@@ -650,9 +785,10 @@ a:hover {
   width: 240px;
   height: 34px;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 17px;
   background-color: #fff;
   line-height: 34px;
+  font-weight: bold;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
@@ -665,7 +801,6 @@ a:hover {
 
 .main-interview h2 {
   padding-bottom: 30px;
-  font-weight: bold;
 }
 
 .main-interview li {

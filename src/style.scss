@@ -16,10 +16,18 @@ body,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,p {
 ul, li {
     list-style: none;
 }
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
 
 a {
     text-decoration: none;
-    color: #08BAD0;
+    color: #FFBE20;
     &:hover {
         text-decoration: underline;
     }
@@ -103,7 +111,7 @@ a {
             margin: 0 30px 30px 0;
         }
     }
-    .intro-grove {
+    .intro-globe {
         flex: 1;
         text-align: center;
     }
@@ -119,9 +127,8 @@ a {
             padding: 15px 0;
         }
         h2 {
-            color: #FAC646;
-            font-size: 100%;
             padding: 0;
+            font-size: 100%;
         }
         dt, dd {
             display: inline-block;
@@ -142,7 +149,7 @@ a {
 
 //main-about
 .main-about {
-    background: linear-gradient(#ffc632, #ffdc4d);
+    background: linear-gradient(#28B8D8, #34CEDC);
     color: #fff;
     padding-bottom: 240px;
     text-align: center;
@@ -159,6 +166,7 @@ a {
     p {
         padding-top: 30px;
         font-size: 20px;
+        font-weight: bold;
     }
 }
 
@@ -196,39 +204,32 @@ a {
     p {
         padding-bottom: .8em;
     }
-    .appInfo-howToUse {
-        padding: 40px 0 15px;
-        font-weight: normal;
-        font-size: 100%;
-    }
-    .appInfo-downloadLink {
-        display: flex;
-        margin: 0 -10px;
+    .appInfo-download {
+        background-color: #f7f7f7;
+        margin-top: 30px;
+        padding: 25px;
         text-align: center;
-        a {
-            display: block;
-            margin: 0 10px;
-            padding: 1em 0;
-            flex: 1;
-            background-color: #08BAD0;
-            border-radius: 4px;
-            color: #fff;
-            &:nth-child(3) {
-                padding: 1.8em 0 0;
-            }
+        .download-title {
+            padding-bottom: 25px;
+            font-weight: normal;
+            font-size: 100%;
         }
-    }
-    .appInfo-aboutDV {
-        display: flex;
-        width: 100%;
-        background-color: #F7F7F7;
-        margin-top: 50px;
-        padding: 15px 20px;
-        overflow: hidden;
-        line-height: 2;
-        dt {
-            margin-right: 10px;
-            white-space: nowrap;
+        .download-link {
+            display: flex;
+            margin: 0 -15px;
+            a {
+                display: block;
+                margin: 0 15px;
+                padding: 1em 0;
+                flex: 1;
+                background-color: #FCBA13;
+                border-radius: 6px;
+                color: #fff;
+                box-shadow: 0 2px 1px rgba(0,0,0,.12);
+                &:nth-child(3) {
+                    padding: 1.8em 0 0;
+                }
+            }
         }
     }
 }
@@ -264,10 +265,97 @@ a {
         .case-body {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #f0f0f0;
+            text-align: center;
         }
     }
 }
+.case-body.sample-run {
+    .controlPanel {
+        width: 1100px;
+        margin: 0 auto;
+        p {
+            margin: 10px 0;
+            text-align: left;
+            font-size: 15px;
+        }
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+            th,td {
+                margin: 0;
+                border: 0;
+                padding: 0;
+                border-right: 1px solid #dadada;
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+            th {
+                padding: 6px 0;
+                background-color: #f0f0f0;
+                color: #333;
+                font-weight: normal;
+                &.em {
+                    background-color: #E8E8E8;
+                    color: #286D29;
+                    font-size: 19px;
+                    font-weight: bold;
+                    &.row {
+                        width: 220px;
+                    }
+                    &.col {
+                        width: 60px;
+                    }
+                }
+            }
+            td {
+                background-color: #fafafa;
+                color: #9b9b9b;
+                &.empty {
+                    background-color: transparent;
+                }
+                &.inputArea {
+                    position: relative;
+                    input {
+                        width: 100%;
+                        height: 56px;
+                        border: 4px solid #62BA62;
+                        text-align: center;
+                        box-sizing: border-box;
+                        font-size: 25px;
+                        color: #333;
+                    }
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        bottom: 0;
+                        right: 0;
+                        background-color: #62BA62;
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+        }
+        button {
+            height: 40px;
+            line-height: 40px;
+            margin-top: 15px;
+            padding: 0 40px;
+            border-radius: 20px;
+            background-color: #FCBA13;
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            box-shadow: 0 1px 2px rgba(0,0,0,.1)
+        }
+    }
+}
+
+
+
 .main-download {
     .module-inner {
         text-align: center;
@@ -297,6 +385,7 @@ a {
 
 
 .main-workshop {
+    background-color: #fafafa;
     .module-inner {
         padding-bottom: 120px;
         background: url(./images/bg-workshop.png) no-repeat 100% 100%;
@@ -305,6 +394,7 @@ a {
 }
 
 .main-development {
+    background-color: #fafafa;
     .module-inner {
         padding-bottom: 150px;
         background: url(./images/bg-development.png) no-repeat 100% 95%;
@@ -312,8 +402,8 @@ a {
     }
     dl {
         margin: 20px 60px 0 0;
-        background: #fafafa;
-        dt, dd {
+        background: #fff;
+        dt {
             padding: 5px 15px;
         }
         dd {
@@ -322,13 +412,26 @@ a {
             a {
                 position: relative;
                 display: block;
+                padding: 5px 15px;
                 color: #000;
+                &:hover {
+                    text-decoration: none;
+                }
                 &:after {
                     content: ">";
                     position: absolute;
-                    right: 0;
-                    color: #aaa;
+                    right: 15px;
+                    color: #E5E5E5;
                     font-weight: bold;
+                }
+                &[href]{
+                    &:hover {
+                        text-decoration: underline;
+                        background-color: #fafafa;
+                    }
+                    &:after {
+                        color: #FCBA13;
+                    }
                 }
             }
         }
@@ -369,12 +472,22 @@ a {
                 background-color: #f9f9f9;
             }
             .event-date {
-                padding: 20px 25px;
+                box-sizing: border-box;
+                width: 175px;
+                padding: 20px 10px 20px 25px;
                 border-right: 1px solid #d7d7d7;
+                
                 .date-day {
                     display: block;
                     margin-bottom: .2em;
                     font-size: 20px;
+                }
+                .date-place {
+                    display: block;
+                    width: 139px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
             }
             .event-description {
@@ -526,9 +639,10 @@ a {
                 width: 240px;
                 height: 34px;
                 text-align: center;
-                border-radius: 4px;
+                border-radius: 17px;
                 background-color: #fff;
                 line-height: 34px;
+                font-weight: bold;
                 box-shadow: 0 2px 1px rgba(0,0,0,.1);
             }
         }
@@ -540,7 +654,6 @@ a {
     color: #fff;
     h2 {
         padding-bottom: 30px;
-        font-weight: bold;
     }
     li {
         display: inline-block;

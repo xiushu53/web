@@ -55,9 +55,10 @@
                     <h1 class="intro-title">E2D3 Data Visualization For Everyone</h1>
                     <p class="intro-description">"Globe of E2D3"<br>当サイトにアクセスした地域をドットで表現</p>
                 </div>
-                <div class="intro-grove">
+                <div class="intro-globe">
                     <!--仮-->
-                    <img src="./images/dummy-grove.png" alt="">
+                    <img src="./images/dummy-gif/globe.gif" alt="">
+                    <img src="./images/dummy-gif/globe-shadow.png" alt="" style="margin-top:-20px">
                 </div>
             </div><!-- /.module-inner -->
             <div class="intro-news">
@@ -83,23 +84,20 @@
             </div>
             <div class="module-inner">
                 <h2>E2D3 on Excel</h2>
-                <h3>Excel上で、無料＆手軽にデータビジュアライズを楽しめるアプリを公開中！</h3>
+                <h3>Excel上で、無料＆手軽にデータを「動くグラフ」にできるアプリを公開中！</h3>
                 <p>個人・法人問わず、どなたでも無料でご利用いただけます。<br>
                     使い方は簡単！Microsoft Office ExcelアプリページからE2D3をダウンロードし、Excel上でお好きなテンプレートを選択。自分で数値データを書き換え、反映させることができます。表現豊かなテンプレートは80種類以上！
                 </p>
                 <p><a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662">Microsoft アプリページへ > </a></p>
 
-                <h3 class="appInfo-howToUse">ご利用環境別の無料ダウンロード方法・ご利用方法</h3>
-                <div class="appInfo-downloadLink">
-                    <a href="/ja/app-install/for-win/"><b>Windows<br>Excel 2013以降</b><br>で利用する</a>
-                    <a href="/ja/app-install/for-mac/"><b>Office for Mac<br>(Ver 2016以降)</b><br>で利用する</a>
-                    <a href="/ja/app-install/for-online/"><b>Excel Online</b><br>で利用する</a>
+                <div class="appInfo-download">
+                    <h3 class="download-title">ご利用環境別の無料ダウンロード方法・ご利用方法</h3>
+                    <div class="download-link">
+                        <a href="/ja/app-install/for-win/"><b>Windows<br>Excel 2013以降</b><br>で利用する</a>
+                        <a href="/ja/app-install/for-mac/"><b>Office for Mac<br>(Ver 2016以降)</b><br>で利用する</a>
+                        <a href="/ja/app-install/for-online/"><b>Excel Online</b><br>で利用する</a>
+                    </div>
                 </div>
-
-                <dl class="appInfo-aboutDV">
-                    <dt>データビジュアライズ：</dt>
-                    <dd>コンピュータを使って、データを視覚的に表現（ビジュアライズ）することです。静的な表や文章よりも、データ同士の関連性や傾向などがわかりやすくなり、たくさんの気づきを得られます。</dd>
-                </dl>
             </div>
         </div>
 
@@ -112,8 +110,40 @@
                         <h3>“みんなで徒競走”</h3>
                         <p>ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。「時速」を体感することで、速さに対する理解を深められます。</p>
                     </div>
-                    <div class="case-body">
-                        DVのソースコードをここに入れる
+                    <div class="case-body sample-run">
+                        <!-- DVのソースコードをここに入れる -->
+                        <img src="./images/dummy-gif/run.gif" alt="">
+
+                        <div class="controlPanel">
+                        <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="empty"></td>
+                                    <th class="em row">あなた</th>
+                                    <th>小学生平均</th>
+                                    <th>ボルト選手</th>
+                                    <th>チーター</th>
+                                    <th>(台風)風速25m</th>
+                                    <th>時速50kmの車</th>
+                                    <th>馬</th>
+                                </tr>
+                                <tr>
+                                    <th class="em col">速度</th>
+                                    <td class="inputArea"><input type="text" name="" id="" value="16秒"></td>
+                                    <td>17秒</td>
+                                    <td>9.58秒</td>
+                                    <td>3秒</td>
+                                    <td>4秒</td>
+                                    <td>7.2秒</td>
+                                    <td>7.5秒</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button>スタート！</button>
+                    </div>
+
+
                     </div>
                 </div>
                 <div class="case-wrap">
@@ -122,7 +152,8 @@
                         <p>年度ごとに項目の値が変化する複雑なデータを棒グラフで表現すると、年度別にグラフを作らなくてはならず面倒…そんな時はこのDot Bar Chart。ドット状の棒グラフが操作によって移ろい、１つの画面で「年度ごと」「項目ごと」の変化を同時に見ることができます。</p>
                     </div>
                     <div class="case-body">
-                        DVのソースコードをここに入れる
+                        <!-- DVのソースコードをここに入れる -->
+                        <img src="./images/dummy-gif/dotbarchart.gif" alt="">
                     </div>
                 </div>
 
@@ -153,8 +184,8 @@
                     <dt>【E2D3と共同制作した事例】</dt>
                     <dd><a href="http://www3.nhk.or.jp/news/special/2016-presidential-election/index.html">2016/09　NHK news web, アメリカ大統領選２０１６</a></dd>
                     <dd><a href="https://kumamotojishin.yahoo.co.jp/bousai/">2016/09　Yahoo!ニュース, 検索データから見る熊本地震</a></dd>
-                    <dd><a href="http://sp.oshiete.goo.ne.jp/club/view/3edaba8975a47f1d003c6959b7d4c9aa/">2015/08　goo スマホ部, ドコモ圧勝！iPhone 6s発売日に速度調査（大阪環状線）【リンク切れ】</a></dd>
-                    <dd><a href="http://www.asahi.com/articles/ASGDL5CYMGDLUEHF019.html">2014/12　朝日新聞デジタル, 衆院選を動くグラフに　激増する無効・棄権票【リンク切れ】</a></dd>
+                    <dd><a>2015/08　goo スマホ部, ドコモ圧勝！iPhone 6s発売日に速度調査（大阪環状線）</a></dd>
+                    <dd><a>2014/12　朝日新聞デジタル, 衆院選を動くグラフに　激増する無効・棄権票</a></dd>
                     <dd><a href="https://withnews.jp/article/f0141202002qq000000000000000W0090101qq000011207A">2014/12　withnews, 得票率１割台で政権取る可能性　グラフで見る衆院選</a></dd>
                 </dl>
             </div>
@@ -186,7 +217,7 @@
                         <div class="event-date">
                             <span class="date-year">2018</span>
                             <span class="date-day">04/05(金)<br>13:00〜</span>
-                            <span class="date-place">ちょっと長い開催場所名長い開催場所名</span>
+                            <span class="date-place">長い名前の開催場所長い開催場所名</span>
                         </div>
                         <div class="event-description">
                             <div class="desc-tag">
