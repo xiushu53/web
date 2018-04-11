@@ -61,40 +61,81 @@ a:hover {
 }
 
 .top-menu {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .top-menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 12px 0;
 }
 
 .top-menu li {
   list-style: none;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  margin-left: 30px;
+  height: 50px;
+  line-height: 50px;
 }
 
 .top-menu li a {
+  display: inline-block;
+  vertical-align: middle;
   color: #333;
   text-decoration: none;
 }
 
 .top-menu li a:hover {
   text-decoration: underline;
+}
+
+.top-menu li.menu-home {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 0;
+}
+
+.top-menu li.menu-home a {
+  background: url("./images/logo-header.png") no-repeat;
+  background-size: 58px 37px;
+  width: 58px;
+  height: 37px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.top-menu li.menu-about a, .top-menu li.menu-product a {
+  background: url("./images/icon-triangle.png") no-repeat 100% 50%;
+  background-size: 8px 6px;
+  padding-right: 12px;
+}
+
+.top-menu li.menu-twitter a {
+  background: url("./images/icon-twitter-small.png") no-repeat;
+  background-size: 21px 19px;
+  width: 21px;
+  height: 18px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.top-menu li.menu-facebook a {
+  background: url("./images/icon-facebook-small.png") no-repeat;
+  background-size: 9px 19px;
+  width: 9px;
+  height: 19px;
+  overflow: hidden;
+  text-indent: -9999px;
 }
 
 .main-intro {
@@ -111,7 +152,7 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-width: 1200px;
+  min-width: 1120px;
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -119,15 +160,15 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main-intro .intro-text {
   background: url("./images/icon-under.png") no-repeat 50% 100%;
   background-size: 34px 17px;
   padding-bottom: 50px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 .main-intro .intro-text .intro-title {
@@ -328,7 +369,7 @@ a:hover {
 }
 
 .main-case .case-wrap .case-body {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
   text-align: center;
 }
@@ -432,16 +473,46 @@ a:hover {
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.case-body.sample-medal h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.case-body.sample-medal ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.case-body.sample-medal li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 5px;
+  color: #fff;
+  background-color: #D8D8D8;
+  cursor: pointer;
+}
+
+.case-body.sample-medal li.current {
+  background-color: #303133;
+}
+
+.case-body.sample-medal li:last-child {
+  margin-right: 0;
+}
+
 .main-download .module-inner {
   text-align: center;
-  padding: 60px 15px;
+  padding: 50px 15px;
 }
 
 .main-download h2 {
-  display: inline-block;
-  padding: 0;
-  font-size: 34px;
-  font-weight: bold;
+  padding: 0 0 10px;
+  font-size: 32px;
   line-height: 42px;
   vertical-align: middle;
 }
@@ -451,8 +522,8 @@ a:hover {
   height: 42px;
   line-height: 42px;
   margin-left: 20px;
-  padding: 0 20px;
-  background-color: #08BAD0;
+  padding: 0 50px;
+  background-color: #FCBA13;
   border-radius: 4px;
   vertical-align: middle;
   color: #fff;
@@ -464,7 +535,7 @@ a:hover {
 }
 
 .main-workshop .module-inner {
-  padding-bottom: 120px;
+  padding-bottom: 150px;
   background: url(./images/bg-workshop.png) no-repeat 100% 100%;
   background-size: 478px auto;
 }
@@ -522,9 +593,9 @@ a:hover {
 }
 
 .main-eventInfo {
-  background: -webkit-gradient(linear, left top, left bottom, from(#34CEDC), to(#77D3DE));
-  background: -o-linear-gradient(#34CEDC, #77D3DE);
-  background: linear-gradient(#34CEDC, #77D3DE);
+  background: -webkit-gradient(linear, left top, left bottom, from(#28B8D8), to(#34CEDC));
+  background: -o-linear-gradient(#28B8D8, #34CEDC);
+  background: linear-gradient(#28B8D8, #34CEDC);
   border-bottom: 0;
   color: #fff;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -794,6 +865,7 @@ a:hover {
   background-color: #fff;
   line-height: 34px;
   font-weight: bold;
+  color: #FCBA13;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }

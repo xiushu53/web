@@ -54,29 +54,67 @@ a {
 
 // Menu
 .top-menu {
-    display: none; //あとで
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 1px 2px rgba(0,0,0,.08);
+    -webkit-backdrop-filter: blur(4px);
     ul {
         display: flex;
-        max-width: 1200px;
+        max-width: 1120px;
         margin: 0 auto;
-        padding: 12px 0;
     }
     li {
         list-style: none;
-        flex: 1;
+        margin-left: 30px;
+        height: 50px;
+        line-height: 50px;
         a {
+            display: inline-block;
+            vertical-align: middle;
             color:  #333;
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
             }
+        }
+        &.menu-home {
+            flex: 1;
+            margin-left: 0;
+            a {
+                background: url('./images/logo-header.png') no-repeat;
+                background-size: 58px 37px;
+                width: 58px;
+                height: 37px;
+                overflow: hidden;
+                text-indent: -9999px;
+            }
+        }
+        &.menu-about, &.menu-product {
+            a {
+                background: url('./images/icon-triangle.png') no-repeat 100% 50%;
+                background-size: 8px 6px;
+                padding-right: 12px;
+            }
+        }
+        &.menu-twitter a {
+            background: url('./images/icon-twitter-small.png') no-repeat;
+            background-size: 21px 19px;
+            width: 21px;
+            height: 18px;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+        &.menu-facebook a {
+            background: url('./images/icon-facebook-small.png') no-repeat;
+            background-size: 9px 19px;
+            width: 9px;
+            height: 19px;
+            overflow: hidden;
+            text-indent: -9999px;
         }
     }
 }
@@ -91,17 +129,17 @@ a {
     padding-bottom: 115px; //ニュースmodule分余白開けておく
     .module-inner {
         display: flex;
-        min-width: 1200px;
+        min-width: 1120px;
         height: 100%;
         box-sizing: border-box;
         padding: 20px 0;
         align-items: center;
+        justify-content: space-between;
     }
     .intro-text {
         background: url('./images/icon-under.png') no-repeat 50% 100%;
         background-size: 34px 17px;
         padding-bottom: 50px;
-        flex: 1;
         .intro-title {
             background: url(./images/text-title.png) no-repeat 0 0;
             background-size: 322px 91px;
@@ -267,7 +305,7 @@ a {
             }
         }
         .case-body {
-            max-width: 1200px;
+            max-width: 1120px;
             margin: 0 auto;
             text-align: center;
         }
@@ -357,19 +395,41 @@ a {
         }
     }
 }
-
+.case-body.sample-medal {
+    h4 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    ul {
+        display: flex;
+        margin-top: 20px;
+    }
+    li {
+        flex: 1;
+        height: 32px;
+        line-height: 32px;
+        margin-right: 5px;
+        color: #fff;
+        background-color: #D8D8D8;
+        cursor: pointer;
+        &.current {
+            background-color: #303133;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
 
 
 .main-download {
     .module-inner {
         text-align: center;
-        padding: 60px 15px;
+        padding: 50px 15px;
     }
     h2 {
-        display: inline-block;
-        padding: 0;
-        font-size: 34px;
-        font-weight: bold;
+        padding: 0 0 10px;
+        font-size: 32px;
         line-height: 42px;
         vertical-align: middle;
     }
@@ -378,8 +438,8 @@ a {
         height: 42px;
         line-height: 42px;
         margin-left: 20px;
-        padding: 0 20px;
-        background-color: #08BAD0;
+        padding: 0 50px;
+        background-color: #FCBA13;
         border-radius: 4px;
         vertical-align: middle;
         color: #fff;
@@ -391,7 +451,7 @@ a {
 .main-workshop {
     background-color: #fafafa;
     .module-inner {
-        padding-bottom: 120px;
+        padding-bottom: 150px;
         background: url(./images/bg-workshop.png) no-repeat 100% 100%;
         background-size: 478px auto;
     }
@@ -442,7 +502,7 @@ a {
     }
 }
 .main-eventInfo {
-    background: linear-gradient(#34CEDC, #77D3DE);
+    background: linear-gradient(#28B8D8, #34CEDC);
     border-bottom: 0;
     color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
@@ -647,6 +707,7 @@ a {
                 background-color: #fff;
                 line-height: 34px;
                 font-weight: bold;
+                color: #FCBA13;
                 box-shadow: 0 2px 1px rgba(0,0,0,.1);
             }
         }
