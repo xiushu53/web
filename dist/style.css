@@ -125,6 +125,9 @@ a:hover {
   background: url("./images/icon-under.png") no-repeat 50% 100%;
   background-size: 34px 17px;
   padding-bottom: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .main-intro .intro-text .intro-title {
@@ -138,9 +141,7 @@ a:hover {
 }
 
 .main-intro .intro-globe {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  max-width: 650px;
   text-align: center;
 }
 
@@ -179,6 +180,10 @@ a:hover {
 .main-intro .intro-news dd {
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
+}
+
+.main-intro .intro-news dd a {
+  padding-left: .8em;
 }
 
 .main-about {

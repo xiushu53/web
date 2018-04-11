@@ -101,6 +101,7 @@ a {
         background: url('./images/icon-under.png') no-repeat 50% 100%;
         background-size: 34px 17px;
         padding-bottom: 50px;
+        flex: 1;
         .intro-title {
             background: url(./images/text-title.png) no-repeat 0 0;
             background-size: 322px 91px;
@@ -112,7 +113,7 @@ a {
         }
     }
     .intro-globe {
-        flex: 1;
+        max-width: 650px;
         text-align: center;
     }
     .intro-news { //高さ固定で
@@ -142,6 +143,9 @@ a {
         }
         dd {
             text-overflow: ellipsis;  //TODO 省略記号がつかない…
+            a {
+                padding-left: .8em;
+            }
         }
     }
 }
