@@ -18,7 +18,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <div id="wrapper">
 
-    <div class="top-menu">
+    <nav class="top-menu">
         <ul>
             <li class="menu-home">
                 <a href="/">E2D3"</a>
@@ -45,11 +45,11 @@
                 <a href="">Facebook</a>
             </li>
         </ul>
-    </div><!-- /.main-menu -->
+    </nav><!-- /.main-menu -->
     
-    <div class="main">
+    <main class="main">
 
-        <div class="module main-intro">
+        <section class="module main-intro">
             <div class="module-inner">
                 <div class="intro-text">
                     <h1 class="intro-title">E2D3 Data Visualization For Everyone</h1>
@@ -60,28 +60,27 @@
                     <img src="./images/dummy-gif/globe.gif" alt="" width="100%">
                     <img src="./images/dummy-gif/globe-shadow.png" alt="" style="margin-top:-20px">
                 </div>
-            </div><!-- /.module-inner -->
-            <div class="intro-news">
-                <div class="news-inner">
-                    <h2>News</h2>
-                    <dl><dt>2018/04/01</dt><dd>Webページをリニューアルしました。</dd></dl>
-                    <!-- <dl><dt>2018/04/01</dt><dd><a href="#">一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇</a></dd></dl> -->
-                    <dl>
-                        <dt>2018/04/01</dt><dd>【初の奈良イベント】CODE for IKOMA定例会にE2D3が遊びに行きます！<a href="#">詳しく見る ></a></dd>
-                    </dl>
-                </div>
-            </div><!-- /.intro-news -->
-        </div>
+            </div>
+        </section>
 
-        <div class="module main-about">
+        <section class="module main-news">
+            <div class="module-inner">
+                <h2>News</h2>
+                <dl><dt>2018/04/01</dt><dd>Webページをリニューアルしました。</dd></dl>
+                <dl><dt>2018/04/01</dt><dd><a href="#">一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇</a></dd></dl>
+                <!--<dl><dt>2018/04/01</dt><dd>【初の奈良イベント】CODE for IKOMA定例会にE2D3が遊びに行きます！<a href="#">詳しく見る ></a></dd></dl>-->
+            </div>
+        </section>
+
+        <section class="module main-about">
             <div class="module-inner">
                 <h2>「データって、面白い！」<br>と感じる瞬間を、すべての人に届けたい。</h2>
                 <img src="./images/illust-about.png" alt="">
                 <p>E2D3は、誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-appInfo">
+        <section class="module main-appInfo">
             <div class="appInfo-video">
                 <img src="http://e2d3wp.azurewebsites.net/wp-content/uploads/2015/09/e2d3bg.gif" alt="">
             </div>
@@ -91,7 +90,7 @@
                 <p>個人・法人問わず、どなたでも無料でご利用いただけます。<br>
                     使い方は簡単！Microsoft Office ExcelアプリページからE2D3をダウンロードし、Excel上でお好きなテンプレートを選択。自分で数値データを書き換え、反映させることができます。表現豊かなテンプレートは80種類以上！
                 </p>
-                <p><a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662">Microsoft アプリページへ > </a></p>
+                <p class="detailLink"><a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662">Microsoft アプリページへ</a></p>
 
                 <div class="appInfo-download">
                     <h3 class="download-title">ご利用環境別の無料ダウンロード方法・ご利用方法</h3>
@@ -102,22 +101,22 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-case hide-sp">
+        <section class="module main-case hide-sp">
             <div class="case-head">
                 <h2><span class="case-title">操作できる！</span>E2D3 サンプル</h2>
             </div>
-                <div class="case-wrap">
-                    <div class="case-overview">
-                        <h3>“みんなで徒競走”</h3>
-                        <p>ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。「時速」を体感することで、速さに対する理解を深められます。</p>
-                    </div>
-                    <div class="case-body sample-run">
-                        <!-- DVのソースコードをここに入れる -->
-                        <img src="./images/dummy-gif/run.gif" alt="">
+            <article class="case-wrap">
+                <div class="case-overview">
+                    <h3>“みんなで徒競走”</h3>
+                    <p>ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。「時速」を体感することで、速さに対する理解を深められます。</p>
+                </div>
+                <div class="case-body sample-run">
+                    <!-- DVのソースコードをここに入れる -->
+                    <img src="./images/dummy-gif/run.gif" alt="">
 
-                        <div class="controlPanel">
+                    <div class="controlPanel">
                         <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
                         <table>
                             <tbody>
@@ -133,7 +132,7 @@
                                 </tr>
                                 <tr>
                                     <th class="em col">速度</th>
-                                    <td class="inputArea"><input type="text" name="" id="" value="16秒"></td>
+                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="" value="16"></td>
                                     <td>17秒</td>
                                     <td>9.58秒</td>
                                     <td>3秒</td>
@@ -144,52 +143,49 @@
                             </tbody>
                         </table>
                         <button>スタート！</button>
-                    </div>
-
-
-                    </div>
+                    </div><!-- /.controlPanel -->
                 </div>
-                <div class="case-wrap">
-                    <div class="case-overview">
-                        <h3>“Dot Bar Chart”</h3>
-                        <p>年度ごとに項目の値が変化する複雑なデータを棒グラフで表現すると、年度別にグラフを作らなくてはならず面倒…そんな時はこのDot Bar Chart。ドット状の棒グラフが操作によって移ろい、１つの画面で「年度ごと」「項目ごと」の変化を同時に見ることができます。</p>
-                    </div>
-                    <div class="case-body sample-medal">
-                        <!-- DVのソースコードをここに入れる -->
-                        <h4>「各オリンピックにおける、国ごとの金メダル合計数と推移」</h4>
-                        <img src="./images/dummy-gif/dotbarchart.gif" alt="">
-                        <ul>
-                            <li>2000 シドニー</li>
-                            <li class="current">2004 アテネ</li>
-                            <li>2008 北京</li>
-                            <li>2021 ロンドン</li>
-                            <li>20016 リオ</li>
-                        </ul>
-                    </div>
+            </article>
+            <article class="case-wrap">
+                <div class="case-overview">
+                    <h3>“Dot Bar Chart”</h3>
+                    <p>年度ごとに項目の値が変化する複雑なデータを棒グラフで表現すると、年度別にグラフを作らなくてはならず面倒…そんな時はこのDot Bar Chart。ドット状の棒グラフが操作によって移ろい、１つの画面で「年度ごと」「項目ごと」の変化を同時に見ることができます。</p>
                 </div>
+                <div class="case-body sample-medal">
+                    <!-- DVのソースコードをここに入れる -->
+                    <h4>「各オリンピックにおける、国ごとの金メダル合計数と推移」</h4>
+                    <img src="./images/dummy-gif/dotbarchart.gif" alt="">
+                    <ul>
+                        <li>2000 シドニー</li>
+                        <li class="current">2004 アテネ</li>
+                        <li>2008 北京</li>
+                        <li>2021 ロンドン</li>
+                        <li>20016 リオ</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
 
-        </div>
-
-        <div class="module main-download hide-sp">
+        <section class="module main-download hide-sp">
             <div class="module-inner">
                 <h2>E2D3 on Excel</h2>
                 <a href="#">無料ダウンロードはこちら</a>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-workshop">
+        <section class="module main-workshop">
             <div class="module-inner">
                 <h2>みんなで作る、データビジュアライズ</h2>
                 <p>E2D3は、小学生や技術者まで幅広い層に向けた、データのワークショップやハッカソンを企画しています。そこで生まれた「このデータを、こんな風に見れたら面白いかも！」というアイディアを、E2D3のエンジニアとデザイナーが実現します。</p>
-                <p class="detailLink"><a href="#">イベント詳細を見る  ></a></p>
+                <p class="detailLink"><a href="#">イベント詳細を見る</a></p>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-development">
+        <section class="module main-development">
             <div class="module-inner">
                 <h2>E2D3が成長し続ける仕掛け</h2>
                 <p>E2D3は、「設計図」を公開して開発することで、誰かのひらめきが別の誰かのひらめきを呼び、どんどんプロダクトが成長していく仕組みをデザインしています。（基幹部分をOSSとしてGithubで公開しているので、プログラミングの知識があればどなたでも開発が可能です。）</p>
-                <p class="detailLink"><a href="/ja/developing-method/">開発者情報を見る  ></a></p>
+                <p class="detailLink"><a href="/ja/developing-method/">開発者情報を見る</a></p>
 
                 <dl>
                     <dt>【E2D3と共同制作した事例】</dt>
@@ -200,9 +196,9 @@
                     <dd><a href="https://withnews.jp/article/f0141202002qq000000000000000W0090101qq000011207A">2014/12　withnews, 得票率１割台で政権取る可能性　グラフで見る衆院選</a></dd>
                 </dl>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-eventInfo">
+        <section class="module main-eventInfo">
             <div class="module-inner">
                 <h2>イベント情報</h2>
                 <p class="large-txt">一緒にデータビジュアライズを楽しみませんか？</p>
@@ -264,9 +260,9 @@
              --></ul>
              <a href="#">&gt; 過去のイベント一覧</a>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-snsLink">
+        <section class="module main-snsLink">
             <div class="module-inner">
                 <h2>SNS</h2>
                 <p>E2D3の活動情報や、世界のデータビジュアライズ情報を配信中！</p>
@@ -291,9 +287,9 @@
 
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-joinus">
+        <section class="module main-joinus">
             <div class="module-inner">
                 <h2>開発メンバー募集中！</h2>
                 <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UIデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
@@ -309,9 +305,9 @@
                     
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="module main-interview">
+        <section class="module main-interview">
             <div class="module-inner">
                 <h2>Developers’ Interview</h2>
                 <ul><!--
@@ -337,13 +333,13 @@
                     </a></li><!--
              --></ul>
             </div>
-        </div>
+        </section>
 
-    </div><!-- /.main -->
+    </main>
 
-    <div class="footer">
+    <footer class="footer">
         <img src="./images/logo-footer.png" alt="E2D3" width="79">　Data Visualization for Everyone
-    </div>
+    </footer>
 
 </div><!-- /.wrapper -->
 
