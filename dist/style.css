@@ -202,9 +202,11 @@ a:hover {
 }
 
 .main-intro .intro-news .news-inner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   max-width: 800px;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 15px 10px;
 }
 
 .main-intro .intro-news h2 {
@@ -919,5 +921,68 @@ a:hover {
   .main-intro .intro-text .intro-title {
     margin-right: 0;
     background-position: 50%;
+  }
+  .main-about h2 {
+    font-size: 24px;
+  }
+  .main-about img {
+    padding-top: 20px;
+  }
+  .main-about p {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .main-appInfo .appInfo-download .download-link {
+    display: block;
+  }
+  .main-appInfo .appInfo-download .download-link a {
+    margin: 10px;
+    padding: 10px;
+  }
+  .main-appInfo .appInfo-download .download-link a br {
+    display: none;
+  }
+  .main-appInfo .appInfo-download .download-link a:nth-child(3) {
+    padding: 10px;
+  }
+  .main-development dl {
+    margin-right: 0;
+  }
+  .main-eventInfo ul.eventInfo-coming a .event-date {
+    width: 35%;
+    padding: 10px;
+  }
+  .main-eventInfo ul.eventInfo-coming a .event-date .date-place {
+    width: auto;
+  }
+  .main-eventInfo ul.eventInfo-coming a .event-description {
+    padding: 10px;
+  }
+  .main-eventInfo .eventInfo-past li {
+    width: 49%;
+  }
+  .main-snsLink .snsLink-wrap {
+    display: block;
+  }
+  .main-snsLink .snsLink-wrap .snsLink-module {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .main-joinus .joinus-github ul {
+    padding-left: 15px;
+  }
+  .main-interview li {
+    width: 48%;
+  }
+  .main-interview li p {
+    margin-right: 1%;
+    line-height: 1.6;
+    font-size: 13px;
+  }
+  .main-interview li:nth-child(3n) {
+    margin-right: 2%;
+  }
+  .main-interview li:nth-child(2n) {
+    margin-right: 0;
   }
 }

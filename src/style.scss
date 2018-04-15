@@ -165,9 +165,10 @@ a {
         width: 100%;
         border-top: 1px solid #EFEFEF;
         .news-inner {
+            box-sizing: border-box;
             max-width: 800px;
             margin: 0 auto;
-            padding: 15px 0;
+            padding: 15px 10px;
         }
         h2 {
             padding: 0;
@@ -761,6 +762,73 @@ a {
         .intro-text .intro-title {
             margin-right: 0;
             background-position: 50%;
+        }
+    }
+    .main-about {
+        h2 {
+            font-size: 24px;
+        }
+        img {
+            padding-top: 20px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: normal;
+        }
+    }
+    .main-appInfo .appInfo-download .download-link {
+        display: block;
+        a {
+            margin: 10px;
+            padding: 10px;
+            br {
+                display: none;
+            }
+            &:nth-child(3) {
+                padding: 10px;
+            }
+        }
+    }
+    .main-development dl {
+        margin-right: 0;
+    }
+    .main-eventInfo ul.eventInfo-coming a {
+        .event-date {
+            width: 35%;
+            padding: 10px;
+            .date-place {
+                width: auto;
+            }
+        }
+        .event-description {
+            padding: 10px;
+        }
+    }
+    .main-eventInfo .eventInfo-past li {
+        width: 49%;
+    }
+    .main-snsLink .snsLink-wrap {
+        display: block;
+        .snsLink-module {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+    .main-joinus .joinus-github ul {
+        padding-left: 15px;
+    }
+    .main-interview li {
+        width: 48%;
+        p {
+            margin-right: 1%;
+            line-height: 1.6;
+            font-size: 13px;
+        }
+        &:nth-child(3n) {
+            margin-right: 2%;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
         }
     }
 }
