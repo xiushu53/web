@@ -16,7 +16,7 @@ body,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,p {
 ul, li {
     list-style: none;
 }
-button{
+button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -57,6 +57,8 @@ a {
             }
         }
         &.buttonLink {
+            text-align: center;
+            padding-top: 20px;
             a {
                 display: inline-block;
                 box-sizing: border-box;
@@ -68,6 +70,7 @@ a {
                 background-color: #fff;
                 line-height: 34px;
                 font-weight: bold;
+                font-size: 16px;
                 color: #20A75E;
                 box-shadow: 0 2px 1px rgba(0,0,0,.1);
             }
@@ -271,10 +274,6 @@ a {
         padding-top: 20px;
         font-size: 20px;
         font-weight: bold;
-        &.buttonLink {
-            font-weight: normal;
-            font-size: 16px;
-        }
     }
 }
 
@@ -809,20 +808,48 @@ a {
 
 /* スマホ対応 */
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
     .hide-sp {
         display: none;
     }
     .top-menu {
         display: none;//仮
     }
-    .main-intro {
-        .module-inner {
-            display: block;
+    .module {
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
         }
-        .intro-text .intro-title {
-            margin-right: 0;
-            background-position: 50%;
+    }
+    .main-intro {
+        height: auto;
+        min-height: auto;
+        .module-inner {
+            flex-direction: column;
+            .intro-text {
+                order: 1;
+                background: 0;
+                .intro-title {
+                    margin-right: 0;
+                    font-size: 18px;
+                    .title-large {
+                        font-size: 25px;
+                    }
+                }
+                .intro-description {
+                    font-size: 15px;
+                    text-align: left;
+                    line-height: 1.4;
+                }
+            }
+            .intro-globe {
+                order: 2;
+            }
+        }
+    }
+    .main-news {
+        dl {
+            margin: 0 10px;
         }
     }
     .main-about {
@@ -837,36 +864,63 @@ a {
             font-weight: normal;
         }
     }
-    .main-appInfo .appInfo-download .download-link {
-        display: block;
-        a {
-            margin: 10px;
-            padding: 10px;
-            br {
-                display: none;
-            }
-            &:nth-child(3) {
+    .main-appInfo {
+        h2 {
+            padding-bottom: 10px;
+            font-size: 24px;
+            text-align: center;
+        }
+        h3 {
+            font-size: 16px;
+            text-align: center;
+        }
+        .appInfo-video {
+            background: 0;
+            padding: 0;
+        }
+        .appInfo-download .download-link {
+            display: block;
+            a {
+                margin: 10px;
                 padding: 10px;
+                border-radius: 24px;
+                br {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    padding: 10px;
+                }
             }
         }
     }
     .main-development dl {
         margin-right: 0;
     }
-    .main-eventInfo ul.eventInfo-coming a {
-        .event-date {
-            width: 35%;
-            padding: 10px;
-            .date-place {
-                width: auto;
-            }
+    .main-eventInfo {
+        p.large-txt {
+            font-size: 16px;
         }
-        .event-description {
-            padding: 10px;
+        ul.eventInfo-coming a {
+            .event-date {
+                width: 35%;
+                padding: 10px;
+                .date-place {
+                    width: auto;
+                }
+            }
+            .event-description {
+                padding: 10px;
+            }
         }
     }
     .main-eventInfo .eventInfo-past li {
-        width: 49%;
+        display: block;
+        margin: 0 auto 10px;
+        width: 100%;
+        max-width: 260px;
+        &:last-child {
+            margin-right: auto;
+        }
     }
     .main-snsLink .snsLink-wrap {
         display: block;
