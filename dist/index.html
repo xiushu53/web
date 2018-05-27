@@ -19,30 +19,35 @@
 <div id="wrapper">
 
     <nav class="top-menu">
-        <ul>
-            <li class="menu-home">
+        <ul class="menu-body">
+            <li class="body-item menu-home">
                 <a href="/">E2D3"</a>
             </li>
-            <li class="menu-about">
+            <li class="body-item menu-about">
                 <a href="#">About E2D3</a>
             </li>
-            <li class="menu-product">
-                <a href="#">How to Use</a>
+            <li class="body-item menu-product">
+                <a>Use E2D3 on Excel</a>
+                <ul class="menu-inner">
+                    <li><a href="">Windows Excel 2013以降で利用する</a></li>
+                    <li><a href="">Office for Mac(Ver2016以上)で利用する</a></li>
+                    <li><a href="">Excel Onlineで利用する</a></li>
+                </ul>
             </li>
-            <li class="menu-events">
+            <li class="body-item menu-events">
                 <a href="#">Events</a>
             </li>
-            <li class="menu-github">
-                <a href="#">Github</a>
-            </li>
-            <li class="menu-language">
+            <li class="body-item menu-language">
                 <a href="">English</a>
             </li>
-            <li class="menu-twitter">
-                <a href="">Twitter</a>
+            <li class="body-item menu-github">
+                <a href="https://github.com/e2d3/">Github</a>
             </li>
-            <li class="menu-facebook">
-                <a href="">Facebook</a>
+            <li class="body-item menu-twitter">
+                <a href="https://twitter.com/e2d3org">Twitter</a>
+            </li>
+            <li class="body-item menu-facebook">
+                <a href="https://www.facebook.com/e2d3project/">Facebook</a>
             </li>
         </ul>
     </nav><!-- /.main-menu -->
@@ -51,32 +56,34 @@
 
         <section class="module main-intro">
             <div class="module-inner">
-                <div class="intro-text">
-                    <h1 class="intro-title">E2D3 Data Visualization For Everyone</h1>
-                    <p class="intro-description">"Globe of E2D3"<br>当サイトにアクセスした地域をドットで表現</p>
-                </div>
                 <div class="intro-globe">
                     <!--仮-->
                     <img src="./images/dummy-gif/globe.gif" alt="" width="100%">
                     <img src="./images/dummy-gif/globe-shadow.png" alt="" style="margin-top:-20px">
+                </div>
+                <div class="intro-text">
+                    <h1 class="intro-title"><span class="title-large">データって、面白い！</span><br> そう感じる瞬間を、すべての人に届けたい</h1>
+                    <p class="intro-description">"Globe of E2D3"<br>当サイトにアクセスした地域をドットで表現。<br>E2D3アプリをダウンロードすれば、Excel上で、<br>お好きなデータを入れて地球を動かすことができます。</p>
                 </div>
             </div>
         </section>
 
         <section class="module main-news">
             <div class="module-inner">
-                <h2>News</h2>
-                <dl><dt>2018/04/01</dt><dd>Webページをリニューアルしました。</dd></dl>
-                <dl><dt>2018/04/01</dt><dd><a href="#">一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇</a></dd></dl>
-                <!--<dl><dt>2018/04/01</dt><dd>【初の奈良イベント】CODE for IKOMA定例会にE2D3が遊びに行きます！<a href="#">詳しく見る ></a></dd></dl>-->
+                <dl>
+                    <dt>News</dt>
+                    <dd><a>2018/04/01　Webページをリニューアルしました。</a></dd>
+                    <dd><a href="#">2018/04/01　一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇</a></dd>
+                </dl>
             </div>
         </section>
 
         <section class="module main-about">
             <div class="module-inner">
-                <h2>「データって、面白い！」<br>と感じる瞬間を、すべての人に届けたい。</h2>
+                <h2>E2D3とは？</h2>
+                <p>誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
+                <p class="buttonLink"><a href="#anchor-detailE2D3">詳しく見る</a></p>
                 <img src="./images/illust-about.png" alt="">
-                <p>E2D3は、誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
             </div>
         </section>
 
@@ -173,7 +180,7 @@
             </div>
         </section>
 
-        <section class="module main-workshop">
+        <section class="module main-workshop" id="anchor-detailE2D3">
             <div class="module-inner">
                 <h2>みんなで作る、データビジュアライズ</h2>
                 <p>E2D3は、小学生や技術者まで幅広い層に向けた、データのワークショップやハッカソンを企画しています。そこで生まれた「このデータを、こんな風に見れたら面白いかも！」というアイディアを、E2D3のエンジニアとデザイナーが実現します。</p>
@@ -188,7 +195,7 @@
                 <p class="detailLink"><a href="/ja/developing-method/">開発者情報を見る</a></p>
 
                 <dl>
-                    <dt>【E2D3と共同制作した事例】</dt>
+                    <dt>E2D3と共同制作した事例</dt>
                     <dd><a href="http://www3.nhk.or.jp/news/special/2016-presidential-election/index.html">2016/09　NHK news web, アメリカ大統領選２０１６</a></dd>
                     <dd><a href="https://kumamotojishin.yahoo.co.jp/bousai/">2016/09　Yahoo!ニュース, 検索データから見る熊本地震</a></dd>
                     <dd><a>2015/08　goo スマホ部, ドコモ圧勝！iPhone 6s発売日に速度調査（大阪環状線）</a></dd>
@@ -258,7 +265,7 @@
                         </dl>
                     </a></li><!--
              --></ul>
-             <a href="#">&gt; 過去のイベント一覧</a>
+             <p class="buttonLink"><a href="#anchor-detailE2D3">過去のイベント一覧</a></p>
             </div>
         </section>
 
