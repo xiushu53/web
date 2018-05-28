@@ -6,6 +6,7 @@
 <title>E2D3 &#8211; Data Visualization for Everyone</title>
 <link rel="stylesheet" href="./style.css">
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="./lib/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -17,43 +18,43 @@
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <div id="wrapper">
-
     <nav class="top-menu">
-        <ul class="menu-body">
-            <li class="body-item menu-home">
-                <a href="/">E2D3"</a>
-            </li>
-            <li class="body-item menu-product">
-                <a>Use E2D3 on Excel</a>
-                <ul class="menu-inner">
-                    <li><a href="">インストール方法</a></li>
-                    <li><a href="">使い方</a></li>
-                </ul>
-            </li>
-            <li class="body-item menu-events">
-                <a href="#">Events</a>
-            </li>
-            <li class="body-item menu-about">
-                <a href="#">About E2D3</a>
-                <ul class="menu-inner">
-                    <li><a href="">チームメンバー</a></li>
-                    <li><a href="">活動履歴</a></li>
-                    <li><a href="">プライバシーポリシー</a></li>
-                </ul>
-            </li>
-            <li class="body-item menu-language">
-                <a href="">English</a>
-            </li>
-            <li class="body-item menu-github">
-                <a href="https://github.com/e2d3/">Github</a>
-            </li>
-            <li class="body-item menu-twitter">
-                <a href="https://twitter.com/e2d3org">Twitter</a>
-            </li>
-            <li class="body-item menu-facebook">
-                <a href="https://www.facebook.com/e2d3project/">Facebook</a>
-            </li>
-        </ul>
+        <div class="menu-body" id="menu-body">
+            <h1 class="menu-home"><a href="/">E2D3</a></h1>
+            <div id="menu-button"><span></span></div>
+            <ul class="menu-list">
+                <li class="body-item menu-product">
+                    <a>Use E2D3 on Excel</a>
+                    <ul class="menu-inner">
+                        <li><a href="">インストール方法</a></li>
+                        <li><a href="">使い方</a></li>
+                    </ul>
+                </li>
+                <li class="body-item menu-events">
+                    <a href="#anchor-event" class="anchor-link">Events</a>
+                </li>
+                <li class="body-item menu-about">
+                    <a href="#">About E2D3</a>
+                    <ul class="menu-inner">
+                        <li><a href="">チームメンバー</a></li>
+                        <li><a href="">活動履歴</a></li>
+                        <li><a href="">プライバシーポリシー</a></li>
+                    </ul>
+                </li>
+                <li class="body-item menu-language">
+                    <a href="">English</a>
+                </li>
+                <li class="body-item menu-github">
+                    <a href="https://github.com/e2d3/">Github</a>
+                </li>
+                <li class="body-item menu-twitter">
+                    <a href="https://twitter.com/e2d3org">Twitter</a>
+                </li>
+                <li class="body-item menu-facebook">
+                    <a href="https://www.facebook.com/e2d3project/">Facebook</a>
+                </li>
+            </ul>
+        </div><!-- /.menu-body -->
     </nav><!-- /.main-menu -->
     
     <main class="main">
@@ -68,6 +69,7 @@
                 <div class="intro-text">
                     <h1 class="intro-title"><span class="title-large">データって、面白い！</span><br> そう感じる瞬間を、すべての人に届けたい</h1>
                     <p class="intro-description">"Globe of E2D3"<br>当サイトにアクセスした地域をドットで表現。<br>E2D3アプリをダウンロードすれば、Excel上で、<br>お好きなデータを入れて地球を動かすことができます。</p>
+                    <a href="#anchor-about" class="anchor-link"></a>
                 </div>
             </div>
         </section>
@@ -82,7 +84,7 @@
             </div>
         </section>
 
-        <section class="module main-about">
+        <section class="module main-about" id="anchor-about">
             <div class="module-inner">
                 <h2>E2D3とは？</h2>
                 <p>誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
@@ -209,7 +211,7 @@
             </div>
         </section>
 
-        <section class="module main-eventInfo">
+        <section class="module main-eventInfo" id="anchor-event">
             <div class="module-inner">
                 <h2>イベント情報</h2>
                 <p class="large-txt">一緒にデータビジュアライズを楽しみませんか？</p>
@@ -353,6 +355,22 @@
     </footer>
 
 </div><!-- /.wrapper -->
+
+<script>
+$(function(){
+    $('#menu-button').on('click',function(){
+        $('#menu-body').toggleClass('on');
+    })
+    $('.anchor-link').on('click',function(){
+        var speed = 400;
+        var href= $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top;
+        $('body,html').animate({scrollTop:position}, speed, 'swing');
+        //return false;
+    })
+});
+</script>
 
 </body>
 </html>

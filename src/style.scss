@@ -88,18 +88,34 @@ a {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 1px 2px rgba(0,0,0,.08);
     -webkit-backdrop-filter: blur(4px);
-    ul.menu-body {
-        display: flex;
+    #menu-body {
         max-width: 1120px;
         box-sizing: border-box;
         padding: 0 10px;
         margin: 0 auto;
     }
+    h1.menu-home {
+        position: absolute;
+        top: 6px;
+        a {
+            display: block;
+            background: url('./images/logo-header.png') no-repeat;
+            background-size: 58px 37px;
+            width: 58px;
+            height: 37px;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+    }
+    ul.menu-list {
+        display: flex;
+        justify-content: flex-end;
+    }
     li.body-item {
         list-style: none;
-        margin-left: 30px;
         height: 50px;
         line-height: 50px;
+        margin-left: 30px;
         a {
             display: inline-block;
             vertical-align: middle;
@@ -108,18 +124,6 @@ a {
             &:hover {
                 text-decoration: underline;
             }
-        }
-    }
-    .menu-home {
-        flex: 1;
-        margin-left: 0;
-        a {
-            background: url('./images/logo-header.png') no-repeat;
-            background-size: 58px 37px;
-            width: 58px;
-            height: 37px;
-            overflow: hidden;
-            text-indent: -9999px;
         }
     }
     .menu-about, .menu-product {
@@ -198,6 +202,7 @@ a {
         justify-content: space-between;
     }
     .intro-text {
+        position: relative;
         background: url('./images/icon-under.png') no-repeat 50% 100%;
         background-size: 34px 18px;
         padding-bottom: 50px;
@@ -209,6 +214,13 @@ a {
             .title-large {
                 font-size: 35px;
             }
+        }
+        .anchor-link {
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 42px;
         }
     }
     .intro-globe {
@@ -813,18 +825,126 @@ a {
         display: none;
     }
     .top-menu {
-        display: none;//仮
+        height: 54px;
+        #menu-body {
+            padding: 0;
+            &.on {
+                ul.menu-list {
+                    //display: block;
+                    transform: scaleY(1);
+                }
+                #menu-button {
+                    span {
+                        display: none;
+                    }
+                    &:before {
+                        transform: rotate(45deg);
+                        top: 17px;
+                    }
+                    &:after {
+                        transform: rotate(135deg);
+                        bottom: 17px;
+                    }
+                }
+            }
+        }
+        h1.menu-home {
+            top: 14px;
+            left: 15px;
+            a {
+                background-size: 44px 27px;
+                width: 44px;
+                height: 27px;
+            }
+        }
+        #menu-button {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            &:before, &:after, span {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 9px;
+                width: 18px;
+                height: 2px;
+                background: #979797;
+                transition: all .5s;
+            }
+            &:before {
+                top: 10px;
+            }
+            &:after {
+                bottom: 10px;
+            }
+            span {
+                top: 17px;
+            }
+        }
+        ul.menu-list {
+            position: relative;
+            top: 54px;
+            display: block;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 1px 2px rgba(0,0,0,.08);
+            -webkit-backdrop-filter: blur(4px);
+            border-top: 1px solid #eee;
+            transition: transform .5s;
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+        li.body-item {
+            margin: 0;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            a {
+                display: block;
+                height: 36px;
+                line-height: 36px;
+                margin: 0 10px;
+            }
+            &.menu-events a, &.menu-language a {
+                padding-right: 40px;
+                background: url('./images/icon-right.png') no-repeat 100% 50%;
+                background-size: 9px 14px;
+            }
+            &.menu-twitter a, &.menu-facebook a, &.menu-github a {
+                background-position: 10px 50%;
+                width: auto;
+                padding-left: 40px;
+                text-indent: 0;
+            }
+        }
+        ul.menu-inner {
+            display: block;
+            position: static;
+            background: 0;
+            box-shadow: none;
+            padding: 0 0 0 1em;
+            li {
+                padding: 0;
+                border-top: 1px solid #eee;
+            }
+        }
     }
     .module {
+        .module-inner {
+            padding-top: 50px;
+        }
         h2 {
             font-size: 20px;
             font-weight: bold;
         }
     }
     .main-intro {
+        margin-top: 60px;
         height: auto;
         min-height: auto;
         .module-inner {
+            padding-top: 20px;
             flex-direction: column;
             .intro-text {
                 order: 1;
@@ -848,11 +968,15 @@ a {
         }
     }
     .main-news {
+        .module-inner {
+            padding-top: 0;
+        }
         dl {
             margin: 0 10px;
         }
     }
     .main-about {
+        padding-bottom: 0;
         h2 {
             font-size: 24px;
         }
@@ -875,6 +999,7 @@ a {
             text-align: center;
         }
         .appInfo-video {
+            margin-top: 0;
             background: 0;
             padding: 0;
         }
@@ -932,18 +1057,23 @@ a {
     .main-joinus .joinus-github ul {
         padding-left: 15px;
     }
-    .main-interview li {
-        width: 48%;
-        p {
-            margin-right: 1%;
-            line-height: 1.6;
-            font-size: 13px;
+    .main-interview {
+        .module-inner {
+            padding-top: 100px;
         }
-        &:nth-child(3n) {
-            margin-right: 2%;
-        }
-        &:nth-child(2n) {
-            margin-right: 0;
+        li {
+            width: 48%;
+            p {
+                margin-right: 1%;
+                line-height: 1.6;
+                font-size: 13px;
+            }
+            &:nth-child(3n) {
+                margin-right: 2%;
+            }
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
         }
     }
 }

@@ -105,10 +105,7 @@ a:hover {
   -webkit-backdrop-filter: blur(4px);
 }
 
-.top-menu ul.menu-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.top-menu #menu-body {
   max-width: 1120px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -116,11 +113,35 @@ a:hover {
   margin: 0 auto;
 }
 
+.top-menu h1.menu-home {
+  position: absolute;
+  top: 6px;
+}
+
+.top-menu h1.menu-home a {
+  display: block;
+  background: url("./images/logo-header.png") no-repeat;
+  background-size: 58px 37px;
+  width: 58px;
+  height: 37px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.top-menu ul.menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .top-menu li.body-item {
   list-style: none;
-  margin-left: 30px;
   height: 50px;
   line-height: 50px;
+  margin-left: 30px;
 }
 
 .top-menu li.body-item a {
@@ -132,22 +153,6 @@ a:hover {
 
 .top-menu li.body-item a:hover {
   text-decoration: underline;
-}
-
-.top-menu .menu-home {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-left: 0;
-}
-
-.top-menu .menu-home a {
-  background: url("./images/logo-header.png") no-repeat;
-  background-size: 58px 37px;
-  width: 58px;
-  height: 37px;
-  overflow: hidden;
-  text-indent: -9999px;
 }
 
 .top-menu .menu-about, .top-menu .menu-product {
@@ -242,6 +247,7 @@ a:hover {
 }
 
 .main-intro .intro-text {
+  position: relative;
   background: url("./images/icon-under.png") no-repeat 50% 100%;
   background-size: 34px 18px;
   padding-bottom: 50px;
@@ -256,6 +262,14 @@ a:hover {
 
 .main-intro .intro-text .intro-title .title-large {
   font-size: 35px;
+}
+
+.main-intro .intro-text .anchor-link {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 42px;
 }
 
 .main-intro .intro-globe {
@@ -986,17 +1000,138 @@ a:hover {
     display: none;
   }
   .top-menu {
+    height: 54px;
+  }
+  .top-menu #menu-body {
+    padding: 0;
+  }
+  .top-menu #menu-body.on ul.menu-list {
+    -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  .top-menu #menu-body.on #menu-button span {
     display: none;
+  }
+  .top-menu #menu-body.on #menu-button:before {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 17px;
+  }
+  .top-menu #menu-body.on #menu-button:after {
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+    bottom: 17px;
+  }
+  .top-menu h1.menu-home {
+    top: 14px;
+    left: 15px;
+  }
+  .top-menu h1.menu-home a {
+    background-size: 44px 27px;
+    width: 44px;
+    height: 27px;
+  }
+  .top-menu #menu-button {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+  }
+  .top-menu #menu-button:before, .top-menu #menu-button:after, .top-menu #menu-button span {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 9px;
+    width: 18px;
+    height: 2px;
+    background: #979797;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+  }
+  .top-menu #menu-button:before {
+    top: 10px;
+  }
+  .top-menu #menu-button:after {
+    bottom: 10px;
+  }
+  .top-menu #menu-button span {
+    top: 17px;
+  }
+  .top-menu ul.menu-list {
+    position: relative;
+    top: 54px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    -webkit-backdrop-filter: blur(4px);
+    border-top: 1px solid #eee;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+    -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+            transform-origin: top;
+  }
+  .top-menu li.body-item {
+    margin: 0;
+    height: auto;
+    border-bottom: 1px solid #eee;
+  }
+  .top-menu li.body-item a {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 10px;
+  }
+  .top-menu li.body-item.menu-events a, .top-menu li.body-item.menu-language a {
+    padding-right: 40px;
+    background: url("./images/icon-right.png") no-repeat 100% 50%;
+    background-size: 9px 14px;
+  }
+  .top-menu li.body-item.menu-twitter a, .top-menu li.body-item.menu-facebook a, .top-menu li.body-item.menu-github a {
+    background-position: 10px 50%;
+    width: auto;
+    padding-left: 40px;
+    text-indent: 0;
+  }
+  .top-menu ul.menu-inner {
+    display: block;
+    position: static;
+    background: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 0 0 0 1em;
+  }
+  .top-menu ul.menu-inner li {
+    padding: 0;
+    border-top: 1px solid #eee;
+  }
+  .module .module-inner {
+    padding-top: 50px;
   }
   .module h2 {
     font-size: 20px;
     font-weight: bold;
   }
   .main-intro {
+    margin-top: 60px;
     height: auto;
     min-height: auto;
   }
   .main-intro .module-inner {
+    padding-top: 20px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1025,8 +1160,14 @@ a:hover {
         -ms-flex-order: 2;
             order: 2;
   }
+  .main-news .module-inner {
+    padding-top: 0;
+  }
   .main-news dl {
     margin: 0 10px;
+  }
+  .main-about {
+    padding-bottom: 0;
   }
   .main-about h2 {
     font-size: 24px;
@@ -1048,6 +1189,7 @@ a:hover {
     text-align: center;
   }
   .main-appInfo .appInfo-video {
+    margin-top: 0;
     background: 0;
     padding: 0;
   }
@@ -1099,6 +1241,9 @@ a:hover {
   }
   .main-joinus .joinus-github ul {
     padding-left: 15px;
+  }
+  .main-interview .module-inner {
+    padding-top: 100px;
   }
   .main-interview li {
     width: 48%;
