@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>E2D3 &#8211; Data Visualization for Everyone</title>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="./lib/jquery-3.3.1.min.js"></script>
+<?php wp_head(); ?>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -63,8 +64,8 @@
             <div class="module-inner">
                 <div class="intro-globe">
                     <!--仮-->
-                    <img src="./images/dummy-gif/globe.gif" alt="" width="100%">
-                    <img src="./images/dummy-gif/globe-shadow.png" alt="" style="margin-top:-20px">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/globe.gif" alt="" width="100%">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/globe-shadow.png" alt="" style="margin-top:-20px">
                 </div>
                 <div class="intro-text">
                     <h1 class="intro-title"><span class="title-large">データって、面白い！</span><br> そう感じる瞬間を、すべての人に届けたい</h1>
@@ -89,7 +90,7 @@
                 <h2>E2D3とは？</h2>
                 <p>誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
                 <p class="buttonLink"><a href="#anchor-detailE2D3">詳しく見る</a></p>
-                <img src="./images/illust-about.png" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/illust-about.png" alt="">
             </div>
         </section>
 
@@ -127,7 +128,7 @@
                 </div>
                 <div class="case-body sample-run">
                     <!-- DVのソースコードをここに入れる -->
-                    <img src="./images/dummy-gif/run.gif" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/run.gif" alt="">
 
                     <div class="controlPanel">
                         <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
@@ -167,7 +168,7 @@
                 <div class="case-body sample-medal">
                     <!-- DVのソースコードをここに入れる -->
                     <h4>「各オリンピックにおける、国ごとの金メダル合計数と推移」</h4>
-                    <img src="./images/dummy-gif/dotbarchart.gif" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/dotbarchart.gif" alt="">
                     <ul>
                         <li>2000 シドニー</li>
                         <li class="current">2004 アテネ</li>
@@ -283,7 +284,7 @@
 
                     <div class="snsLink-module">
                         <div class="module-head">
-                            <h3><img src="./images/icon-facebook.png" alt="Facebook"></h3>
+                            <h3><img src="<?php echo get_template_directory_uri(); ?>/images/icon-facebook.png" alt="Facebook"></h3>
                             <div class="head-btn"><div class="fb-like" data-href="https://www.facebook.com/e2d3project/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div></div>
                         </div>
                         <p>E2D3のイベント情報や、アクティビティ情報は公式Facebookから。</p>
@@ -291,7 +292,7 @@
                     </div>
                     <div class="snsLink-module">
                         <div class="module-head">
-                            <h3><img src="./images/icon-twitter.png" alt="Twitter"></h3>
+                            <h3><img src="<?php echo get_template_directory_uri(); ?>/images/icon-twitter.png" alt="Twitter"></h3>
                             <div class="head-btn"><a href="https://twitter.com/e2d3org?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow @e2d3org</a></div>
                         </div>
                         <p>世界のData Visualizeをピックアップして紹介中！最新のDataViz情報収集はE2D3のアカウントで。</p>
@@ -308,7 +309,7 @@
                 <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UIデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
                 <div class="joinus-github">
                     <div class="github-icon">
-                        <a href="https://github.com/e2d3/"><img src="./images/illust-github.png" alt="Github" width="102"></a>
+                        <a href="https://github.com/e2d3/"><img src="<?php echo get_template_directory_uri(); ?>/images/illust-github.png" alt="Github" width="102"></a>
                     </div>
                     <ul>
                         <li><a href="/ja/developing-method/">Developing Method</a></li>
@@ -351,7 +352,7 @@
     </main>
 
     <footer class="footer">
-        <img src="./images/logo-footer.png" alt="E2D3" width="79">　Data Visualization for Everyone
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" alt="E2D3" width="79">　Data Visualization for Everyone
     </footer>
 
 </div><!-- /.wrapper -->
