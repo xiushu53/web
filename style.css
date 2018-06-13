@@ -34,7 +34,7 @@ button {
           appearance: none;
 }
 
-img {
+img, iframe {
   max-width: 100%;
 }
 
@@ -98,6 +98,10 @@ a:hover {
   color: #20A75E;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.module .main-article p {
+  margin-bottom: 1em;
 }
 
 .top-menu {
