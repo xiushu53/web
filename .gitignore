@@ -1,6 +1,11 @@
+Thumbs.db
+.DS_Store
 node_modules/
 package-lock.json
 .DS_Store
 .vscode/
 .firebaserc
 firebase.json
+
+*
+!wp-content/themes/e2d3-web
