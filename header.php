@@ -27,8 +27,8 @@
                 <li class="body-item menu-product">
                     <a>Use E2D3 on Excel</a>
                     <ul class="menu-inner">
-                        <li><a href="">インストール方法</a></li>
-                        <li><a href="">使い方</a></li>
+                        <li><a href="/app-install/">インストール方法</a></li>
+                        <li><a href="/howtouse/">使い方</a></li>
                     </ul>
                 </li>
                 <li class="body-item menu-events">
@@ -37,9 +37,9 @@
                 <li class="body-item menu-about">
                     <a href="#">About E2D3</a>
                     <ul class="menu-inner">
-                        <li><a href="">チームメンバー</a></li>
-                        <li><a href="">活動履歴</a></li>
-                        <li><a href="">プライバシーポリシー</a></li>
+                        <li><a href="/e2d3-project-member/">チームメンバー</a></li>
+                        <li><a href="/activity-log/">活動履歴</a></li>
+                        <li><a href="/privacy/">プライバシーポリシー</a></li>
                     </ul>
                 </li>
                 <li class="body-item menu-language">
