@@ -27,7 +27,7 @@
             <div class="module-inner">
                 <h2>E2D3とは？</h2>
                 <p>誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
-                <p class="buttonLink"><a href="#anchor-detailE2D3">詳しく見る</a></p>
+                <p class="buttonLink"><a href="#anchor-detailE2D3" class="anchor-link">詳しく見る</a></p>
                 <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
             </div>
         </section>
@@ -123,7 +123,7 @@
             <div class="module-inner">
                 <h2>みんなで作る、データビジュアライズ</h2>
                 <p>E2D3は、小学生や技術者まで幅広い層に向けた、データのワークショップやハッカソンを企画しています。そこで生まれた「このデータを、こんな風に見れたら面白いかも！」というアイディアを、E2D3のエンジニアとデザイナーが実現します。</p>
-                <p class="detailLink"><a href="#">イベント詳細を見る</a></p>
+                <p class="detailLink"><a href="#anchor-event" class="anchor-link">イベント詳細を見る</a></p>
             </div>
         </section>
 
@@ -131,7 +131,7 @@
             <div class="module-inner">
                 <h2>E2D3が成長し続ける仕掛け</h2>
                 <p>E2D3は、「設計図」を公開して開発することで、誰かのひらめきが別の誰かのひらめきを呼び、どんどんプロダクトが成長していく仕組みをデザインしています。（基幹部分をOSSとしてGithubで公開しているので、プログラミングの知識があればどなたでも開発が可能です。）</p>
-                <p class="detailLink"><a href="/ja/developing-method/">開発者情報を見る</a></p>
+                <p class="detailLink"><a href="#anchor-joinus" class="anchor-link">開発者情報を見る</a></p>
 
                 <dl>
                     <dt>E2D3と共同制作した事例</dt>
@@ -212,7 +212,7 @@
             </div>
         </section>
 
-        <section class="module main-joinus">
+        <section class="module main-joinus" id="anchor-joinus">
             <div class="module-inner">
                 <h2>開発メンバー募集中！</h2>
                 <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UIデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
