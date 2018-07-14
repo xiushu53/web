@@ -78,7 +78,7 @@ function init() {
         var x = 0;
         svg.append('image')
             .attr("id", animal.name)
-            .attr("href", IMAGE_DIR + animal.image)
+            .attr("xlink:href", IMAGE_DIR + animal.image)
             .attr("class", "animals")
             .attr("x", x)
             .attr("y", animal.top)
