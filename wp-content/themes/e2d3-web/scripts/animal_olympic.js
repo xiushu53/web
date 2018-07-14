@@ -54,6 +54,10 @@ var ANIMALS = [YOU, CHILD, BOLT, CHEETAH, TYPHOON, CAR, HORSE];
 var HEIGHT = 544;
 var ICON_HEIGHT = 90;
 var ICON_WIDTH = 90;
+var ICON_START_X = 0;
+var START_DELAY = 1000;
+var ICON_NUM = 7;
+var SPEED_COEFFICIENT = 200;
 
 function init() {
 
@@ -70,12 +74,12 @@ function init() {
         .style("left", 0);
 
     // アイコンセット
-    var startDelay = 1000;
+    var startDelay = START_DELAY;
     var height = svg.attr('height');
     var xMax = svg.attr('width');
     ANIMALS.forEach(function(animal, i){
-        var y = i * (height / 7);
-        var x = 0;
+        var y = i * (height / ICON_NUM);
+        var x = ICON_START_X;
         svg.append('image')
             .attr("id", animal.name)
             .attr("xlink:href", IMAGE_DIR + animal.image)
@@ -86,13 +90,12 @@ function init() {
             .attr("height", ICON_HEIGHT)
             .transition()
             .delay(startDelay)
-            .duration(animal['record'] * 200)
+            .duration(animal['record'] * SPEED_COEFFICIENT)
             .ease(d3.easeLinear)
             .attr('x', xMax - ICON_WIDTH)
             .attr('stroke', 'none')
             .attr('display', 'inherited');
     });
-    
     // スタートボタンにイベントを登録
     d3.select('#startButton').on('click', function(d){ start();});
 }
@@ -108,13 +111,8 @@ function start() {
     if (ownRecord != null && ownRecord != '') {
         ANIMALS[0]['record'] = parseInt(ownRecord);
     }
-
-    console.log(ANIMALS[0]);
-
     // すべての要素を削除
     d3.select('#drawArea').select('svg').remove();
-
     // 初期化
     init();
-
 }
