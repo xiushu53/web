@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    
+
     <main class="main">
 
         <section class="module main-intro">
@@ -18,13 +18,11 @@
         </section>
 
         <section class="module main-news">
-            <div class="module-inner">
-                <dl>
-                    <dt>News</dt>
-                    <dd><a>2018/04/01　Webページをリニューアルしました。</a></dd>
-                    <dd><a href="#">2018/04/01　一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇</a></dd>
-                </dl>
-            </div>
+          <div class="module-inner">
+            <?php
+              show_news();
+            ?>
+          </div>
         </section>
 
         <section class="module main-about" id="anchor-about">
@@ -110,14 +108,6 @@
                 <div class="case-body sample-medal">
                     <!-- DVのソースコードをここに入れる -->
                     <h4>「各オリンピックにおける、国ごとの金メダル合計数と推移」</h4>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/dotbarchart.gif" alt="">
-                    <ul>
-                        <li>2000 シドニー</li>
-                        <li class="current">2004 アテネ</li>
-                        <li>2008 北京</li>
-                        <li>2021 ロンドン</li>
-                        <li>20016 リオ</li>
-                    </ul>
                 </div>
             </article>
         </section>
@@ -160,39 +150,16 @@
                 <p class="large-txt">一緒にデータビジュアライズを楽しみませんか？</p>
                 <p>E2D3は、データビジュアライゼーションの最新情報を共有するだけでなく、誰もがデータビジュアライゼーションを学び、楽しめるイベントを開催しています。ゲストを招いての講演会やワークショップ、ハッカソンなど開催中！<br>エンジニアだけでなく、デザイナーや営業、主婦、小学生、大学生など様々なバックグラウンドの方に楽しんでいただいてます。データビジュアライズに興味がある方大歓迎！ぜひお気軽にご参加ください。</p>
 
-                <ul class="eventInfo-coming">
-                    <li><a href="#">
-                        <div class="event-date">
-                            <span class="date-year">2018</span>
-                            <span class="date-day">04/05(金)<br>13:00〜</span>
-                            <span class="date-place">渋谷TechPlay</span>
-                        </div>
-                        <div class="event-description">
-                            <div class="desc-tag">
-                                <span class="tag">もくもく会</span>
-                                <span class="tag open">予約受付中</span>
-                            </div>
-                            <h3 class="desc-eventTitle">もくもく会＆LT会【要予約】</h3>
-                            <p class="desc-text">誰もがData Vizを簡単に楽しめる世界を目指すグラフ共有コミュニティE2D3（Excel to D3.js）と一緒に、最新のデータビジュアライゼーションを勉強しませんか。どなたでも参加できます。</p>
-                        </div>
-                    </a></li>
-                    <li><a href="#">
-                        <div class="event-date">
-                            <span class="date-year">2018</span>
-                            <span class="date-day">04/05(金)<br>13:00〜</span>
-                            <span class="date-place">長い名前の開催場所長い開催場所名</span>
-                        </div>
-                        <div class="event-description">
-                            <div class="desc-tag">
-                                <span class="tag">講演会</span>
-                                <span class="tag closed">受付終了</span>
-                            </div>
-                            <h3 class="desc-eventTitle">もくもく会＆LT会【要予約】</h3>
-                            <p class="desc-text">誰もがData Vizを簡単に楽しめる世界を目指すグラフ共有コミュニティE2D3（Excel to D3.js）と一緒に、最新のデータビジュアライゼーションを勉強しませんか。どなたでも参加できます。</p>
-                        </div>
-                    </a></li>
-                </ul>
 
+                <?php
+                include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+                if(is_plugin_active('e2d3-event-info/e2d3-event-info.php')){
+                  Event_Info_E2D3::show_event_list();
+                }
+
+                ?>
+
+                
                 <h3>過去のイベント</h3>
                 <ul class="eventInfo-past"><!--
                  --><li><a href="#" style="background-image:url('http://e2d3.org/wp-content/uploads/2017/11/23032921_10214709510551805_3844396104476802665_n.jpg')">
@@ -258,7 +225,7 @@
                         <li><a href="https://github.com/e2d3/e2d3">Source Code</a></li>
                         <li><a href="https://github.com/e2d3/e2d3/wiki/Home_ja">Wiki</a></li>
                     </ul>
-                    
+
                 </div>
             </div>
         </section>
@@ -290,6 +257,16 @@
              --></ul>
             </div>
         </section>
+        <script>
+        var width = 986;
+        var height = 650;
+        var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
+
+        d3.tsv("<?php echo get_template_directory_uri() . '/data/data.tsv'; ?>", function(err, data) {
+            svg.append('g').data([data]).call(d3.dotBarChart);
+        });
+    </script>
+
 
     </main>
 
