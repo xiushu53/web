@@ -6,6 +6,3 @@ package-lock.json
 .vscode/
 .firebaserc
 firebase.json
-
-*
-!wp-content/themes/e2d3-web
