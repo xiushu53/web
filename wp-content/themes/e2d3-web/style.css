@@ -1005,6 +1005,15 @@ a:hover {
   font-size: 12px;
 }
 
+#drawArea {
+  position: relative;
+}
+
+#drawArea #riku {
+  width: 100%;
+  height: 544px"
+}
+
 /* スマホ対応 */
 @media (max-width: 760px) {
   .hide-sp {
