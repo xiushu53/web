@@ -5,9 +5,7 @@
         <section class="module main-intro">
             <div class="module-inner">
                 <div class="intro-globe">
-                    <!--仮-->
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/globe.gif" alt="" width="100%">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/globe-shadow.png" alt="" style="margin-top:-20px">
+                    <!-- Rendering See Trough Globe -->
                 </div>
                 <div class="intro-text">
                     <h1 class="intro-title"><span class="title-large">データって、面白い！</span><br> そう感じる瞬間を、すべての人に届けたい</h1>
@@ -30,7 +28,7 @@
                 <h2>E2D3とは？</h2>
                 <p>誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
                 <p class="buttonLink"><a href="#anchor-detailE2D3">詳しく見る</a></p>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/illust-about.png" alt="">
+                <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
             </div>
         </section>
 
@@ -68,7 +66,7 @@
                 </div>
                 <div class="case-body sample-run">
                     <!-- DVのソースコードをここに入れる -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/run.gif" alt="">
+                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/dummy-gif/run.gif'); ?>" alt="">
 
                     <div class="controlPanel">
                         <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
@@ -106,7 +104,7 @@
                     <p>年度ごとに項目の値が変化する複雑なデータを棒グラフで表現すると、年度別にグラフを作らなくてはならず面倒…そんな時はこのDot Bar Chart。ドット状の棒グラフが操作によって移ろい、１つの画面で「年度ごと」「項目ごと」の変化を同時に見ることができます。</p>
                 </div>
                 <div class="case-body sample-medal">
-                    <!-- DVのソースコードをここに入れる -->
+                    <!-- Rendering Dot Bar Chart -->
                     <h4>「各オリンピックにおける、国ごとの金メダル合計数と推移」</h4>
                 </div>
             </article>
@@ -193,7 +191,7 @@
 
                     <div class="snsLink-module">
                         <div class="module-head">
-                            <h3><img src="<?php echo get_template_directory_uri(); ?>/images/icon-facebook.png" alt="Facebook"></h3>
+                            <h3><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/icon-facebook.png'); ?>" alt="Facebook"></h3>
                             <div class="head-btn"><div class="fb-like" data-href="https://www.facebook.com/e2d3project/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div></div>
                         </div>
                         <p>E2D3のイベント情報や、アクティビティ情報は公式Facebookから。</p>
@@ -201,7 +199,7 @@
                     </div>
                     <div class="snsLink-module">
                         <div class="module-head">
-                            <h3><img src="<?php echo get_template_directory_uri(); ?>/images/icon-twitter.png" alt="Twitter"></h3>
+                            <h3><img src="<?php echo esc_attr(get_template_directory_uri(). '/images/icon-twitter.png'); ?>" alt="Twitter"></h3>
                             <div class="head-btn"><a href="https://twitter.com/e2d3org?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow @e2d3org</a></div>
                         </div>
                         <p>世界のData Visualizeをピックアップして紹介中！最新のDataViz情報収集はE2D3のアカウントで。</p>
@@ -218,7 +216,7 @@
                 <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UIデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
                 <div class="joinus-github">
                     <div class="github-icon">
-                        <a href="https://github.com/e2d3/"><img src="<?php echo get_template_directory_uri(); ?>/images/illust-github.png" alt="Github" width="102"></a>
+                        <a href="https://github.com/e2d3/"><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-github.png'); ?>" alt="Github" width="102"></a>
                     </div>
                     <ul>
                         <li><a href="/ja/developing-method/">Developing Method</a></li>
@@ -257,12 +255,99 @@
              --></ul>
             </div>
         </section>
+        <?php
+    $json_dim_array = get_access_data();
+?>
+
+
+<div></div>
+
+<script>
+
+    var js_var_dim = <?php echo $json_dim_array; //phpから変数受け取り//?>;
+    var js_dim_obj = [];
+    
+    js_var_dim.forEach(function(d) {
+        var dim_obj = {};
+        dim_obj.latitude = +d[0],
+        dim_obj.longitude = +d[1];
+        js_dim_obj[js_dim_obj.length] = dim_obj;
+    });
+
+    var width = document.getElementsByClassName('main-intro')[0].clientWidth;
+    var height = document.getElementsByClassName('main-intro')[0].clientHeight;
+
+    var compute_radius = 0;
+
+    if (height <= width) {
+        compute_radius = height * .7;
+        width = height;
+    } else {
+        compute_radius = width * .7;
+        height = width * 1.5;
+    }
+
+    var velocity = 0.02;
+
+    var svg = d3.select('.intro-globe').append('svg')
+        .attr('width', width)
+        .attr('height', height);
+
+    var drawLayer = svg.append('g')
+        .attr(
+            'transform',
+            'translate(' + (0.5 * width) + ', ' + (0.5 * height + 20) + ')'
+        );
+
+    var globeHandler = d3.globeHandler()
+        .width(width).height(height)
+        .translation([0, -50])
+        .scale(compute_radius / 2);
+
+    d3.json(
+        '<?php echo esc_attr( get_template_directory_uri() . "/ne_110m_land_t.json");?>',
+        function(error, world) {
+            if (error) throw error;
+            var geom = topojson.feature(world, world.objects.ne_110m_land);
+            globeHandler.geometry(geom);
+
+            globeHandler.points(js_dim_obj);
+            drawLayer.call(globeHandler);
+            drawLayer.selectAll('path.shadow').attr('fill', '#DDD');
+
+            drawLayer.selectAll('circle.point')
+                .attr('fill', '#41CFDC')
+                .attr('stroke', 'none')
+                .attr('opacity', 0.75);
+
+            drawLayer.selectAll('path.land')
+                .attr('fill', '#BABABA')
+                .attr('stroke', 'none');
+
+            drawLayer.selectAll('path.sphere')
+                .attr('stroke', 'none')
+                .attr('fill', 'rgba(255, 255, 255, 0.8)');
+
+            drawLayer.selectAll('path.graticule')
+                .attr('fill', 'none')
+                .attr('stroke', '#F7F7F7')
+                .attr('stroke-width', 1.0);
+
+            var idx = 0;
+
+            d3.timer(function(elapsed) {
+                globeHandler.rotate(elapsed * velocity);
+            });
+
+        }
+    );
+</script>
         <script>
         var width = 986;
         var height = 650;
         var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
 
-        d3.tsv("<?php echo get_template_directory_uri() . '/data/data.tsv'; ?>", function(err, data) {
+        d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
             svg.append('g').data([data]).call(d3.dotBarChart);
         });
     </script>
