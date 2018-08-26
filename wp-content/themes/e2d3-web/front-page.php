@@ -258,7 +258,7 @@
             </div>
         </section>
         <?php
-    $json_dim_array = get_access_data();
+    //$json_dim_array = get_access_data();
 ?>
 
 
