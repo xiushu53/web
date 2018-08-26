@@ -27,7 +27,7 @@
             <div class="module-inner">
                 <h2>E2D3とは？</h2>
                 <p>誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
-                <p class="buttonLink"><a href="#anchor-detailE2D3">詳しく見る</a></p>
+                <p class="buttonLink"><a href="#anchor-detailE2D3" class="anchor-link">詳しく見る</a></p>
                 <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
             </div>
         </section>
@@ -65,8 +65,9 @@
                     <p>ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。「時速」を体感することで、速さに対する理解を深められます。</p>
                 </div>
                 <div class="case-body sample-run">
-                    <!-- DVのソースコードをここに入れる -->
-                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/dummy-gif/run.gif'); ?>" alt="">
+                    <div id="drawArea">
+                        <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/animal_icons/riku.png'); ?>" id="riku" />
+                    </div>
 
                     <div class="controlPanel">
                         <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
@@ -84,7 +85,7 @@
                                 </tr>
                                 <tr>
                                     <th class="em col">速度</th>
-                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="" value="16"></td>
+                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="ownRecord" value="16"></td>
                                     <td>17秒</td>
                                     <td>9.58秒</td>
                                     <td>3秒</td>
@@ -94,7 +95,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button>スタート！</button>
+                        <button id="startButton">スタート！</button>
                     </div><!-- /.controlPanel -->
                 </div>
             </article>
@@ -121,7 +122,7 @@
             <div class="module-inner">
                 <h2>みんなで作る、データビジュアライズ</h2>
                 <p>E2D3は、小学生や技術者まで幅広い層に向けた、データのワークショップやハッカソンを企画しています。そこで生まれた「このデータを、こんな風に見れたら面白いかも！」というアイディアを、E2D3のエンジニアとデザイナーが実現します。</p>
-                <p class="detailLink"><a href="#">イベント詳細を見る</a></p>
+                <p class="detailLink"><a href="#anchor-event" class="anchor-link">イベント詳細を見る</a></p>
             </div>
         </section>
 
@@ -129,7 +130,7 @@
             <div class="module-inner">
                 <h2>E2D3が成長し続ける仕掛け</h2>
                 <p>E2D3は、「設計図」を公開して開発することで、誰かのひらめきが別の誰かのひらめきを呼び、どんどんプロダクトが成長していく仕組みをデザインしています。（基幹部分をOSSとしてGithubで公開しているので、プログラミングの知識があればどなたでも開発が可能です。）</p>
-                <p class="detailLink"><a href="/ja/developing-method/">開発者情報を見る</a></p>
+                <p class="detailLink"><a href="#anchor-joinus" class="anchor-link">開発者情報を見る</a></p>
 
                 <dl>
                     <dt>E2D3と共同制作した事例</dt>
@@ -210,7 +211,7 @@
             </div>
         </section>
 
-        <section class="module main-joinus">
+        <section class="module main-joinus" id="anchor-joinus">
             <div class="module-inner">
                 <h2>開発メンバー募集中！</h2>
                 <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UIデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
@@ -255,15 +256,9 @@
              --></ul>
             </div>
         </section>
-        <?php
-    $json_dim_array = get_access_data();
-?>
 
-
-<div></div>
-
+<?php $json_dim_array = get_access_data(); ?>
 <script>
-
     var js_var_dim = <?php echo $json_dim_array; //phpから変数受け取り//?>;
     var js_dim_obj = [];
     
@@ -342,16 +337,22 @@
         }
     );
 </script>
-        <script>
-        var width = 986;
-        var height = 650;
-        var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
+<script>
+    // dot bar chart
+    var width = 986;
+    var height = 650;
+    var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
 
-        d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
-            svg.append('g').data([data]).call(d3.dotBarChart);
-        });
-    </script>
+    d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
+        svg.append('g').data([data]).call(d3.dotBarChart);
+    });
+</script>
 
+<script>
+    // animal olympics
+    var BASE_URL = '<?php echo esc_attr( get_template_directory_uri() ); ?>';
+</script>
+<script type="text/javascript" src="<?php echo esc_attr( get_template_directory_uri() . '/scripts/animal_olympic.js' ); ?>"></script>
 
     </main>
 

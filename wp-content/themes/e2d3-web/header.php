@@ -6,7 +6,6 @@
 <title>E2D3 &#8211; Data Visualization for Everyone</title>
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script src="./lib/jquery-3.3.1.min.js"></script>
 <?php wp_head(); ?>
 </head>
 <body>

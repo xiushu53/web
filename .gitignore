@@ -2,10 +2,15 @@ Thumbs.db
 .DS_Store
 node_modules/
 package-lock.json
-.DS_Store
 .vscode/
 .firebaserc
 firebase.json
+google-api-php-client-*
 
-*
-!wp-content/themes/e2d3-web
+#theme file以外は無視
+/*
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/e2d3-web/
