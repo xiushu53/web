@@ -66,9 +66,8 @@
                 </div>
                 <div class="case-body sample-run">
                     <!-- DVのソースコードをここに入れる -->
-                    <div id="drawArea" style="relative">
-                      <img src="<?php echo $template_path; ?>/images/animal_icons/riku.png"
-                        style="width: 100%; height: 544px" id="riku" />
+                    <div id="drawArea">
+                      <img src="<?php echo $template_path; ?>/images/animal_icons/riku.png" id="riku" />
                     </div>
 
                     <div class="controlPanel">
