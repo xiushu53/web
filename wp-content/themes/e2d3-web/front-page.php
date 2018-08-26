@@ -66,7 +66,9 @@
                 </div>
                 <div class="case-body sample-run">
                     <!-- DVのソースコードをここに入れる -->
-                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/dummy-gif/run.gif'); ?>" alt="">
+                    <div id="drawArea">
+                      <img src="<?php echo $template_path; ?>/images/animal_icons/riku.png" id="riku" />
+                    </div>
 
                     <div class="controlPanel">
                         <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
@@ -84,7 +86,7 @@
                                 </tr>
                                 <tr>
                                     <th class="em col">速度</th>
-                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="" value="16"></td>
+                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="ownRecord" value="16"></td>
                                     <td>17秒</td>
                                     <td>9.58秒</td>
                                     <td>3秒</td>
@@ -94,7 +96,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button>スタート！</button>
+                        <button id="startButton">スタート！</button>
                     </div><!-- /.controlPanel -->
                 </div>
             </article>
@@ -353,6 +355,10 @@
     </script>
 
 
+        <script>
+			  var BASE_URL = '<?php echo $template_path; ?>';
+		</script>
+        <script type="text/javascript" src="<?php echo $template_path; ?>/scripts/animal_olympic.js"></script>
     </main>
 
 <?php get_footer(); ?>
