@@ -65,9 +65,8 @@
                     <p>ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。「時速」を体感することで、速さに対する理解を深められます。</p>
                 </div>
                 <div class="case-body sample-run">
-                    <!-- DVのソースコードをここに入れる -->
                     <div id="drawArea">
-                      <img src="<?php echo $template_path; ?>/images/animal_icons/riku.png" id="riku" />
+                        <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/animal_icons/riku.png'); ?>" id="riku" />
                     </div>
 
                     <div class="controlPanel">
@@ -257,15 +256,9 @@
              --></ul>
             </div>
         </section>
-        <?php
-    //$json_dim_array = get_access_data();
-?>
 
-
-<div></div>
-
+<?php $json_dim_array = get_access_data(); ?>
 <script>
-
     var js_var_dim = <?php echo $json_dim_array; //phpから変数受け取り//?>;
     var js_dim_obj = [];
     
@@ -344,21 +337,23 @@
         }
     );
 </script>
-        <script>
-        var width = 986;
-        var height = 650;
-        var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
+<script>
+    // dot bar chart
+    var width = 986;
+    var height = 650;
+    var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
 
-        d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
-            svg.append('g').data([data]).call(d3.dotBarChart);
-        });
-    </script>
+    d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
+        svg.append('g').data([data]).call(d3.dotBarChart);
+    });
+</script>
 
+<script>
+    // animal olympics
+    var BASE_URL = '<?php echo esc_attr( get_template_directory_uri() ); ?>';
+</script>
+<script type="text/javascript" src="<?php echo esc_attr( get_template_directory_uri() . '/scripts/animal_olympic.js' ); ?>"></script>
 
-        <script>
-			  var BASE_URL = '<?php echo $template_path; ?>';
-		</script>
-        <script type="text/javascript" src="<?php echo $template_path; ?>/scripts/animal_olympic.js"></script>
     </main>
 
 <?php get_footer(); ?>
