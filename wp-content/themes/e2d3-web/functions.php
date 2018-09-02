@@ -241,11 +241,15 @@ function show_news(){
 
 /* ↑↑for ChildPage↑↑ */
 
-/** Include scripts  dot-bar-chart-part*/
+/** Include scripts  dot-bar-chart-part globe*/
 function e2d3_scripts() {
 if ( is_home() ) {
 	wp_enqueue_script( 'd3v4', 'https://d3js.org/d3.v4.min.js', array( ), false);
 	wp_enqueue_script( 'dotbarchart', get_theme_file_uri( 'scripts/dotbarchart.js' ), array( 'd3v4' ), '20180722', true);
+
+	// グローブ用
+	wp_enqueue_script( 'globehandler', get_theme_file_uri( 'scripts/globeHandler.js' ), array( ), false);
+	wp_enqueue_script( 'topjson', 'https://d3js.org/topojson.v1.min.js', array( 'd3v4' ), false);
 
 	// jQueryを読み込み
 	wp_enqueue_script('jquery');
