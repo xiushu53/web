@@ -1,5 +1,158 @@
 <?php
 
+/** Include scripts  test 2018.06.13  Hideki Nakane*/
+function e2d3_scripts() {
+if ( is_home() || is_page( 'test' ) || is_page('animal_olympic')) {
+	wp_enqueue_script( 'd3v4', 'https://d3js.org/d3.v4.min.js', array( ), false);
+	wp_enqueue_script( 'globehandler', get_theme_file_uri( 'globeHandler.js' ), array( ), false);
+	wp_enqueue_script( 'topjson', 'https://d3js.org/topojson.v1.min.js', array( 'd3v4' ), false);
+	wp_enqueue_script( 'dotbarchart', get_theme_file_uri( 'scripts/dotbarchart.js' ), array( 'd3v4' ), '20180722', true);
+}
+}
+add_action('wp_enqueue_scripts', 'e2d3_scripts');
+
+/** Get the access data from Google Reporting API 2018.06.13 Hideki Nakane*/
+function get_access_data() {
+	// Load the Google API PHP Client Library.
+	require_once __DIR__ . '/google-api-php-client-2.2.1/vendor/autoload.php';
+
+  	function initializeAnalytics() {
+
+    	// Secret key
+			$key = get_option('my_google_auth');
+			$KEY_FILE_LOCATION = parse_my_google_auth($key);
+
+
+	    // Create and configure a new client object.
+    	$client = new Google_Client();
+    	$client->setApplicationName("Hello Analytics Reporting");
+    	$client->setAuthConfig($KEY_FILE_LOCATION);
+    	$client->setScopes(['https://www.googleapis.com/auth/analytics.readonly']);
+    	$analytics = new Google_Service_AnalyticsReporting($client);
+
+    	return $analytics;
+  	}
+
+	function getReport($analytics) {
+
+	    $VIEW_ID = "104580083";
+
+    	// Create the DateRange object.
+    	$dateRange = new Google_Service_AnalyticsReporting_DateRange();
+    	$dateRange->setStartDate("30daysAgo");
+    	$dateRange->setEndDate("today");
+
+	    // Create the Metrics object.
+    	$sessions = new Google_Service_AnalyticsReporting_Metric();
+    	$sessions->setExpression("ga:sessions");
+    	$sessions->setAlias("sessions");
+
+	    // Create the Dimension object.
+    	$dimention = new Google_Service_AnalyticsReporting_Dimension();
+    	$dimention->setName("ga:latitude");
+    	$dimention2 = new Google_Service_AnalyticsReporting_Dimension();
+    	$dimention2->setName("ga:longitude");
+
+	    // Create the ReportRequest object.
+    	$request = new Google_Service_AnalyticsReporting_ReportRequest();
+    	$request->setViewId($VIEW_ID);
+    	$request->setDateRanges($dateRange);
+    	$request->setMetrics(array($sessions));
+    	$request->setDimensions(array($dimention,$dimention2));
+
+	    $body = new Google_Service_AnalyticsReporting_GetReportsRequest();
+    	$body->setReportRequests( array( $request) );
+    	return $analytics->reports->batchGet( $body );
+	}
+
+  	function printResults($reports) {
+    	$dim_array = [];
+
+	    for ( $reportIndex = 0; $reportIndex < count( $reports ); $reportIndex++ ) {
+    		$report = $reports[ $reportIndex ];
+        	$rows = $report->getData()->getRows();
+
+	        for ( $rowIndex = 0; $rowIndex < count($rows); $rowIndex++) {
+   		    	$row = $rows[ $rowIndex ];
+        		$dimensions = $row->getDimensions();
+
+	        	$dim_array[] = $dimensions;
+        	}
+      	}
+
+		return $dim_array;
+	}
+
+	$analytics = initializeAnalytics();
+	$response = getReport($analytics);
+	$dim_array = printResults($response);
+
+	$json_dim_array=json_encode($dim_array);
+
+	return $json_dim_array;
+
+}
+add_action('get_access_google_data', 'get_access_data');
+
+
+add_action('admin_menu',function(){
+	add_options_page('Google API 認証情報設定','Google API 認証情報設定','manage_options','','google_auth_set_page');
+});
+
+function google_auth_set_page(){
+		?>
+		<div id="google_api_set_box">
+		<h1>Google API 認証情報設定</h1>
+		<?php
+		$options = get_option('my_google_auth');
+
+		$defaults = array('auth_json'=>'');
+		$options = wp_parse_args($options,$defaults);
+		$auth_json = $options['auth_json'];
+
+
+		if(isset($_POST['my_google_auth_nonce'])){
+			check_admin_referer('my_google_auth_action','my_google_auth_nonce');
+			if(isset($_POST['auth_json']) && is_string($_POST['auth_json'])){
+
+				$auth_json = $_POST['auth_json'];
+
+				update_option('my_google_auth',array('auth_json'=>$auth_json));
+
+			}
+		}
+	?>
+
+		<form action="" method="post">
+			<?php wp_nonce_field('my_google_auth_action','my_google_auth_nonce'); ?>
+			<table class="form-table">
+				<tr>
+					<th>JSONのパス</th>
+					<td><input type="text" name="auth_json" value="<?php echo $auth_json; ?>" class="regular-text code"></td>
+				</tr>
+			</table>
+			<?php submit_button(); ?>
+		</form>
+	</div>
+	<?php
+	}
+function parse_my_google_auth($opt){
+
+	$auth_json = $opt["auth_json"];
+
+	$name = preg_replace_callback('/<([^>]*)>/i',function($matches){
+		$vars = get_defined_constants();
+		$ret = $vars[$matches[1]];
+		return $ret;
+	},$auth_json);
+
+	return $name;
+}
+
+/** ↑↑for Globe↑↑ **/
+
+/** ↓↓for ChildPage↓↓ **/
+
 // サイドバーを有効に
 add_action( 'widgets_init', 'e2d3_register_widget');
 // 追加のCSSやJSなど
@@ -85,6 +238,8 @@ function show_news(){
 				endif;
 	wp_reset_postdata();
 }
+
+/* ↑↑for ChildPage↑↑ */
 
 /** Include scripts  dot-bar-chart-part*/
 function e2d3_scripts() {
