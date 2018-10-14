@@ -1,13 +1,11 @@
 <?php get_header(); ?>
-    
+
     <main class="main">
 
         <section class="module main-intro">
             <div class="module-inner">
                 <div class="intro-globe">
-                    <!--仮-->
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/globe.gif" alt="" width="100%">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/globe-shadow.png" alt="" style="margin-top:-20px">
+                    <!-- Rendering See Trough Globe -->
                 </div>
                 <div class="intro-text">
                     <h1 class="intro-title"><span class="title-large">データって、面白い！</span><br> そう感じる瞬間を、すべての人に届けたい</h1>
@@ -18,21 +16,19 @@
         </section>
 
         <section class="module main-news">
-            <div class="module-inner">
-                <dl>
-                    <dt>News</dt>
-                    <dd><a>2018/04/01　Webページをリニューアルしました。</a></dd>
-                    <dd><a href="#">2018/04/01　一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇一二三四五六七八九〇</a></dd>
-                </dl>
-            </div>
+          <div class="module-inner">
+            <?php
+              show_news();
+            ?>
+          </div>
         </section>
 
         <section class="module main-about" id="anchor-about">
             <div class="module-inner">
                 <h2>E2D3とは？</h2>
                 <p>誰もがデータを楽しめる世界を目指すため、<br>データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>非営利のコミュニティです。</p>
-                <p class="buttonLink"><a href="#anchor-detailE2D3">詳しく見る</a></p>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/illust-about.png" alt="">
+                <p class="buttonLink"><a href="#anchor-detailE2D3" class="anchor-link">詳しく見る</a></p>
+                <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
             </div>
         </section>
 
@@ -69,8 +65,9 @@
                     <p>ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。「時速」を体感することで、速さに対する理解を深められます。</p>
                 </div>
                 <div class="case-body sample-run">
-                    <!-- DVのソースコードをここに入れる -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/run.gif" alt="">
+                    <div id="drawArea">
+                        <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/animal_icons/riku.png'); ?>" id="riku" />
+                    </div>
 
                     <div class="controlPanel">
                         <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
@@ -88,7 +85,7 @@
                                 </tr>
                                 <tr>
                                     <th class="em col">速度</th>
-                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="" value="16"></td>
+                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="ownRecord" value="16"></td>
                                     <td>17秒</td>
                                     <td>9.58秒</td>
                                     <td>3秒</td>
@@ -98,7 +95,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button>スタート！</button>
+                        <button id="startButton">スタート！</button>
                     </div><!-- /.controlPanel -->
                 </div>
             </article>
@@ -108,16 +105,8 @@
                     <p>年度ごとに項目の値が変化する複雑なデータを棒グラフで表現すると、年度別にグラフを作らなくてはならず面倒…そんな時はこのDot Bar Chart。ドット状の棒グラフが操作によって移ろい、１つの画面で「年度ごと」「項目ごと」の変化を同時に見ることができます。</p>
                 </div>
                 <div class="case-body sample-medal">
-                    <!-- DVのソースコードをここに入れる -->
+                    <!-- Rendering Dot Bar Chart -->
                     <h4>「各オリンピックにおける、国ごとの金メダル合計数と推移」</h4>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/dummy-gif/dotbarchart.gif" alt="">
-                    <ul>
-                        <li>2000 シドニー</li>
-                        <li class="current">2004 アテネ</li>
-                        <li>2008 北京</li>
-                        <li>2021 ロンドン</li>
-                        <li>20016 リオ</li>
-                    </ul>
                 </div>
             </article>
         </section>
@@ -133,7 +122,7 @@
             <div class="module-inner">
                 <h2>みんなで作る、データビジュアライズ</h2>
                 <p>E2D3は、小学生や技術者まで幅広い層に向けた、データのワークショップやハッカソンを企画しています。そこで生まれた「このデータを、こんな風に見れたら面白いかも！」というアイディアを、E2D3のエンジニアとデザイナーが実現します。</p>
-                <p class="detailLink"><a href="#">イベント詳細を見る</a></p>
+                <p class="detailLink"><a href="#anchor-event" class="anchor-link">イベント詳細を見る</a></p>
             </div>
         </section>
 
@@ -141,7 +130,7 @@
             <div class="module-inner">
                 <h2>E2D3が成長し続ける仕掛け</h2>
                 <p>E2D3は、「設計図」を公開して開発することで、誰かのひらめきが別の誰かのひらめきを呼び、どんどんプロダクトが成長していく仕組みをデザインしています。（基幹部分をOSSとしてGithubで公開しているので、プログラミングの知識があればどなたでも開発が可能です。）</p>
-                <p class="detailLink"><a href="/ja/developing-method/">開発者情報を見る</a></p>
+                <p class="detailLink"><a href="#anchor-joinus" class="anchor-link">開発者情報を見る</a></p>
 
                 <dl>
                     <dt>E2D3と共同制作した事例</dt>
@@ -160,39 +149,16 @@
                 <p class="large-txt">一緒にデータビジュアライズを楽しみませんか？</p>
                 <p>E2D3は、データビジュアライゼーションの最新情報を共有するだけでなく、誰もがデータビジュアライゼーションを学び、楽しめるイベントを開催しています。ゲストを招いての講演会やワークショップ、ハッカソンなど開催中！<br>エンジニアだけでなく、デザイナーや営業、主婦、小学生、大学生など様々なバックグラウンドの方に楽しんでいただいてます。データビジュアライズに興味がある方大歓迎！ぜひお気軽にご参加ください。</p>
 
-                <ul class="eventInfo-coming">
-                    <li><a href="#">
-                        <div class="event-date">
-                            <span class="date-year">2018</span>
-                            <span class="date-day">04/05(金)<br>13:00〜</span>
-                            <span class="date-place">渋谷TechPlay</span>
-                        </div>
-                        <div class="event-description">
-                            <div class="desc-tag">
-                                <span class="tag">もくもく会</span>
-                                <span class="tag open">予約受付中</span>
-                            </div>
-                            <h3 class="desc-eventTitle">もくもく会＆LT会【要予約】</h3>
-                            <p class="desc-text">誰もがData Vizを簡単に楽しめる世界を目指すグラフ共有コミュニティE2D3（Excel to D3.js）と一緒に、最新のデータビジュアライゼーションを勉強しませんか。どなたでも参加できます。</p>
-                        </div>
-                    </a></li>
-                    <li><a href="#">
-                        <div class="event-date">
-                            <span class="date-year">2018</span>
-                            <span class="date-day">04/05(金)<br>13:00〜</span>
-                            <span class="date-place">長い名前の開催場所長い開催場所名</span>
-                        </div>
-                        <div class="event-description">
-                            <div class="desc-tag">
-                                <span class="tag">講演会</span>
-                                <span class="tag closed">受付終了</span>
-                            </div>
-                            <h3 class="desc-eventTitle">もくもく会＆LT会【要予約】</h3>
-                            <p class="desc-text">誰もがData Vizを簡単に楽しめる世界を目指すグラフ共有コミュニティE2D3（Excel to D3.js）と一緒に、最新のデータビジュアライゼーションを勉強しませんか。どなたでも参加できます。</p>
-                        </div>
-                    </a></li>
-                </ul>
 
+                <?php
+                include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+                if(is_plugin_active('e2d3-event-info/e2d3-event-info.php')){
+                  Event_Info_E2D3::show_event_list();
+                }
+
+                ?>
+
+                
                 <h3>過去のイベント</h3>
                 <ul class="eventInfo-past"><!--
                  --><li><a href="#" style="background-image:url('http://e2d3.org/wp-content/uploads/2017/11/23032921_10214709510551805_3844396104476802665_n.jpg')">
@@ -226,7 +192,7 @@
 
                     <div class="snsLink-module">
                         <div class="module-head">
-                            <h3><img src="<?php echo get_template_directory_uri(); ?>/images/icon-facebook.png" alt="Facebook"></h3>
+                            <h3><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/icon-facebook.png'); ?>" alt="Facebook"></h3>
                             <div class="head-btn"><div class="fb-like" data-href="https://www.facebook.com/e2d3project/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div></div>
                         </div>
                         <p>E2D3のイベント情報や、アクティビティ情報は公式Facebookから。</p>
@@ -234,7 +200,7 @@
                     </div>
                     <div class="snsLink-module">
                         <div class="module-head">
-                            <h3><img src="<?php echo get_template_directory_uri(); ?>/images/icon-twitter.png" alt="Twitter"></h3>
+                            <h3><img src="<?php echo esc_attr(get_template_directory_uri(). '/images/icon-twitter.png'); ?>" alt="Twitter"></h3>
                             <div class="head-btn"><a href="https://twitter.com/e2d3org?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow @e2d3org</a></div>
                         </div>
                         <p>世界のData Visualizeをピックアップして紹介中！最新のDataViz情報収集はE2D3のアカウントで。</p>
@@ -245,20 +211,20 @@
             </div>
         </section>
 
-        <section class="module main-joinus">
+        <section class="module main-joinus" id="anchor-joinus">
             <div class="module-inner">
                 <h2>開発メンバー募集中！</h2>
                 <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UIデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
                 <div class="joinus-github">
                     <div class="github-icon">
-                        <a href="https://github.com/e2d3/"><img src="<?php echo get_template_directory_uri(); ?>/images/illust-github.png" alt="Github" width="102"></a>
+                        <a href="https://github.com/e2d3/"><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-github.png'); ?>" alt="Github" width="102"></a>
                     </div>
                     <ul>
                         <li><a href="/ja/developing-method/">Developing Method</a></li>
                         <li><a href="https://github.com/e2d3/e2d3">Source Code</a></li>
                         <li><a href="https://github.com/e2d3/e2d3/wiki/Home_ja">Wiki</a></li>
                     </ul>
-                    
+
                 </div>
             </div>
         </section>
@@ -290,6 +256,103 @@
              --></ul>
             </div>
         </section>
+
+<?php $json_dim_array = get_access_data(); ?>
+<script>
+    var js_var_dim = <?php echo $json_dim_array; //phpから変数受け取り//?>;
+    var js_dim_obj = [];
+    
+    js_var_dim.forEach(function(d) {
+        var dim_obj = {};
+        dim_obj.latitude = +d[0],
+        dim_obj.longitude = +d[1];
+        js_dim_obj[js_dim_obj.length] = dim_obj;
+    });
+
+    var width = document.getElementsByClassName('main-intro')[0].clientWidth;
+    var height = document.getElementsByClassName('main-intro')[0].clientHeight;
+
+    var compute_radius = 0;
+
+    if (height <= width) {
+        compute_radius = height * .7;
+        width = height;
+    } else {
+        compute_radius = width * .7;
+        height = width * 1.5;
+    }
+
+    var velocity = 0.02;
+
+    var svg = d3.select('.intro-globe').append('svg')
+        .attr('width', width)
+        .attr('height', height);
+
+    var drawLayer = svg.append('g')
+        .attr(
+            'transform',
+            'translate(' + (0.5 * width) + ', ' + (0.5 * height + 20) + ')'
+        );
+
+    var globeHandler = d3.globeHandler()
+        .width(width).height(height)
+        .translation([0, -50])
+        .scale(compute_radius / 2);
+
+    d3.json(
+        '<?php echo esc_attr( get_template_directory_uri() . "/ne_110m_land_t.json");?>',
+        function(error, world) {
+            if (error) throw error;
+            var geom = topojson.feature(world, world.objects.ne_110m_land);
+            globeHandler.geometry(geom);
+
+            globeHandler.points(js_dim_obj);
+            drawLayer.call(globeHandler);
+            drawLayer.selectAll('path.shadow').attr('fill', '#DDD');
+
+            drawLayer.selectAll('circle.point')
+                .attr('fill', '#41CFDC')
+                .attr('stroke', 'none')
+                .attr('opacity', 0.75);
+
+            drawLayer.selectAll('path.land')
+                .attr('fill', '#BABABA')
+                .attr('stroke', 'none');
+
+            drawLayer.selectAll('path.sphere')
+                .attr('stroke', 'none')
+                .attr('fill', 'rgba(255, 255, 255, 0.8)');
+
+            drawLayer.selectAll('path.graticule')
+                .attr('fill', 'none')
+                .attr('stroke', '#F7F7F7')
+                .attr('stroke-width', 1.0);
+
+            var idx = 0;
+
+            d3.timer(function(elapsed) {
+                globeHandler.rotate(elapsed * velocity);
+            });
+
+        }
+    );
+</script>
+<script>
+    // dot bar chart
+    var width = 986;
+    var height = 650;
+    var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
+
+    d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
+        svg.append('g').data([data]).call(d3.dotBarChart);
+    });
+</script>
+
+<script>
+    // animal olympics
+    var BASE_URL = '<?php echo esc_attr( get_template_directory_uri() ); ?>';
+</script>
+<script type="text/javascript" src="<?php echo esc_attr( get_template_directory_uri() . '/scripts/animal_olympic.js' ); ?>"></script>
 
     </main>
 
