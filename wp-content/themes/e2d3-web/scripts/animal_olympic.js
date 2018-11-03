@@ -74,6 +74,36 @@ function init() {
         .style("left", 0);
 
     // アイコンセット
+    ANIMALS.forEach(function(animal, i){
+        var x = ICON_START_X;
+        svg.append('image')
+            .attr("id", animal.name)
+            .attr("xlink:href", IMAGE_DIR + animal.image)
+            .attr("class", "animals")
+            .attr("x", x)
+            .attr("y", animal.top)
+            .attr("width", ICON_WIDTH)
+            .attr("height", ICON_HEIGHT)
+    });
+    // スタートボタンにイベントを登録
+    d3.select('#startButton').on('click', function(){ start();});
+}
+
+// 初期化
+init();
+
+function animation() {
+    var drawArea = d3.select('#drawArea');
+    // 追加したトラック画像の要素を取得
+    var riku = document.getElementById('riku');
+
+    // svgの追加
+    var svg = drawArea.append('svg')
+        .attr("width", riku.clientWidth)
+        .attr("height", HEIGHT)
+        .style("position", "absolute")
+        .style("top", 0)
+        .style("left", 0);
     var startDelay = START_DELAY;
     var height = svg.attr('height');
     var xMax = svg.attr('width');
@@ -96,11 +126,7 @@ function init() {
             .attr('stroke', 'none')
             .attr('display', 'inherited');
     });
-    // スタートボタンにイベントを登録
-    d3.select('#startButton').on('click', function(d){ start();});
 }
-
-init();
 
 function start() {
     var element = document.getElementById('ownRecord');
@@ -113,6 +139,6 @@ function start() {
     }
     // すべての要素を削除
     d3.select('#drawArea').select('svg').remove();
-    // 初期化
-    init();
+    // アニメーション
+    animation();
 }
