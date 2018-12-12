@@ -160,27 +160,8 @@
 
                 
                 <h3>過去のイベント</h3>
-                <ul class="eventInfo-past"><!--
-                 --><li><a href="#" style="background-image:url('http://e2d3.org/wp-content/uploads/2017/11/23032921_10214709510551805_3844396104476802665_n.jpg')">
-                        <dl class="eventInfo-description">
-                            <dd class="desc-date">2017/12/20</dd>
-                            <dt class="desc-eventTitle">【E2D3】データビジュアライゼーションもくもく会VOL.7！</dt>
-                        </dl>
-                    </a></li><!--
-                 --><li><a href="#" style="background-image:url('http://e2d3.org/wp-content/uploads/2017/07/7dbdc58c5b5ad8ec94742b50dee94973147a7805-2.png')">
-                        <dl class="eventInfo-description">
-                            <dd class="desc-date">2017/12/20</dd>
-                            <dt class="desc-eventTitle">【E2D3】データビジュアライゼーションもくもく会VOL.7！</dt>
-                        </dl>
-                    </a></li><!--
-                 --><li><a href="#" style="background-image:url('')">
-                        <dl class="eventInfo-description">
-                            <dd class="desc-date">2017/12/20</dd>
-                            <dt class="desc-eventTitle">【E2D3】データビジュアライゼーションもくもく会VOL.7！</dt>
-                        </dl>
-                    </a></li><!--
-             --></ul>
-             <p class="buttonLink"><a href="#anchor-detailE2D3">過去のイベント一覧</a></p>
+                <?php show_past_event(); ?>
+                                
             </div>
         </section>
 

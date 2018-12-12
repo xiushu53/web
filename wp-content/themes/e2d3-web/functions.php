@@ -237,6 +237,46 @@ endif;
     wp_reset_postdata();
 }
 
+// 過去のイベント最新３件＆一覧へのリンク
+function show_past_event(){
+
+  $pastEv = new WP_Query(array(
+    'category_name'=>'News',
+    'post_status'=>'publish',
+    'orderby'=>'date',
+    'order'=>'DESC',
+    'posts_per_page'=>'3'
+  ));
+  $pastEvID = $pastEv->get_queried_object_id();
+  
+  if($pastEv->have_posts()):
+    ?>
+    <ul class="eventInfo-past" style="font-size:0;">
+    <?php 
+    while($pastEv->have_posts()):$pastEv->the_post(); ?>
+    <li>
+    
+      <a href="<?php the_permalink(); ?>" style="background-image:url('<?php the_post_thumbnail_url(); ?>')">
+      <dl class="eventInfo-description">
+          <dd class="desc-date"><?php echo get_post_time('Y/m/d'); ?></dd>
+          <dt class="desc-eventTitle"><?php the_title(); ?></dt>
+      </dl>
+      </a>
+    </li>
+    <?php 
+    endwhile;
+    ?>
+    </ul>
+    <p class="buttonLink">
+      <a href="<?php echo esc_url(get_category_link($pastEvID)); ?>">過去のイベント一覧</a>
+    </p>
+  <?php
+  endif;   
+
+  wp_reset_postdata();
+  
+}
+
 /* ↑↑for ChildPage↑↑ */
 
 ?>
