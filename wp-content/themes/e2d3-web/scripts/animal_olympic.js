@@ -3,57 +3,57 @@ var YOU = {
     name: "you",
     image: "you@2x.png",
     record: 16,
-    top: 4
+    top: 2
 };
 
 var CHILD = {
     name: "child",
     image: "child@2x.png",
     record: 17,
-    top: 81
+    top: 54
 };
 
 var BOLT = {
     name: "bolt",
     image: "bolt@2x.png",
     record: 9.58,
-    top: 151
+    top: 100
 };
 
 var CHEETAH = {
     name: "cheetah",
     image: "cheetah@2x.png",
     record: 3,
-    top: 222
+    top: 148
 }
 
 var TYPHOON = {
     name: "typhoon",
     image: "typhoon@2x.png",
     record: 4,
-    top: 293
+    top: 195
 }
 
 var CAR = {
     name: "car",
     image: "car@2x.png",
     record: 7.2,
-    top: 363
+    top: 242
 }
 
 var HORSE = {
     name: "horse",
     image: "horse@2x.png",
     record: 7.5,
-    top: 434
+    top: 290
 }
 
 var IMAGE_DIR = BASE_URL + '/images/animal_icons/';
 
 var ANIMALS = [YOU, CHILD, BOLT, CHEETAH, TYPHOON, CAR, HORSE];
-var HEIGHT = 544;
-var ICON_HEIGHT = 90;
-var ICON_WIDTH = 90;
+var HEIGHT = 746;
+var ICON_HEIGHT = 61;
+var ICON_WIDTH = 61;
 var ICON_START_X = 0;
 var START_DELAY = 1000;
 var ICON_NUM = 7;
@@ -68,12 +68,42 @@ function init() {
     // svgの追加
     var svg = drawArea.append('svg')
         .attr("width", riku.clientWidth)
-        .attr("height", HEIGHT)
+        .attr("height", riku.clientHeight)
         .style("position", "absolute")
-        .style("top", 0)
-        .style("left", 0);
+        .style("top", riku.offsetTop)
+        .style("left", riku.offsetLeft);
 
     // アイコンセット
+    ANIMALS.forEach(function(animal, i){
+        var x = ICON_START_X;
+        svg.append('image')
+            .attr("id", animal.name)
+            .attr("xlink:href", IMAGE_DIR + animal.image)
+            .attr("class", "animals")
+            .attr("x", x)
+            .attr("y", animal.top)
+            .attr("width", ICON_WIDTH)
+            .attr("height", ICON_HEIGHT)
+    });
+    // スタートボタンにイベントを登録
+    d3.select('#startButton').on('click', function(){ start();});
+}
+
+// 初期化
+init();
+
+function animation() {
+    var drawArea = d3.select('#drawArea');
+    // 追加したトラック画像の要素を取得
+    var riku = document.getElementById('riku');
+
+    // svgの追加
+    var svg = drawArea.append('svg')
+        .attr("width", riku.clientWidth)
+        .attr("height", riku.clientHeight)
+        .style("position", "absolute")
+        .style("top", riku.offsetTop)
+        .style("left", riku.offsetLeft);
     var startDelay = START_DELAY;
     var height = svg.attr('height');
     var xMax = svg.attr('width');
@@ -96,11 +126,7 @@ function init() {
             .attr('stroke', 'none')
             .attr('display', 'inherited');
     });
-    // スタートボタンにイベントを登録
-    d3.select('#startButton').on('click', function(d){ start();});
 }
-
-init();
 
 function start() {
     var element = document.getElementById('ownRecord');
@@ -113,6 +139,6 @@ function start() {
     }
     // すべての要素を削除
     d3.select('#drawArea').select('svg').remove();
-    // 初期化
-    init();
+    // アニメーション
+    animation();
 }
