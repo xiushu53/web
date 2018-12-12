@@ -8,6 +8,7 @@ Version: 1.0
 */
 @import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
 body {
+  color: #404040;
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 100%;
 }
@@ -47,6 +48,25 @@ a:hover {
   text-decoration: underline;
 }
 
+a.downloadButton {
+  display: inline-block;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 34px;
+  background-color: #1CB85F;
+  border-radius: 4px;
+  vertical-align: middle;
+  color: #fff;
+  font-weight: bold;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
+}
+
+a.downloadButton:hover {
+  background-color: #019B4C;
+  text-decoration: none;
+}
+
 .module {
   border-bottom: 1px solid #EFEFEF;
 }
@@ -59,7 +79,9 @@ a:hover {
 
 .module h2 {
   padding-bottom: 30px;
+  text-align: center;
   font-size: 32px;
+  font-weight: bold;
 }
 
 .module p {
@@ -79,20 +101,19 @@ a:hover {
 
 .module p.buttonLink {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .module p.buttonLink a {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  min-width: 200px;
-  height: 34px;
-  padding: 0 20px;
+  min-width: 225px;
+  height: 40px;
   text-align: center;
-  border-radius: 17px;
+  border-radius: 4px;
   background-color: #fff;
-  line-height: 34px;
+  line-height: 40px;
   font-weight: bold;
   font-size: 16px;
   color: #20A75E;
@@ -232,8 +253,6 @@ a:hover {
 }
 
 .main-intro {
-  height: 100vh;
-  min-height: 800px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-bottom: 0;
@@ -241,46 +260,33 @@ a:hover {
 }
 
 .main-intro .module-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
   max-width: 1120px;
-  height: 100%;
+  height: 100vh;
+  min-height: 800px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 20px 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.main-intro .intro-text {
-  position: relative;
-  background: url("./images/icon-under.png") no-repeat 50% 100%;
-  background-size: 34px 18px;
-  padding-bottom: 50px;
-  text-align: center;
 }
 
 .main-intro .intro-text .intro-title {
-  margin: 0 30px 30px 0;
+  line-height: 1.2;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 50px;
 }
 
-.main-intro .intro-text .intro-title .title-large {
-  font-size: 35px;
+.main-intro .intro-text .intro-subTitle {
+  font-size: 26px;
+  font-weight: bold;
 }
 
-.main-intro .intro-text .anchor-link {
-  position: absolute;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 42px;
+.main-intro .intro-text .intro-description {
+  padding: 30px 0 20px;
+}
+
+.main-intro .intro-text .intro-description em {
+  font-weight: bold;
+  font-style: normal;
 }
 
 .main-intro .intro-globe {
@@ -356,7 +362,7 @@ a:hover {
 
 .main-about p {
   padding-top: 20px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -366,7 +372,7 @@ a:hover {
 
 .main-appInfo .appInfo-video {
   margin-top: -250px;
-  padding: 50px 0 60px;
+  padding: 35px 0 75px;
   background: url(./images/bg-video.png) no-repeat 50% 0;
   background-size: 1110px 586px;
   text-align: center;
@@ -432,17 +438,6 @@ a:hover {
   text-align: center;
 }
 
-.main-case .case-head .case-title {
-  display: inline-block;
-  background: url("./images/text-sampleCatch.png") no-repeat 0 0;
-  background-size: 114px 46px;
-  width: 114px;
-  height: 46px;
-  overflow: hidden;
-  text-indent: -9999px;
-  margin-right: 5px;
-}
-
 .main-case .case-wrap {
   padding: 60px 0;
   border-bottom: 1px solid #EFEFEF;
@@ -456,7 +451,9 @@ a:hover {
 
 .main-case .case-wrap .case-overview h3 {
   padding-bottom: 20px;
+  text-align: center;
   font-size: 26px;
+  font-weight: bold;
 }
 
 .main-case .case-wrap .case-body {
@@ -1011,7 +1008,7 @@ a:hover {
 
 #drawArea #riku {
   width: 746px;
-  height: 366px
+  height: 366px;
 }
 
 /* スマホ対応 */
