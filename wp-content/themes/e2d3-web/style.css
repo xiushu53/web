@@ -48,23 +48,33 @@ a:hover {
   text-decoration: underline;
 }
 
-a.downloadButton {
+a.button {
   display: inline-block;
   height: 42px;
   line-height: 42px;
   padding: 0 34px;
   background-color: #1CB85F;
   border-radius: 4px;
-  vertical-align: middle;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
   color: #fff;
+  text-align: center;
   font-weight: bold;
-  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
+  font-size: 16px;
 }
 
-a.downloadButton:hover {
+a.button:hover {
   background-color: #019B4C;
   text-decoration: none;
+}
+
+a.button.light {
+  background-color: #fff;
+  color: #20A75E;
+}
+
+a.button.light:hover {
+  background-color: #f7f7f7;
 }
 
 .module {
@@ -72,7 +82,7 @@ a.downloadButton:hover {
 }
 
 .module .module-inner {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
   padding: 100px 15px;
 }
@@ -97,28 +107,6 @@ a.downloadButton:hover {
   padding-right: 18px;
   background: url("./images/icon-right.png") no-repeat 100% 50%;
   background-size: 9px 14px;
-}
-
-.module p.buttonLink {
-  text-align: center;
-  padding-top: 30px;
-}
-
-.module p.buttonLink a {
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  min-width: 225px;
-  height: 40px;
-  text-align: center;
-  border-radius: 4px;
-  background-color: #fff;
-  line-height: 40px;
-  font-weight: bold;
-  font-size: 16px;
-  color: #20A75E;
-  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
 .module .main-article p {
@@ -253,71 +241,93 @@ a.downloadButton:hover {
 }
 
 .main-intro {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  position: relative;
   border-bottom: 0;
   background-color: #fcfcfc;
 }
 
+.main-intro .intro-globe {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 650px;
+  text-align: center;
+}
+
 .main-intro .module-inner {
   position: relative;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   max-width: 1120px;
   height: 100vh;
   min-height: 800px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 20px 10px;
 }
 
-.main-intro .intro-text .intro-title {
+.main-intro .module-inner .intro-text {
+  padding-right: 100px;
+}
+
+.main-intro .module-inner .intro-text br {
+  display: none;
+}
+
+.main-intro .module-inner .intro-text .intro-title {
   line-height: 1.2;
   font-weight: bold;
   font-size: 50px;
 }
 
-.main-intro .intro-text .intro-subTitle {
+.main-intro .module-inner .intro-text .intro-subTitle {
+  padding-bottom: 30px;
   font-size: 26px;
   font-weight: bold;
 }
 
-.main-intro .intro-text .intro-description {
-  padding: 30px 0 20px;
-}
-
-.main-intro .intro-text .intro-description em {
+.main-intro .module-inner .intro-text .intro-description em {
   font-weight: bold;
   font-style: normal;
 }
 
-.main-intro .intro-globe {
-  max-width: 650px;
-  text-align: center;
+.main-intro .module-inner .intro-text .button {
+  margin-top: 20px;
 }
 
-.main-news {
-  background-color: #fcfcfc;
+.main-intro .module-inner .main-news {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
 }
 
-.main-news .module-inner {
-  padding: 0 0 20px;
-}
-
-.main-news dl {
+.main-intro .module-inner .main-news dl {
+  max-width: 800px;
+  margin: 0 auto;
   background: #fff;
 }
 
-.main-news dl dt {
+.main-intro .module-inner .main-news dl dt {
   padding: 10px;
   text-align: center;
   font-size: 17px;
 }
 
-.main-news dl dd {
+.main-intro .module-inner .main-news dl dd {
   border-top: 1px solid #F0F0F0;
   font-size: 15px;
 }
 
-.main-news dl dd a {
+.main-intro .module-inner .main-news dl dd a {
   position: relative;
   display: block;
   padding: 8px 20px 8px 15px;
@@ -326,15 +336,15 @@ a.downloadButton:hover {
   background-size: 8px 12px;
 }
 
-.main-news dl dd a:hover {
+.main-intro .module-inner .main-news dl dd a:hover {
   text-decoration: none;
 }
 
-.main-news dl dd a[href] {
+.main-intro .module-inner .main-news dl dd a[href] {
   background-image: url("./images/icon-right.png");
 }
 
-.main-news dl dd a[href]:hover {
+.main-intro .module-inner .main-news dl dd a[href]:hover {
   text-decoration: underline;
   background-color: #fafafa;
 }
@@ -388,7 +398,7 @@ a.downloadButton:hover {
 }
 
 .main-appInfo h3 {
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   font-weight: bold;
   font-size: 20px;
 }
@@ -420,11 +430,11 @@ a.downloadButton:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #20A75E;
-  border-radius: 6px;
+  background-color: #1CB85F;
+  border-radius: 4px;
   color: #fff;
-  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
 .main-appInfo .appInfo-download .download-link a:nth-child(3) {
@@ -462,13 +472,24 @@ a.downloadButton:hover {
   text-align: center;
 }
 
+.case-body.sample-run #drawArea {
+  position: relative;
+  width: 746px;
+  margin: 0 auto;
+}
+
+.case-body.sample-run #riku {
+  width: 746px;
+  height: 366px;
+}
+
 .case-body.sample-run .controlPanel {
-  max-width: 1100px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
 .case-body.sample-run .controlPanel p {
-  margin: 10px 0;
+  margin: 10px 0 10px 50px;
   text-align: left;
   font-size: 15px;
 }
@@ -478,6 +499,8 @@ a.downloadButton:hover {
   table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 0;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .case-body.sample-run .controlPanel table th, .case-body.sample-run .controlPanel table td {
@@ -492,7 +515,7 @@ a.downloadButton:hover {
 }
 
 .case-body.sample-run .controlPanel table th {
-  padding: 6px 0;
+  padding: 2px;
   background-color: #f0f0f0;
   color: #333;
   font-weight: normal;
@@ -501,16 +524,16 @@ a.downloadButton:hover {
 .case-body.sample-run .controlPanel table th.em {
   background-color: #E8E8E8;
   color: #286D29;
-  font-size: 19px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .case-body.sample-run .controlPanel table th.em.row {
-  width: 220px;
+  width: 140px;
 }
 
 .case-body.sample-run .controlPanel table th.em.col {
-  width: 60px;
+  width: 50px;
 }
 
 .case-body.sample-run .controlPanel table td {
@@ -519,6 +542,7 @@ a.downloadButton:hover {
 }
 
 .case-body.sample-run .controlPanel table td.empty {
+  width: 50px;
   background-color: transparent;
 }
 
@@ -528,21 +552,21 @@ a.downloadButton:hover {
 
 .case-body.sample-run .controlPanel table td.inputArea input {
   width: 100%;
-  height: 56px;
+  height: 40px;
   border: 4px solid #62BA62;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 25px;
+  font-size: 17px;
   color: #333;
 }
 
 .case-body.sample-run .controlPanel table td.inputArea:before {
   position: absolute;
   content: "秒";
-  right: 30px;
-  top: 15px;
-  font-size: 18px;
+  right: 32px;
+  top: 8px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -557,17 +581,21 @@ a.downloadButton:hover {
 }
 
 .case-body.sample-run .controlPanel button {
-  height: 40px;
-  line-height: 40px;
+  height: 42px;
+  line-height: 42px;
   margin-top: 15px;
-  padding: 0 40px;
-  border-radius: 20px;
-  background-color: #20A75E;
-  color: #fff;
-  font-size: 17px;
-  font-weight: bold;
+  padding: 0 34px;
+  background-color: #5B5B5B;
+  border-radius: 4px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.case-body.sample-run .controlPanel button:hover {
+  background-color: #3E3E3E;
 }
 
 .case-body.sample-medal h4 {
@@ -612,19 +640,6 @@ a.downloadButton:hover {
   font-size: 32px;
   line-height: 42px;
   vertical-align: middle;
-}
-
-.main-download a {
-  display: inline-block;
-  height: 42px;
-  line-height: 42px;
-  margin-left: 20px;
-  padding: 0 50px;
-  background-color: #20A75E;
-  border-radius: 4px;
-  vertical-align: middle;
-  color: #fff;
-  font-weight: bold;
 }
 
 .main-workshop {
@@ -696,7 +711,7 @@ a.downloadButton:hover {
 }
 
 .main-eventInfo h2 {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   font-weight: bold;
 }
 
@@ -840,6 +855,11 @@ a.downloadButton:hover {
   font-size: 14px;
 }
 
+.main-eventInfo p.buttonLink {
+  margin-top: 30px;
+  text-align: center;
+}
+
 .main-snsLink {
   background-color: #fafafa;
   border-bottom: 0;
@@ -852,6 +872,7 @@ a.downloadButton:hover {
 
 .main-snsLink p {
   padding: 20px 0;
+  font-size: 20px;
 }
 
 .main-snsLink .snsLink-wrap {
@@ -871,6 +892,7 @@ a.downloadButton:hover {
   border-radius: 4px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 .main-snsLink .snsLink-wrap .snsLink-module:last-child {
@@ -896,6 +918,11 @@ a.downloadButton:hover {
 
 .main-snsLink .snsLink-wrap .snsLink-module .module-head h3 img {
   width: 48px;
+}
+
+.main-snsLink .snsLink-wrap .snsLink-module p {
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 .main-joinus {
@@ -950,17 +977,9 @@ a.downloadButton:hover {
 }
 
 .main-joinus .joinus-github li a {
-  display: block;
-  width: 240px;
+  min-width: 154px;
   height: 34px;
-  text-align: center;
-  border-radius: 17px;
-  background-color: #fff;
   line-height: 34px;
-  font-weight: bold;
-  color: #20A75E;
-  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
 .main-interview {
@@ -989,6 +1008,11 @@ a.downloadButton:hover {
   color: #fff;
 }
 
+.main-interview li a p {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
 .main-interview li img {
   width: 100%;
 }
@@ -1002,15 +1026,6 @@ a.downloadButton:hover {
   font-size: 12px;
 }
 
-#drawArea {
-  position: relative;
-}
-
-#drawArea #riku {
-  width: 746px;
-  height: 366px;
-}
-
 /* スマホ対応 */
 @media (max-width: 760px) {
   .hide-sp {
@@ -1020,6 +1035,7 @@ a.downloadButton:hover {
     height: 54px;
   }
   .top-menu #menu-body {
+    height: 54px;
     padding: 0;
   }
   .top-menu #menu-body.on ul.menu-list {
@@ -1142,46 +1158,28 @@ a.downloadButton:hover {
     font-size: 20px;
     font-weight: bold;
   }
-  .main-intro {
-    margin-top: 60px;
-    height: auto;
-    min-height: auto;
-  }
   .main-intro .module-inner {
-    padding-top: 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    padding: 10px;
   }
   .main-intro .module-inner .intro-text {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    background: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .main-intro .module-inner .intro-text br {
+    display: block;
   }
   .main-intro .module-inner .intro-text .intro-title {
-    margin-right: 0;
+    padding-bottom: 15px;
+    font-size: 26px;
+  }
+  .main-intro .module-inner .intro-text .intro-subTitle {
+    padding-bottom: 40px;
+    line-height: 1.4;
     font-size: 18px;
   }
-  .main-intro .module-inner .intro-text .intro-title .title-large {
-    font-size: 25px;
-  }
   .main-intro .module-inner .intro-text .intro-description {
-    font-size: 15px;
-    text-align: left;
     line-height: 1.4;
-  }
-  .main-intro .module-inner .intro-globe {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-  .main-news .module-inner {
-    padding-top: 0;
-  }
-  .main-news dl {
-    margin: 0 10px;
+    padding-bottom: 5px;
   }
   .main-about {
     padding-bottom: 0;

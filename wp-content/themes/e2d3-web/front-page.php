@@ -3,27 +3,21 @@
     <main class="main">
 
         <section class="module main-intro">
+            <div class="intro-globe">
+                <!-- Rendering See Trough Globe -->
+            </div>
             <div class="module-inner">
-                <div class="intro-globe">
-                    <!-- Rendering See Trough Globe -->
-                </div>
                 <div class="intro-text">
                     <p class="intro-title">Data Visualization for ALL</p>
-                    <p class="intro-subTitle">「データって、面白い！」を体感できるソフトウェア</p>
-                    <p class="intro-description">
-                    当サイトにアクセスした地域をドットで表現した地球儀。<br>
-                    <em>E2D3を使えば、Excel上で好きなデータを入れて楽しめます。</em></p>
-                    <a href="/app-install/" class="downloadButton">E2D3を無料でダウンロード</a>
+                    <p class="intro-subTitle">「データって、面白い！」を<br>体感できるソフトウェア</p>
+                    <p class="intro-description">当サイトにアクセスした地域を<br>ドットで表現した地球儀。</p>
+                    <p class="intro-description"><em>E2D3を使えば、Excel上で好きな<br>データを入れて楽しめます。</em></p>
+                    <a href="/app-install/" class="button">E2D3を無料でダウンロード</a>
+                </div>
+                <div class="main-news">
+                    <?php show_news(); ?>
                 </div>
             </div>
-        </section>
-
-        <section class="module main-news">
-          <div class="module-inner">
-            <?php
-              show_news();
-            ?>
-          </div>
         </section>
 
         <section class="module main-about" id="anchor-about">
@@ -32,7 +26,7 @@
                 <p>データって、面白い！そう感じる瞬間を全ての人に届けたい。<br>
                 そんな理念を胸に、データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>
                 非営利のコミュニティです。</p>
-                <p class="buttonLink"><a href="#anchor-detailE2D3" class="anchor-link">コミュニティについて</a></p>
+                <p class="buttonLink"><a href="#anchor-detailE2D3" class="button light anchor-link">コミュニティについて</a></p>
                 <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
             </div>
         </section>
@@ -71,11 +65,11 @@
                 </div>
                 <div class="case-body sample-run">
                     <div id="drawArea">
-                        <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/animal_icons/riku.png'); ?>" id="riku" />
+                        <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/animal_icons/riku.png'); ?>" id="riku" alt="">
                     </div>
 
                     <div class="controlPanel">
-                        <p>自分の速さを入力して、「スタート」ボタンを押してみよう！</p>
+                        <p>あなたの速さを入力して、「スタート」ボタンを押してみよう！</p>
                         <table>
                             <tbody>
                                 <tr>
@@ -119,7 +113,7 @@
         <section class="module main-download hide-sp">
             <div class="module-inner">
                 <h2>E2D3 on Excel</h2>
-                <a href="#">無料ダウンロードはこちら</a>
+                <a href="#" class="button">無料ダウンロード</a>
             </div>
         </section>
 
@@ -154,16 +148,13 @@
                 <p class="large-txt">一緒にデータビジュアライズを楽しみませんか？</p>
                 <p>E2D3は、データビジュアライゼーションの最新情報を共有するだけでなく、誰もがデータビジュアライゼーションを学び、楽しめるイベントを開催しています。ゲストを招いての講演会やワークショップ、ハッカソンなど開催中！<br>エンジニアだけでなく、デザイナーや営業、主婦、小学生、大学生など様々なバックグラウンドの方に楽しんでいただいてます。データビジュアライズに興味がある方大歓迎！ぜひお気軽にご参加ください。</p>
 
-
                 <?php
                 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
                 if(is_plugin_active('e2d3-event-info/e2d3-event-info.php')){
                   Event_Info_E2D3::show_event_list();
                 }
-
                 ?>
 
-                
                 <h3>過去のイベント</h3>
                 <?php show_past_event(); ?>
                                 
@@ -172,10 +163,9 @@
 
         <section class="module main-snsLink">
             <div class="module-inner">
-                <h2>SNS</h2>
+                <h2>Twitter, Facebook</h2>
                 <p>E2D3の活動情報や、世界のデータビジュアライズ情報を配信中！</p>
                 <div class="snsLink-wrap">
-
                     <div class="snsLink-module">
                         <div class="module-head">
                             <h3><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/icon-facebook.png'); ?>" alt="Facebook"></h3>
@@ -192,7 +182,6 @@
                         <p>世界のData Visualizeをピックアップして紹介中！最新のDataViz情報収集はE2D3のアカウントで。</p>
                         <a class="twitter-timeline" data-height="400" data-dnt="true" href="https://twitter.com/e2d3org?ref_src=twsrc%5Etfw">Tweets by e2d3org</a>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -206,11 +195,10 @@
                         <a href="https://github.com/e2d3/"><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-github.png'); ?>" alt="Github" width="102"></a>
                     </div>
                     <ul>
-                        <li><a href="/ja/developing-method/">Developing Method</a></li>
-                        <li><a href="https://github.com/e2d3/e2d3">Source Code</a></li>
-                        <li><a href="https://github.com/e2d3/e2d3/wiki/Home_ja">Wiki</a></li>
+                        <li><a class="button light" href="/ja/developing-method/">Developing Method</a></li>
+                        <li><a class="button light" href="https://github.com/e2d3/e2d3">Source Code</a></li>
+                        <li><a class="button light" href="https://github.com/e2d3/e2d3/wiki/Home_ja">Wiki</a></li>
                     </ul>
-
                 </div>
             </div>
         </section>
@@ -229,7 +217,7 @@
                     </a></li><!--
                  --><li><a href="https://career.levtech.jp/sponsor/interview/2/">
                         <img src="http://e2d3.org/wp-content/uploads/2015/12/interview002-1-666x400.jpg" alt="">
-                        <p>大手メディア企業で働く澤氏「『E2D3』でデータ可視化のプログラミングコストを下げたい]</p>
+                        <p>大手メディア企業で働く澤氏「『E2D3』でデータ可視化のプログラミングコストを下げたい」</p>
                     </a></li><!--
                  --><li><a href="http://codezine.jp/article/detail/9567">
                         <img src="http://e2d3.org/wp-content/uploads/2017/07/sato20170724-184x110.jpg" alt="">
@@ -325,8 +313,10 @@
 </script>
 <script>
     // dot bar chart
-    var width = 986;
-    var height = 650;
+    //var width = 986;
+    //var height = 650;
+    var width = 750;
+    var height = 495;
     var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
 
     d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
