@@ -9,13 +9,17 @@ Version: 1.0
 // WebFonts notosans
 @import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
  
-body {
-    color: #404040;
-     font-family: 'Noto Sans JP', sans-serif;
-     font-size: 100%;
+// Common Settings
+* {
+    box-sizing: border-box;
 }
 
-// Common Settings
+body {
+    color: #404040;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 100%;
+}
+
 body,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,p {
     margin: 0;
     padding: 0;
@@ -70,6 +74,7 @@ a {
     }
 }
 
+// 基本モジュール
 .module {
     border-bottom: 1px solid #EFEFEF;
     .module-inner {
@@ -210,18 +215,21 @@ a {
     }
 }
 
-//Firstview
+// Firstview
 .main-intro {
     position: relative;
     border-bottom: 0;
     background-color: #fcfcfc;
     .intro-globe {
-        display: none; //仮
         position: absolute;
         top: 0;
         left: 0;
-        max-width: 650px;
-        text-align: center;
+        z-index: 1;
+        width: 100%;
+        text-align: right;
+        svg {
+            display: inline-block;
+        }
     }
     .module-inner {
         position: relative;
@@ -263,6 +271,7 @@ a {
             bottom: 20px;
             left: 0;
             width: 100%;
+            padding: 0 10px;
             dl {
                 max-width: 800px;
                 margin: 0 auto;
@@ -492,8 +501,8 @@ a {
             }
         }
         button {
-            height: 42px;
-            line-height: 42px;
+            height: 40px;
+            line-height: 40px;
             margin-top: 15px;
             padding: 0 34px;
             background-color: #5B5B5B;
@@ -804,7 +813,7 @@ a {
                 margin-bottom: 0;
             }
             a {
-                min-width: 154px;
+                min-width: 230px;
                 height: 34px;
                 line-height: 34px;
             }
@@ -975,6 +984,9 @@ a {
         }
     }
     .main-intro {
+        .intro-globe {
+            text-align: center;
+        }
         .module-inner {
             padding: 10px;
             .intro-text {
@@ -995,6 +1007,7 @@ a {
                 .intro-description {
                     line-height: 1.4;
                     padding-bottom: 5px;
+                    font-size: 14px;
                 }
             }
         }

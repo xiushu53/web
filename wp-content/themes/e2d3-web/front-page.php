@@ -84,7 +84,7 @@
                                 </tr>
                                 <tr>
                                     <th class="em col">速度</th>
-                                    <td class="inputArea"><input type="text" maxlength="4" name="" id="ownRecord" value="16"></td>
+                                    <td class="inputArea"><input type="text" maxlength="2" name="" id="ownRecord" value="16"></td>
                                     <td>17秒</td>
                                     <td>9.58秒</td>
                                     <td>3秒</td>
@@ -244,7 +244,7 @@
     });
 
     var width = document.getElementsByClassName('main-intro')[0].clientWidth;
-    var height = document.getElementsByClassName('main-intro')[0].clientHeight;
+    var height = document.getElementsByClassName('main-intro')[0].clientHeight -180;
 
     var compute_radius = 0;
 

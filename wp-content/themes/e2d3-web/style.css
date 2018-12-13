@@ -7,6 +7,11 @@ Author: Yeshi
 Version: 1.0
 */
 @import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   color: #404040;
   font-family: 'Noto Sans JP', sans-serif;
@@ -247,12 +252,16 @@ a.button.light:hover {
 }
 
 .main-intro .intro-globe {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 650px;
-  text-align: center;
+  z-index: 1;
+  width: 100%;
+  text-align: right;
+}
+
+.main-intro .intro-globe svg {
+  display: inline-block;
 }
 
 .main-intro .module-inner {
@@ -308,6 +317,7 @@ a.button.light:hover {
   bottom: 20px;
   left: 0;
   width: 100%;
+  padding: 0 10px;
 }
 
 .main-intro .module-inner .main-news dl {
@@ -581,8 +591,8 @@ a.button.light:hover {
 }
 
 .case-body.sample-run .controlPanel button {
-  height: 42px;
-  line-height: 42px;
+  height: 40px;
+  line-height: 40px;
   margin-top: 15px;
   padding: 0 34px;
   background-color: #5B5B5B;
@@ -977,7 +987,7 @@ a.button.light:hover {
 }
 
 .main-joinus .joinus-github li a {
-  min-width: 154px;
+  min-width: 230px;
   height: 34px;
   line-height: 34px;
 }
@@ -1158,6 +1168,9 @@ a.button.light:hover {
     font-size: 20px;
     font-weight: bold;
   }
+  .main-intro .intro-globe {
+    text-align: center;
+  }
   .main-intro .module-inner {
     padding: 10px;
   }
@@ -1180,6 +1193,7 @@ a.button.light:hover {
   .main-intro .module-inner .intro-text .intro-description {
     line-height: 1.4;
     padding-bottom: 5px;
+    font-size: 14px;
   }
   .main-about {
     padding-bottom: 0;
