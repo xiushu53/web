@@ -14,16 +14,19 @@ Version: 1.0
     box-sizing: border-box;
 }
 
+//rem単位を使いやすく
+html {
+    font-size: 10px;
+}
 body {
     color: #404040;
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 100%;
 }
 
 body,ul,li,h1,h2,h3,h4,h5,dl,dt,dd,p {
     margin: 0;
     padding: 0;
-    font-size: 100%;
+    font-size: 1.6rem;
     font-weight: 400;
 }
 ul, li {
@@ -49,16 +52,16 @@ a {
     // Download button
     &.button {
         display: inline-block;
-        height: 42px;
-        line-height: 42px;
+        height: 40px;
+        line-height: 40px;
         padding: 0 34px;
         background-color: #1CB85F;
         border-radius: 4px;
         box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
         color: #fff;
         text-align: center;
-        font-weight: bold;
-        font-size: 16px;
+        font-weight: 700;
+        font-size: 1.6rem;
         &:hover {
             background-color: #019B4C;
             text-decoration: none;
@@ -85,14 +88,14 @@ a {
     h2 {
         padding-bottom: 30px;
         text-align: center;
-        font-size: 32px;
-        font-weight: bold;
+        font-size: 3.2rem;
+        font-weight: 700;
     }
     p {
         line-height: 2;
         &.detailLink {
             margin-top: .5em;
-            font-weight: bold;
+            font-weight: 700;
             a {
                 padding-right: 18px;
                 background: url('./images/icon-right.png') no-repeat 100% 50%;
@@ -248,17 +251,17 @@ a {
             }
             .intro-title {
                 line-height: 1.2;
-                font-weight: bold;
-                font-size: 50px;
+                font-weight: 700;
+                font-size: 5.0rem;
             }
             .intro-subTitle {
                 padding-bottom: 30px;
-                font-size: 26px;
-                font-weight: bold;
+                font-size: 2.6rem;
+                font-weight: 700;
             }
             .intro-description {
                 em {
-                    font-weight: bold;
+                    font-weight: 500;
                     font-style: normal;
                 }
             }
@@ -279,11 +282,12 @@ a {
                 dt {
                     padding: 10px;
                     text-align: center;
-                    font-size: 17px;
+                    font-size: 2.0rem;
+                    font-weight: 700;
                 }
                 dd {
                     border-top: 1px solid #F0F0F0;
-                    font-size: 15px;
+                    font-size: 1.5rem;
                     a {
                         position: relative;
                         display: block;
@@ -314,10 +318,10 @@ a {
     color: #fff;
     padding-bottom: 240px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
     h2 {
-        font-size: 32px;
-        font-weight: bold;
+        font-size: 3.2rem;
+        font-weight: 700;
     }
     img {
         width: 100%;
@@ -326,8 +330,8 @@ a {
     }
     p {
         padding-top: 20px;
-        font-size: 18px;
-        font-weight: bold;
+        font-size: 1.7rem;
+        font-weight: 700;
     }
 }
 
@@ -346,12 +350,12 @@ a {
         }
     }
     h2 {
-        font-weight: bold;
+        font-weight: 700;
     }
     h3 {
         padding-bottom: 20px;
-        font-weight: bold;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 2.0rem;
     }
     .appInfo-download {
         background-color: #f7f7f7;
@@ -361,7 +365,7 @@ a {
         .download-title {
             padding-bottom: 25px;
             font-weight: normal;
-            font-size: 100%;
+            font-size: 1.6rem;
         }
         .download-link {
             display: flex;
@@ -399,8 +403,8 @@ a {
             h3 {
                 padding-bottom: 20px;
                 text-align: center;
-                font-size: 26px;
-                font-weight: bold;
+                font-size: 2.6rem;
+                font-weight: 700;
             }
         }
         .case-body {
@@ -426,14 +430,15 @@ a {
         p {
             margin: 10px 0 10px 50px;
             text-align: left;
-            font-size: 15px;
+            font-size: 1.5rem;
+            font-weight: 500;
         }
         table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
             border-spacing: 0;
-            font-size: 13px;
+            font-size: 1.3rem;
             font-weight: 600;
             th,td {
                 margin: 0;
@@ -452,8 +457,8 @@ a {
                 &.em {
                     background-color: #E8E8E8;
                     color: #286D29;
-                    font-size: 15px;
-                    font-weight: bold;
+                    font-size: 1.5rem;
+                    font-weight: 700;
                     &.row {
                         width: 140px;
                     }
@@ -477,7 +482,7 @@ a {
                         border: 4px solid #62BA62;
                         text-align: center;
                         box-sizing: border-box;
-                        font-size: 17px;
+                        font-size: 1.7rem;
                         color: #333;
                     }
                     &:before {
@@ -485,7 +490,7 @@ a {
                         content: "秒";
                         right: 32px;
                         top: 8px;
-                        font-size: 16px;
+                        font-size: 1.6rem;
                         color: #333;
                     }
                     &:after {
@@ -509,8 +514,8 @@ a {
             border-radius: 4px;
             box-shadow: 0 1px 2px rgba(0,0,0,.1);
             color: #fff;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 1.6rem;
+            font-weight: 700;
             &:hover {
                 background-color: #3E3E3E;
             }
@@ -519,8 +524,8 @@ a {
 }
 .case-body.sample-medal {
     h4 {
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 2.0rem;
+        font-weight: 700;
     }
     ul {
         display: flex;
@@ -551,7 +556,7 @@ a {
     }
     h2 {
         padding: 0 0 10px;
-        font-size: 32px;
+        font-size: 3.2rem;
         line-height: 42px;
         vertical-align: middle;
     }
@@ -580,11 +585,11 @@ a {
         dt {
             padding: 10px;
             text-align: center;
-            font-size: 17px;
+            font-size: 1.7rem;
         }
         dd {
             border-top: 1px solid #F0F0F0;
-            font-size: 15px;
+            font-size: 1.5rem;
             a {
                 position: relative;
                 display: block;
@@ -613,17 +618,17 @@ a {
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     h2 {
         padding-bottom: 30px;
-        font-weight: bold;
+        font-weight: 700;
     }
     p.large-txt {
         padding-bottom: 40px;
-        font-weight: bold;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 2.0rem;
     }
     h3 {
         padding-bottom: 20px;
-        font-weight: bold;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 2.0rem;
     }
     ul.eventInfo-coming {
         padding: 60px 0;
@@ -649,7 +654,8 @@ a {
                 .date-day {
                     display: block;
                     margin-bottom: .2em;
-                    font-size: 20px;
+                    font-size: 2.0rem;
+                    font-weight: 500;
                 }
                 .date-place {
                     display: block;
@@ -671,7 +677,7 @@ a {
                         border-radius: 12px;
                         background-color: #aaa;
                         color: #fff;
-                        font-size: 14px;
+                        font-size: 1.4rem;
                         line-height: 1;
                         &.open {
                             background-color: #62BA62;
@@ -683,11 +689,11 @@ a {
                 }
                 .desc-eventTitle {
                     padding-bottom: 10px;
-                    font-size: 22px;
-                    font-weight: normal;
+                    font-size: 2.2rem;
+                    font-weight: 500;
                 }
                 .desc-text {
-                    font-size: 13px;
+                    font-size: 1.3rem;
                 }
             }
         }
@@ -718,11 +724,12 @@ a {
                 .eventInfo-description {
                     position: absolute;
                     bottom: 0;
+                    width: 100%;
+                    padding: 10px;
                     background-color: rgba(0,0,0,.6);
                     color: #fff;
-                    padding: 10px;
                     .desc-eventTitle {
-                        font-size: 14px;
+                        font-size: 1.4rem;
                     }
                 }
             }
@@ -738,11 +745,11 @@ a {
     border-bottom: 0;
     h2 {
         padding-bottom: 10px;
-        font-weight: bold;
+        font-weight: 700;
     }
     p {
         padding: 20px 0;
-        font-size: 20px;
+        font-size: 2.0rem;
     }
     .snsLink-wrap {
         display: flex;
@@ -772,7 +779,7 @@ a {
             }
             p {
                 line-height: 1.5;
-                font-size: 16px;
+                font-size: 1.6rem;
             }
         }
     }
@@ -785,7 +792,7 @@ a {
     .module-inner {
         position: relative;
         h2 {
-            font-weight: bold;
+            font-weight: 700;
         }
         &:after {
             position: absolute;
@@ -840,7 +847,8 @@ a {
             color: #fff;
             p {
                 line-height: 1.5;
-                font-size: 15px;
+                font-size: 1.5rem;
+                font-weight: 500;
             }
         }
         img {
@@ -857,7 +865,7 @@ a {
     border-bottom: 0;
     text-align: center;
     color: #fff;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 
@@ -867,6 +875,9 @@ a {
     .hide-sp {
         display: none;
     }
+    html {
+        font-size: 8px;
+    }
     .top-menu {
         height: 54px;
         #menu-body {
@@ -874,7 +885,6 @@ a {
             padding: 0;
             &.on {
                 ul.menu-list {
-                    //display: block;
                     transform: scaleY(1);
                 }
                 #menu-button {
@@ -979,8 +989,7 @@ a {
             padding-top: 50px;
         }
         h2 {
-            font-size: 20px;
-            font-weight: bold;
+            font-weight: 700;
         }
     }
     .main-intro {
@@ -1007,32 +1016,22 @@ a {
                 .intro-description {
                     line-height: 1.4;
                     padding-bottom: 5px;
-                    font-size: 14px;
                 }
             }
         }
     }
     .main-about {
         padding-bottom: 0;
-        h2 {
-            font-size: 24px;
-        }
         img {
             padding-top: 20px;
-        }
-        p {
-            font-size: 16px;
-            font-weight: normal;
         }
     }
     .main-appInfo {
         h2 {
             padding-bottom: 10px;
-            font-size: 24px;
             text-align: center;
         }
         h3 {
-            font-size: 16px;
             text-align: center;
         }
         .appInfo-video {
@@ -1059,9 +1058,6 @@ a {
         margin-right: 0;
     }
     .main-eventInfo {
-        p.large-txt {
-            font-size: 16px;
-        }
         ul.eventInfo-coming a {
             .event-date {
                 width: 35%;
@@ -1103,7 +1099,6 @@ a {
             p {
                 margin-right: 1%;
                 line-height: 1.6;
-                font-size: 13px;
             }
             &:nth-child(3n) {
                 margin-right: 2%;

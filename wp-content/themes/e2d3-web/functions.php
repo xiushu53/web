@@ -221,7 +221,7 @@ function show_news() {
     if ($qNews->have_posts()):
     ?>
 		<dl>
-			<dt>News</dt>
+			<dt>NEWS</dt>
 		<?php while ($qNews->have_posts()): $qNews->the_post();?>
 							<dd><a href="<?php the_permalink();?>"><?php
     echo get_post_time('Y/m/d') . '　';
