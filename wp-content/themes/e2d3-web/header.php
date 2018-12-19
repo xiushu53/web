@@ -23,6 +23,14 @@
             <h1 class="menu-home"><a href="/">E2D3</a></h1>
             <div id="menu-button"><span></span></div>
             <ul class="menu-list">
+                <li class="body-item menu-about">
+                    <a href="#">About E2D3</a>
+                    <ul class="menu-inner">
+                        <li><a href="/e2d3-project-member/">チームメンバー</a></li>
+                        <li><a href="/activity-log/">活動履歴</a></li>
+                        <li><a href="/privacy/">プライバシーポリシー</a></li>
+                    </ul>
+                </li>
                 <li class="body-item menu-product">
                     <a>Use E2D3 on Excel</a>
                     <ul class="menu-inner">
@@ -32,14 +40,6 @@
                 </li>
                 <li class="body-item menu-events">
                     <a href="#anchor-event" class="anchor-link">Events</a>
-                </li>
-                <li class="body-item menu-about">
-                    <a href="#">About E2D3</a>
-                    <ul class="menu-inner">
-                        <li><a href="/e2d3-project-member/">チームメンバー</a></li>
-                        <li><a href="/activity-log/">活動履歴</a></li>
-                        <li><a href="/privacy/">プライバシーポリシー</a></li>
-                    </ul>
                 </li>
                 <li class="body-item menu-language">
                     <a href="">English</a>
