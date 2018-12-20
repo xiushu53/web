@@ -221,7 +221,7 @@ function show_news() {
     if ($qNews->have_posts()):
     ?>
 		<dl>
-			<dt>News</dt>
+			<dt>NEWS</dt>
 		<?php while ($qNews->have_posts()): $qNews->the_post();?>
 							<dd><a href="<?php the_permalink();?>"><?php
     echo get_post_time('Y/m/d') . '　';
@@ -268,7 +268,7 @@ function show_past_event(){
     ?>
     </ul>
     <p class="buttonLink">
-      <a href="<?php echo esc_url(get_category_link($pastEvID)); ?>">過去のイベント一覧</a>
+      <a href="<?php echo esc_url(get_category_link($pastEvID)); ?>" class="button light">過去のイベント一覧</a>
     </p>
   <?php
   endif;   

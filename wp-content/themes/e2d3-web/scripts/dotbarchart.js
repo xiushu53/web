@@ -1,6 +1,6 @@
 !(function(d3) {
 
-    var dim = { width: 986, height: 650 };
+    var dim = { width: 750, height: 495 };
     var margin = { top: 6, bottom: 64, left: 32, right: 0 };
     var inputHeight = 32;
     var timeKey = '大会';
@@ -82,7 +82,8 @@
                 .attr('height', inputHeight)
                 .attr('x', 0).attr('y', 0)
                 .style('fill', 'rgba(0, 0, 0, 0)')
-                .style('stroke', 'none');
+                .style('stroke', 'none')
+                .style('cursor', 'pointer');
             var buttonLabels = timeButtonContainer.append('text')
                 .attr('x', inputScale.bandwidth() * 0.5)
                 .attr('y', inputHeight * 0.5)
@@ -91,6 +92,7 @@
                 .style('fill', function(d, i) {
                     return (i == time) ? '#FFF' : '#FFF';
                 }).style('font-size', 18)
+                .style('cursor', 'pointer')
                 .text(function(d) { return d; });
             var counts = data.map(function(v) {
                 var obj = {};
