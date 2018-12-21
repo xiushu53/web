@@ -24,18 +24,18 @@
             <div id="menu-button"><span></span></div>
             <ul class="menu-list">
                 <li class="body-item menu-about">
-                    <a href="#">About E2D3</a>
+                    <a href="#anchor-about">About E2D3</a>
                     <ul class="menu-inner">
-                        <li><a href="/e2d3-project-member/">チームメンバー</a></li>
-                        <li><a href="/activity-log/">活動履歴</a></li>
-                        <li><a href="/privacy/">プライバシーポリシー</a></li>
+                        <li><a href="<?php echo esc_url( get_home_url() ); ?>/e2d3-project-member/">チームメンバー</a></li>
+                        <li><a href="<?php echo esc_url( get_home_url() ); ?>/activity-log/">活動履歴</a></li>
+                        <li><a href="<?php echo esc_url( get_home_url() ); ?>/privacy/">プライバシーポリシー</a></li>
                     </ul>
                 </li>
                 <li class="body-item menu-product">
                     <a>Use E2D3 on Excel</a>
                     <ul class="menu-inner">
-                        <li><a href="/app-install/">インストール方法</a></li>
-                        <li><a href="/howtouse/">使い方</a></li>
+                        <li><a href="<?php echo esc_url( get_home_url() ); ?>/app-install/">インストール方法</a></li>
+                        <li><a href="<?php echo esc_url( get_home_url() ); ?>/howtouse/">使い方</a></li>
                     </ul>
                 </li>
                 <li class="body-item menu-events">

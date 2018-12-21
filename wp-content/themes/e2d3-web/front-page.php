@@ -12,7 +12,7 @@
                     <p class="intro-subTitle">「データって、面白い！」を<br>体感できるソフトウェア</p>
                     <p class="intro-description">当サイトにアクセスした地域を<br>ドットで表現した地球儀。</p>
                     <p class="intro-description"><em>E2D3を使えば、Excel上で好きな<br>データを入れて楽しめます。</em></p>
-                    <a href="/app-install/" class="button">E2D3を無料でダウンロード</a>
+                    <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/" class="button">E2D3を無料でダウンロード</a>
                 </div>
                 <div class="main-news">
                     <?php show_news(); ?>
@@ -46,9 +46,9 @@
                 <div class="appInfo-download">
                     <h3 class="download-title">ご利用環境別の無料ダウンロード方法・ご利用方法</h3>
                     <div class="download-link">
-                        <a href="/app-install/for-win/"><b>Windows<br>Excel 2013以降</b><br>で利用する</a>
-                        <a href="/app-install/for-mac/"><b>Office for Mac<br>(Ver 2016以降)</b><br>で利用する</a>
-                        <a href="/app-install/for-online/"><b>Excel Online</b><br>で利用する</a>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-win/"><b>Windows<br>Excel 2013以降</b><br>で利用する</a>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-mac/"><b>Office for Mac<br>(Ver 2016以降)</b><br>で利用する</a>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-online/"><b>Excel Online</b><br>で利用する</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
         <section class="module main-download hide-sp">
             <div class="module-inner">
                 <h2>E2D3 on Excel</h2>
-                <a href="#" class="button">無料ダウンロード</a>
+                <a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662" class="button">無料ダウンロード</a>
             </div>
         </section>
 
@@ -195,7 +195,7 @@
                         <a href="https://github.com/e2d3/"><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-github.png'); ?>" alt="Github" width="102"></a>
                     </div>
                     <ul>
-                        <li><a class="button light" href="/ja/developing-method/">Developing Method</a></li>
+                        <li><a class="button light" href="<?php echo esc_url( get_home_url() ); ?>/developing-method/">Developing Method</a></li>
                         <li><a class="button light" href="https://github.com/e2d3/e2d3">Source Code</a></li>
                         <li><a class="button light" href="https://github.com/e2d3/e2d3/wiki/Home_ja">Wiki</a></li>
                     </ul>
