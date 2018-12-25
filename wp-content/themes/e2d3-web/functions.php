@@ -255,8 +255,7 @@ function show_past_event(){
     <?php 
     while($pastEv->have_posts()):$pastEv->the_post(); ?>
     <li>
-    
-      <a href="<?php the_permalink(); ?>" style="background-image:url('<?php the_post_thumbnail_url(); ?>')">
+      <a href="<?php the_permalink(); ?>" style="background-image:url('<?php echo (get_the_post_thumbnail_url())?get_the_post_thumbnail_url():get_template_directory_uri().'/images/logo-square.png'; ?>')">
       <dl class="eventInfo-description">
           <dd class="desc-date"><?php echo get_post_time('Y/m/d'); ?></dd>
           <dt class="desc-eventTitle"><?php the_title(); ?></dt>
