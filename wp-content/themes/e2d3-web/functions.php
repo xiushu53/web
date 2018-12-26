@@ -241,7 +241,7 @@ endif;
 function show_past_event(){
 
   $pastEv = new WP_Query(array(
-    'category_name'=>'News',
+    'category_name'=>'Report',
     'post_status'=>'publish',
     'orderby'=>'date',
     'order'=>'DESC',
