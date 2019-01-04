@@ -2,20 +2,26 @@
 
     <main class="main">
 
-        <section class="module main-intro">
-            <div class="intro-globe">
-                <!-- Rendering See Trough Globe -->
-            </div>
-            <div class="module-inner">
-                <div class="intro-text">
-                    <p class="intro-title">Data Visualization for ALL</p>
-                    <p class="intro-subTitle">「データって、面白い！」を<br>体感できるソフトウェア</p>
-                    <p class="intro-description">当サイトにアクセスした地域を<br>ドットで表現した地球儀。</p>
-                    <p class="intro-description"><em>E2D3を使えば、Excel上で好きな<br>データを入れて楽しめます。</em></p>
-                    <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/" class="button">E2D3を無料でダウンロード</a>
+        <section class="main-intro">
+            <div class="intro-wrap" id="globe-wrap">
+                <div class="intro-globe">
+                    <!-- Rendering See Trough Globe -->
                 </div>
-                <div class="main-news">
-                    <?php show_news(); ?>
+                <div class="intro-inner">
+                    <div class="intro-text">
+                        <p class="intro-title">Data Visualization for ALL</p>
+                        <p class="intro-subTitle">「データって、面白い！」を<br>体感できるソフトウェア</p>
+                        <p class="intro-description">当サイトにアクセスした地域を<br>ドットで表現した地球儀、”See-Through Globe”。</p>
+                        <p class="intro-description">E2D3を使えば、Excel上で好きな<br>データを入れて楽しめます。</p>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/" class="button">E2D3を無料でダウンロード</a>
+                        <ul class="intro-link">
+                            <li><a target="_blank" href="https://www.jss.gr.jp/society/prize/prize_biog2018/">2018年度 日本統計学会教育賞</a></li>
+                            <li><a target="_blank" href="http://e2d3.org/ja/2016/04/04/stat-dash%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%97%E3%83%AA2016-%E7%B7%8F%E5%8B%99%E5%A4%A7%E8%87%A3%E8%B3%9E-%E5%8F%97%E8%B3%9E/">STAT DASHグランプリ2016 総務大臣賞</a></li>
+                        </ul>
+                    </div>
+                    <div class="main-news">
+                        <?php show_news(); ?>
+                    </div>
                 </div>
             </div>
         </section>
@@ -28,6 +34,9 @@
                 非営利のコミュニティです。</p>
                 <p class="buttonLink"><a href="#anchor-detailE2D3" class="button light anchor-link">コミュニティについて</a></p>
                 <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
+                <h2>データビジュアライズとは？</h2>
+                <p>数値データをグラフや図などを用いて、わかりやすく、印象的に表現することです。<br>
+                パソコン上で操作できたり、アニメーションで動いたり、手書きのグラフにはない楽しみがいっぱい！</p>
             </div>
         </section>
 
@@ -189,7 +198,7 @@
         <section class="module main-joinus" id="anchor-joinus">
             <div class="module-inner">
                 <h2>開発メンバー募集中！</h2>
-                <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UIデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
+                <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UXデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
                 <div class="joinus-github">
                     <div class="github-icon">
                         <a href="https://github.com/e2d3/"><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-github.png'); ?>" alt="Github" width="102"></a>
@@ -243,17 +252,21 @@
         js_dim_obj[js_dim_obj.length] = dim_obj;
     });
 
-    var width = document.getElementsByClassName('main-intro')[0].clientWidth;
-    var height = document.getElementsByClassName('main-intro')[0].clientHeight -180;
+    var width = document.getElementById('globe-wrap').clientWidth;
+    var height = document.getElementById('globe-wrap').clientHeight;
 
+    // 拡大率
     var compute_radius = 0;
 
-    if (height <= width) {
-        compute_radius = height * .7;
-        width = height;
+    if (window.innerHeight <= window.innerWidth) {
+        // 横画面
+        compute_radius = height * .5;
+        width = width * .6;
+        height = height * .8;
     } else {
-        compute_radius = width * .7;
-        height = width * 1.5;
+        // 縦画面
+        compute_radius = width * .6;
+        height = width * 1.2;
     }
 
     var velocity = 0.02;
