@@ -330,18 +330,20 @@ a {
     }
     h2 {
         font-size: 3.4rem;
-        padding-top: 50px;
-        padding-bottom: 15px;
+        padding-top: 90px;
+        padding-bottom: 10px;
+    }
+    p {
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+    .buttonLink {
+        padding-top: 20px;
     }
     img {
         width: 100%;
         max-width: 576px;
         padding-top: 20px;
-    }
-    p {
-        padding-top: 20px;
-        font-size: 1.7rem;
-        font-weight: 700;
     }
 }
 
