@@ -161,6 +161,8 @@
                 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
                 if(is_plugin_active('e2d3-event-info/e2d3-event-info.php')){
                   Event_Info_E2D3::show_event_list();
+                }else{
+                  get_event_info_from_techplay();
                 }
                 ?>
 
