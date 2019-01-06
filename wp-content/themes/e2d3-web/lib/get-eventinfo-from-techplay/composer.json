@@ -1,0 +1,10 @@
+{
+  "require": {
+    "fabpot/goutte": "^3.2"
+  },
+  "config": {
+    "platform": {
+      "php": "7.0.2"
+    }
+  }
+}

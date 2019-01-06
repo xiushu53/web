@@ -278,4 +278,115 @@ function show_past_event(){
 
 /* ↑↑for ChildPage↑↑ */
 
+
+/* get-eventinfo-from-techplay */
+function get_event_info_from_techplay(){
+
+  require_once  __DIR__ .'/lib/get-eventinfo-from-techplay/vendor/autoload.php';
+  
+  $client = new Goutte\Client();
+
+  $crawler = $client->request('GET','https://techplay.jp/community/e2d3');
+  
+  $ev = $crawler->filter('.community-topic-wrap .community-topic')->each(function($e){
+
+    $flg = true;
+
+    $props = ['title','href','label','date','place'];
+
+    $k = array_reduce($props,function($list,$now){
+
+      $e = $list['e'];
+
+      switch($now){
+        case 'title':
+          if(count($e->filter('h3 a'))>0){
+            $list[$now] = $e->filter('h3 a')->text();
+          }     
+          break;
+        case 'href':
+          if(count($e->filter('h3 a'))>0){
+            $o = $e->filter('h3 a')->extract(array('href'));
+            if($o){$list['href']=$o[0];}
+          }   
+          break;
+        case 'label':
+          if(count($e->filter('.labels span'))>0){
+            $labels = $e->filter('.labels span')->each(function($e_2){
+              return "<span class='tag'>".$e_2->text()."</span>";
+            });
+            $list['label'] = implode($labels);
+          }
+          break;
+        case 'date':
+        case 'place':
+          if(count($e->filter('.community-topic-info'))>0 && 
+            !array_key_exists('date',$list) &&
+            !array_key_exists('place',$list) ){
+              list($list['date'],$list['place']) = $e->filter('.community-topic-info')->each(function($e_3,$i){
+
+                if($i===0 && $e_3->filter('dt')->text() === '日時'){
+                  $date2html = null;
+                  $fulldate = $e_3->filter('dd')->text();
+                  preg_match_all('/^(\d{4})\/(\d{2}\/\d{2}\(\w\))(.*)/u', trim($fulldate) , $matches, PREG_SET_ORDER);
+                  if(!empty($matches) && count($matches[0])===4){
+
+                    $date2html = "<span class='date-year'>{$matches[0][1]}</span>";
+                    $date2html .= "<span class='date-day'>{$matches[0][2]}<br>".trim($matches[0][3])."</span>";
+
+                  };
+
+                  return $date2html;
+                }
+
+                if($i===1 && $e_3->filter('dt')->text() === '会場'){
+                  return $e_3->filter('dd')->text();
+                }
+
+              });
+          }
+
+          break;
+        default:
+          break;
+      }
+
+      return $list;
+    },['e'=>$e]);
+
+    unset($k['e']);
+    if(count($k)!==5){
+      $k = null;
+    };
+    return $k;
+  });
+
+?>
+  <ul class="eventInfo-coming">
+<?php
+  // null が無ければ出力処理
+  if(!in_array(null,$ev)){
+    foreach($ev as $li){
+      ?>
+      <li><a href='<?php echo $li['href']; ?>'>
+      <div class="event-date">
+          <?php echo $li['date']; ?>
+          <span class="date-place"><?php echo $li['place']; ?></span>
+      </div>
+      <div class="event-description">
+          <div class="desc-tag">
+              <?php echo $li['label']; ?>
+          </div>
+          <h3 class="desc-eventTitle"><?php echo $li['title']; ?></h3>
+      </div>
+  </a></li>
+  <?php
+    }
+  }
+?>
+  </ul>
+<?php
+
+}
+
 ?>
