@@ -789,25 +789,17 @@ a.button.light:hover {
 .main-eventInfo ul.eventInfo-coming a .event-date {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 175px;
-  padding: 20px 10px 20px 25px;
+  width: 25%;
+  padding: 16px 8px 16px 16px;
   border-right: 1px solid #d7d7d7;
+  font-size: 1.4rem;
 }
 
 .main-eventInfo ul.eventInfo-coming a .event-date .date-day {
   display: block;
   margin-bottom: .2em;
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   font-weight: 500;
-}
-
-.main-eventInfo ul.eventInfo-coming a .event-date .date-place {
-  display: block;
-  width: 139px;
-  overflow: hidden;
-  white-space: nowrap;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
 }
 
 .main-eventInfo ul.eventInfo-coming a .event-description {
@@ -842,7 +834,7 @@ a.button.light:hover {
 
 .main-eventInfo ul.eventInfo-coming a .event-description .desc-eventTitle {
   padding-bottom: 10px;
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   font-weight: 500;
 }
 
