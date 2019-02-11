@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: front-page-en
+*/
+?>
+
 <?php get_header(); ?>
 
     <main class="main">
@@ -10,13 +16,13 @@
                 <div class="intro-inner">
                     <div class="intro-text">
                         <p class="intro-title">Data Visualization for ALL</p>
-                        <p class="intro-subTitle">「データって、面白い！」を<br>体感できるソフトウェア</p>
-                        <p class="intro-description">当サイトにアクセスした地域を<br>ドットで表現した地球儀、”See-Through Globe”。</p>
-                        <p class="intro-description">E2D3を使えば、Excel上で好きな<br>データを入れて楽しめます。</p>
-                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/" class="button">E2D3を無料でダウンロード</a>
+                        <p class="intro-subTitle">The software lets you have fun with data!</p>
+                        <p class="intro-description">The dots on the transparent globe show the area where someone is accessing the site from.</p>
+                        <p class="intro-description">You can download the transparent globe's data on Excel after first downloading E2D3.</p>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/" class="button">Download E2D3 FOR FREE</a>
                         <ul class="intro-link">
-                            <li><a target="_blank" href="https://www.jss.gr.jp/society/prize/prize_biog2018/">2018年度 日本統計学会教育賞</a></li>
-                            <li><a target="_blank" href="http://e2d3.org/ja/2016/04/04/stat-dash%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%97%E3%83%AA2016-%E7%B7%8F%E5%8B%99%E5%A4%A7%E8%87%A3%E8%B3%9E-%E5%8F%97%E8%B3%9E/">STAT DASHグランプリ2016 総務大臣賞</a></li>
+                            <li><a target="_blank" href="https://www.jss.gr.jp/society/prize/prize_biog2018/">Winner of The Japan Statistical Society award of 2018</a></li>
+                            <li><a target="_blank" href="http://e2d3.org/ja/2016/04/04/stat-dash%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%97%E3%83%AA2016-%E7%B7%8F%E5%8B%99%E5%A4%A7%E8%87%A3%E8%B3%9E-%E5%8F%97%E8%B3%9E/">Winner of STAT DASH Grand Prix 2016</a></li>
                         </ul>
                     </div>
                     <div class="main-news">
@@ -28,15 +34,14 @@
 
         <section class="module main-about" id="anchor-about">
             <div class="module-inner">
-                <h2>E2D3とは？</h2>
-                <p>データって、面白い！そう感じる瞬間を全ての人に届けたい。<br>
-                そんな理念を胸に、データビジュアライズを手軽に楽しめるソフトウェアを提供している、<br>
-                非営利のコミュニティです。</p>
-                <p class="buttonLink"><a href="#anchor-detailE2D3" class="button light anchor-link">コミュニティについて</a></p>
+                <h2>What is E2D3 you might ask？</h2>
+                <p>E2D3 is an NPO that develops  software for data visualization.<br>
+                Our mission is to create a world where everyone can enjoy data!</p>
+                <p class="buttonLink"><a href="#anchor-detailE2D3" class="button light anchor-link">About our community</a></p>
                 <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
-                <h2>データビジュアライズとは？</h2>
-                <p>数値データをグラフや図などを用いて、わかりやすく、印象的に表現することです。<br>
-                パソコン上で操作できたり、アニメーションで動いたり、手書きのグラフにはない楽しみがいっぱい！</p>
+                <h2>What is Data Visualization?</h2>
+                <p>It is to express numerical data in an easy to understand and impressive manner by using graphs and diagrams.<br>
+                There are lots of fun that you can operate on a computer, move with animation, not on a handwritten graph!</p>
             </div>
         </section>
 
@@ -45,19 +50,19 @@
                 <img src="http://e2d3wp.azurewebsites.net/wp-content/uploads/2015/09/e2d3bg.gif" alt="">
             </div>
             <div class="module-inner">
-                <h2>ExcelでE2D3を使う</h2>
-                <h3>Excel上で、手軽にデータを「動くグラフ」にできるアプリを公開中！</h3>
-                <p>個人・法人問わず、どなたでも無料でご利用いただけます。<br>
-                    使い方は簡単！Microsoft Office ExcelアプリページからE2D3をダウンロードし、Excel上でお好きなテンプレートを選択。自分で数値データを書き換え、反映させることができます。表現豊かなテンプレートは80種類以上！
+                <h2>Use E2D3 on Excel</h2>
+                <h3>We create apps that you can utilize to make animated and intuitive graphs using your own data.</h3>
+                <p>It is all completely free, regardless of whether you intend to use it for business purposes or for personal use.<br>
+                It is also easy to use! The templates have default numbers, but you can change the numbers to whatever you desire. Just download E2D3 from Microsoft AppSource, open Microsoft Excel, and choose your favorite template. We provide over 80 templates!
                 </p>
-                <p class="detailLink"><a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662">Microsoft アプリページへ</a></p>
+                <p class="detailLink"><a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662">Go to Microsoft AppSource</a></p>
 
                 <div class="appInfo-download">
-                    <h3 class="download-title">ご利用環境別の無料ダウンロード方法・ご利用方法</h3>
+                    <h3 class="download-title">Free download method by usage environment</h3>
                     <div class="download-link">
-                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-win/"><b>Windows<br>Excel 2013以降</b><br>で利用する</a>
-                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-mac/"><b>Office for Mac<br>(Ver 2016以降)</b><br>で利用する</a>
-                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-online/"><b>Excel Online</b><br>で利用する</a>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-win/"><b>Excel 2013 and later,</b><br>windows</a>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-mac/"><b>Office for Mac</b><br>(after Ver. 2016)</b></a>
+                        <a href="<?php echo esc_url( get_home_url() ); ?>/app-install/for-online/"><b>Excel Online</b></a>
                     </div>
                 </div>
             </div>
@@ -65,12 +70,12 @@
 
         <section class="module main-case hide-sp">
             <div class="case-head">
-                <h2>E2D3を体感してみよう！</h2>
+                <h2>Let's try E2D3!</h2>
             </div>
             <article class="case-wrap">
                 <div class="case-overview">
-                    <h3>“みんなで徒競走”</h3>
-                    <p>ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。陸上選手や動物など、いろいろな「速さ」を100m走として比較して体感し、理解を深めることができます。</p>
+                    <h3>“Footrace”</h3>
+                    <p>This template was created by a primary school student during a Hackathon. You can use the template to compare your speed to animals and track and field athletes.</p>
                 </div>
                 <div class="case-body sample-run">
                     <div id="drawArea">
@@ -78,43 +83,44 @@
                     </div>
 
                     <div class="controlPanel">
-                        <p>あなたの速さを入力して、「スタート」ボタンを押してみよう！</p>
+                        <p>You just have to enter your footrace speed and push the start button!</p>
                         <table>
                             <tbody>
                                 <tr>
                                     <td class="empty"></td>
-                                    <th class="em row">あなた</th>
-                                    <th>小学生平均</th>
-                                    <th>ボルト選手</th>
-                                    <th>チーター</th>
-                                    <th>(台風)風速25m</th>
-                                    <th>時速50kmの車</th>
-                                    <th>馬</th>
+                                    <th class="em row">YOU</th>
+                                    <th>a primary school</th>
+                                    <th>Bolt</th>
+                                    <th>Cheetah</th>
+                                    <th>Typhoon</th>
+                                    <th>Car(50km/h)</th>
+                                    <th>Horse</th>
                                 </tr>
                                 <tr>
-                                    <th class="em col">速度</th>
+                                    <th class="em col">Speed</th>
                                     <td class="inputArea"><input type="text" maxlength="2" name="" id="ownRecord" value="16"></td>
-                                    <td>17秒</td>
-                                    <td>9.58秒</td>
-                                    <td>3秒</td>
-                                    <td>4秒</td>
-                                    <td>7.2秒</td>
-                                    <td>7.5秒</td>
+                                    <td>17 Sec.</td>
+                                    <td>9.58 Sec.</td>
+                                    <td>3 Sec.</td>
+                                    <td>4 Sec.</td>
+                                    <td>7.2 Sec.</td>
+                                    <td>7.5 Sec.</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <button id="startButton">スタート！</button>
+                        <button id="startButton">Start!</button>
                     </div><!-- /.controlPanel -->
                 </div>
             </article>
             <article class="case-wrap">
                 <div class="case-overview">
                     <h3>“Dot Bar Chart”</h3>
-                    <p>年度ごとに項目の値が変化する複雑なデータを棒グラフで表現すると、年度別にグラフを作らなくてはならず面倒…そんな時はこのDot Bar Chart。ドット状の棒グラフが操作によって移ろい、１つの画面で「年度ごと」「項目ごと」の変化を同時に見ることができます。</p>
+                    <p>When complicated data whose value changes every fiscal year is represented by a bar chart, it is necessary to create a graph for each fiscal year… it’s troublesome. Dot Bar Chart helps you! A dotted bar chart is transferred by clicks, and you can see the change of “every year” and “item by item” at the same time on one screen.
+</p>
                 </div>
                 <div class="case-body sample-medal">
                     <!-- Rendering Dot Bar Chart -->
-                    <h4>「各オリンピックにおける、国ごとの金メダル合計数と推移」</h4>
+                    <h4>“Total number and trend of gold medals by country in each Olympics”</h4>
                 </div>
             </article>
         </section>
@@ -122,40 +128,39 @@
         <section class="module main-download hide-sp">
             <div class="module-inner">
                 <h2>E2D3 on Excel</h2>
-                <a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662" class="button">無料ダウンロード</a>
+                <a href="https://appsource.microsoft.com/ja-jp/product/office/WA104379169?src=office&corrid=dce92b26-476d-4caf-a723-6b88d1ac3c12&omexanonuid=e8a2dc31-66e1-4f22-9c37-ab19dba58662" class="button">Donload FOR FREE</a>
             </div>
         </section>
 
         <section class="module main-workshop" id="anchor-detailE2D3">
             <div class="module-inner">
-                <h2>みんなで作る、データビジュアライズ</h2>
-                <p>E2D3は、小学生や技術者まで幅広い層に向けた、データのワークショップやハッカソンを企画しています。そこで生まれた「このデータを、こんな風に見れたら面白いかも！」というアイディアを、E2D3のエンジニアとデザイナーが実現します。</p>
-                <p class="detailLink"><a href="#anchor-event" class="anchor-link">イベント詳細を見る</a></p>
+                <h2>Data Visualization Made by Everyone</h2>
+                <p>E2D3 holds workshops and Hackasson not only elementary school students and engineers, but also for wide range of other people. E2D3 engineers and designers present data in a way that stimulates innovation, and so believe “Properly presented data can be fun to work with".</p>
+                <p class="detailLink"><a href="#anchor-event" class="anchor-link">See The Event Details</a></p>
             </div>
         </section>
 
         <section class="module main-development">
             <div class="module-inner">
-                <h2>E2D3が成長し続ける仕掛け</h2>
-                <p>E2D3は、「設計図」を公開して開発することで、誰かのひらめきが別の誰かのひらめきを呼び、どんどんプロダクトが成長していく仕組みをデザインしています。（基幹部分をOSSとしてGithubで公開しているので、プログラミングの知識があればどなたでも開発が可能です。）</p>
-                <p class="detailLink"><a href="#anchor-joinus" class="anchor-link">開発者情報を見る</a></p>
+                <h2>A Mechanism to Keep E2D3 Growing</h2>
+                <p>E2D3 is open source; one person's inspiration leads to another person’s inspiration, and the product grows. (The core part is released as OSS, anyone with programming knowledge can develop it.)</p>
+                <p class="detailLink"><a href="#anchor-joinus" class="anchor-link">See Developer’s info</a></p>
 
                 <dl>
-                    <dt>E2D3と共同制作した事例</dt>
-                    <dd><a href="http://www3.nhk.or.jp/news/special/2016-presidential-election/index.html">2016/09　NHK news web, アメリカ大統領選２０１６</a></dd>
-                    <dd><a href="https://kumamotojishin.yahoo.co.jp/bousai/">2016/09　Yahoo!ニュース, 検索データから見る熊本地震</a></dd>
-                    <dd><a>2015/08　goo スマホ部, ドコモ圧勝！iPhone 6s発売日に速度調査（大阪環状線）</a></dd>
-                    <dd><a>2014/12　朝日新聞デジタル, 衆院選を動くグラフに　激増する無効・棄権票</a></dd>
-                    <dd><a href="https://withnews.jp/article/f0141202002qq000000000000000W0090101qq000011207A">2014/12　withnews, 得票率１割台で政権取る可能性　グラフで見る衆院選</a></dd>
+                    <dt>A case of collaborating with E2D3</dt>
+                    <dd><a href="http://www3.nhk.or.jp/news/special/2016-presidential-election/index.html">Sep. 2016　NHK news web, US presidential election</a></dd>
+                    <dd><a href="https://kumamotojishin.yahoo.co.jp/bousai/">Sep. 2016　Yahoo! news, Kumamoto earthquake seen from search data</a></dd>
+                    <dd><a>Nov. 2014  Asahi Newspaper Digital, on the chart moving the House of Representatives election</a></dd>
+                    <dd><a href="https://withnews.jp/article/f0141202002qq000000000000000W0090101qq000011207A">Sep. 2012　withnews, House of Representatives election on graph</a></dd>
                 </dl>
             </div>
         </section>
 
         <section class="module main-eventInfo" id="anchor-event">
             <div class="module-inner">
-                <h2>イベント情報</h2>
-                <p class="large-txt">一緒にデータビジュアライズを楽しみませんか？</p>
-                <p>E2D3は、データビジュアライゼーションの最新情報を共有するだけでなく、誰もがデータビジュアライゼーションを学び、楽しめるイベントを開催しています。ゲストを招いての講演会やワークショップ、ハッカソンなど開催中！<br>エンジニアだけでなく、デザイナーや営業、主婦、小学生、大学生など様々なバックグラウンドの方に楽しんでいただいてます。データビジュアライズに興味がある方大歓迎！ぜひお気軽にご参加ください。</p>
+                <h2>Events</h2>
+                <p class="large-txt">Let’s Enjoy Data Visualization Together!</p>
+                <p>E2D3 not only shares software and the latest information, but also holds events through which everyone can learn and enjoy data visualization. We holds workshops, hackathons, and offer lectures given by guest speakers. It is not only for engineers and designers, but also for elementary school students, sales staff, housewives, university students; as such for people of all backgrounds.<br>If you are interested in data visualization, please feel free to join us!</p>
 
                 <?php
                 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -175,7 +180,7 @@
         <section class="module main-snsLink">
             <div class="module-inner">
                 <h2>Twitter, Facebook</h2>
-                <p>E2D3の活動情報や、世界のデータビジュアライズ情報を配信中！</p>
+                <p>We show the activity of E2D3 and world’s data visualization information on Twitter and Facebook.</p>
                 <div class="snsLink-wrap">
                     <div class="snsLink-module">
                         <div class="module-head">
@@ -199,8 +204,8 @@
 
         <section class="module main-joinus" id="anchor-joinus">
             <div class="module-inner">
-                <h2>開発メンバー募集中！</h2>
-                <p>E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UXデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。</p>
+                <h2>Looking For Development Members!</h2>
+                <p>E2D3 is looking for development members. Would you like to participate in developments within your field of expertise such as engineering, UI/UX design, document composition, workshop facilitation, etc?</p>
                 <div class="joinus-github">
                     <div class="github-icon">
                         <a href="https://github.com/e2d3/"><img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-github.png'); ?>" alt="Github" width="102"></a>
@@ -214,33 +219,6 @@
             </div>
         </section>
 
-        <section class="module main-interview">
-            <div class="module-inner">
-                <h2>Developers’ Interview</h2>
-                <ul><!--
-                 --><li><a href="https://career.levtech.jp/sponsor/interview/1/">
-                        <img src="http://e2d3.org/wp-content/uploads/2015/12/interview0011-1-666x400.jpg" alt="">
-                        <p>ユーザベースCTO竹内秀行氏の挑戦「世界10億人が『E2D3』を使える日を夢見て」</p>
-                    </a></li><!--
-                 --><li><a href="https://geechs-magazine.com/tag/people/20170808">
-                        <img src="http://e2d3.org/wp-content/uploads/2017/08/igarashi1-640x384.jpg" alt="">
-                        <p>「パラレルキャリアを実践するなら絶対にゴールを見失うな」E2D3五十嵐氏インタビュー</p>
-                    </a></li><!--
-                 --><li><a href="https://career.levtech.jp/sponsor/interview/2/">
-                        <img src="http://e2d3.org/wp-content/uploads/2015/12/interview002-1-666x400.jpg" alt="">
-                        <p>大手メディア企業で働く澤氏「『E2D3』でデータ可視化のプログラミングコストを下げたい」</p>
-                    </a></li><!--
-                 --><li><a href="http://codezine.jp/article/detail/9567">
-                        <img src="http://e2d3.org/wp-content/uploads/2017/07/sato20170724-184x110.jpg" alt="">
-                        <p>誰もが簡単にデータビジュアライゼーションできる世界を目指して！ 日本初OSSプロジェクト「E2D3」とは</p>
-                    </a></li><!--
-                 --><li><a href="https://career.levtech.jp/sponsor/interview/3/">
-                        <img src="http://e2d3.org/wp-content/uploads/2015/12/interview003-1-666x400.jpg" alt="">
-                        <p>富士通データキュレーター小副川氏「『E2D3』がデータ探索的な会話のハブになる未来」</p>
-                    </a></li><!--
-             --></ul>
-            </div>
-        </section>
 
 <?php $json_dim_array = get_access_data(); ?>
 <script>
@@ -334,7 +312,8 @@
     var height = 495;
     var svg = d3.select('.sample-medal').append('svg').attr('width', width).attr('height', height);
 
-    d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data.tsv' ); ?>", function(err, data) {
+    d3.tsv("<?php echo esc_attr( get_template_directory_uri() . '/data/data-en.tsv' ); ?>", function(err, data) {
+        console.log(data);
         svg.append('g').data([data]).call(d3.dotBarChart);
     });
 </script>
