@@ -5,7 +5,6 @@ package-lock.json
 .vscode/
 .firebaserc
 firebase.json
-google-api-php-client-*
 
 #theme file以外は無視
 /*
