@@ -68,6 +68,11 @@ Template Name: front-page-en
             </div>
         </section>
 
+        <style>
+        .case-body.sample-run .controlPanel table td.inputArea::before {
+            content: "sec";
+        }
+        </style>
         <section class="module main-case hide-sp">
             <div class="case-head">
                 <h2>Let's try E2D3!</h2>

@@ -42,7 +42,7 @@
                     <a href="#anchor-event" class="anchor-link">Events</a>
                 </li>
                 <li class="body-item menu-language">
-                    <a href="">English</a>
+                    <a href="<?php echo esc_url( get_home_url() ); ?>/en/">English</a>
                 </li>
                 <li class="body-item menu-github">
                     <a href="https://github.com/e2d3/">Github</a>
