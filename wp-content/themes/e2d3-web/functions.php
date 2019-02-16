@@ -3,7 +3,7 @@
 /** Include scripts  test 2018.06.13  Hideki Nakane*/
 function e2d3_scripts() {
 
-    if (is_home() || is_page('test') || is_page('animal_olympic')) {
+    if (is_home() || is_page('test') || is_page('animal_olympic') || is_page('en')) {
         wp_enqueue_script('d3v4', 'https://d3js.org/d3.v4.min.js', array(), false);
         wp_enqueue_script('globehandler', get_theme_file_uri('scripts/globeHandler.js'), array(), false);
         wp_enqueue_script('topjson', 'https://d3js.org/topojson.v1.min.js', array('d3v4'), false);

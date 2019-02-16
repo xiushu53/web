@@ -1,0 +1,242 @@
+## Header
+### Title
+Data Visualization for ALL
+日) 同じ
+
+#### Sub
+The software lets you have fun with data!
+日) 「データって、面白い！」を体感できるソフトウェア
+
+### Body Copy
+The dots on the transparent globe show the area where someone is accessing the site from.
+You can download the transparent globe's data on Excel after first downloading E2D3.
+日) 当サイトにアクセスした地域をドットで表現した地球儀、”See-Through Globe”。
+E2D3を使えば、Excel上で好きなデータを入れて楽しめます。
+
+### BTN
+Download E2D3 FOR FREE
+日) E2D3を無料でダウンロード
+
+### AWARDS
+Winner of The Japan Statistical Society award of 2018
+Winner of STAT DASH Grand Prix 2016
+日) 2018年度 日本統計学会教育賞
+STAT DASHグランプリ2016 総務大臣賞
+
+
+## News
+NEWS
+Jan. 2019　The web page was fully renewed.
+Sep. 2018    The last event of this year will held in Shibuya.
+
+日) 2016/09　WEBページをリニューアルしました。
+2016/09　【初の奈良イベント】CODE for IKOMA定例会にE2D3が遊びに行きます！
+
+## CONT01
+### Title
+What is E2D3 you might ask？
+日) E2D3とは？
+
+
+
+### Text
+E2D3 is an NPO that develops  software for data visualization.
+Our mission is to create a world where everyone can enjoy data!
+日) データって、面白い！そう感じる瞬間を全ての人に届けたい。
+E2D3は、そんな理念を胸に、データビジュアライズを手軽に楽しめるソフトウェアを提供している、
+非営利のコミュニティです。
+
+### BTN
+About our community
+日) コミュニティについて
+
+### Title
+What is Data Visualization ?
+日) データビジュアライズとは？
+
+### Text
+It is to express numerical data in an easy to understand and impressive manner by using graphs and diagrams. There are lots of fun that you can operate on a computer, move with animation, not on a handwritten graph!
+日) 数値データをグラフや図などを用いて、わかりやすく、印象的に表現することです。
+パソコン上で操作できたり、アニメーションで動いたり、手書きのグラフにはない楽しみがいっぱい！
+
+
+## CONT02
+### Title
+Use E2D3 on Excel
+日) ExcelでE2D3を使う
+
+### Text
+We create apps that you can utilize to make animated and intuitive graphs
+using your own data.
+日) Excel上で、手軽にデータを「動くグラフ」にできるアプリを公開中！
+
+It is all completely free, regardless of whether you intend to use it for business purposes or for personal use.
+It is also easy to use! The templates have default numbers, but you can change the numbers to whatever you desire. Just download E2D3 from Microsoft AppSource, open Microsoft Excel, and choose your favorite template. We provide over 80 templates!
+日) 個人・法人問わず、どなたでも無料でご利用いただけます。
+使い方は簡単！Microsoft Office ExcelアプリページからE2D3をダウンロードし、Excel上でお好きなテンプレートを選択。自分で数値データを書き換え、反映させることができます。表現豊かなテンプレートは80種類以上！
+
+
+### Link
+Go to Microsoft AppSource
+日) Microsoft アプリページへ
+
+### BTNS
+Free download method by usage environment
+日) ご利用環境別の無料ダウンロード方法・ご利用方法
+
+### BTN Left
+Excel 2013 and later, 
+windows
+
+### BTN center
+Office for Mac
+(after Ver. 2016)
+
+### BTN Right
+Excel Online
+
+
+
+## CONT03
+## Title
+Let's try E2D3!
+日) E2D3を体感してみよう！
+
+### DV01
+#### Title
+“Footrace”
+日) “みんなで徒競走”
+
+#### Text
+This template was created by a primary school student during a Hackathon. You can use the template to compare your speed to animals and track and field athletes.
+日) ハッカソンに参加した小学生のアイディアから生まれた、遊べるデータビジュアライズです。陸上選手や動物など、いろいろな「速さ」を100m走として比較して体感し、理解を深めることができます。
+
+#### Table Copy
+You just have to enter your footrace speed and push the start button!
+日) あなたの速さを入力して、「スタート」ボタンを押してみよう！
+
+#### Table
+YOU / a primary school / Bolt / Cheetah / Typhoon / Car(50km/h) / Horse
+Speed / 16 Sec. / 17 Sec. / 9.58 Sec. / 3 Sec. / 4 Sec. / 7.2 Sec. / 7.5 Sec.
+
+#### BTN
+Start!
+日) スタート
+
+### DV02
+#### Title
+“Dot Bar Chart”
+日) “Dot Bar Chart”
+
+#### Text
+When complicated data whose value changes every fiscal year is represented by a bar chart, it is necessary to create a graph for each fiscal year… it’s troublesome. Dot Bar Chart helps you!
+A dotted bar chart is transferred by clicks, and you can see the change of “every year” and “item by item” at the same time on one screen.
+日) 年度ごとに項目の値が変化する複雑なデータを棒グラフで表現すると、年度別にグラフを作らなくてはならず面倒…そんな時はこのDot Bar Chart。ドット状の棒グラフが操作によって移ろい、１つの画面で「年度ごと」「項目ごと」の変化を同時に見ることができます。
+
+
+#### Table copy
+“Total number and trend of gold medals by country in each Olympics”
+日) 「各オリンピックにおける、国ごとの金メダル合計数と推移」
+
+####
+The U.S / China / Russia / England / Germany / Australia / Janpan
+Sydoney in 2000 / Athnes in 2004 / Beijing in 2008 / London 2012 / Rio 2016
+
+
+
+### BTN
+E2D3 on Excel 
+
+#### BTN
+Donload FOR FREE
+
+
+
+## CONT04
+### Title
+Data Visualization Made by Everyone
+日) みんなで作る、データビジュアライズ
+
+### Body Copy
+E2D3 holds workshops and Hackasson not only elementary school students and engineers, but also for wide range of other people. E2D3 engineers and designers present data in a way that stimulates innovation, and so believe “Properly presented data can be fun to work with".
+日) E2D3は、小学生や技術者まで幅広い層に向けた、データのワークショップやハッカソンを企画しています。そこで生まれた「このデータを、こんな風に見れたら面白いかも！」というアイディアを、E2D3のエンジニアとデザイナーが実現します。
+
+### Link
+See The Event Details
+日) イベント詳細を見る
+
+
+##  CONT05
+### Title
+A Mechanism to Keep E2D3 Growing
+日) E2D3が成長し続ける仕掛け
+
+### Text
+E2D3 is open source; one person's inspiration leads to another person’s inspiration, and the product grows. (The core part is released as OSS, anyone with programming knowledge can develop it.)
+日) E2D3は、「設計図」を公開して開発することで、誰かのひらめきが別の誰かのひらめきを呼び、どんどんプロダクトが成長していく仕組みをデザインしています。（基幹部分をOSSとしてGithubで公開しているので、プログラミングの知識があればどなたでも開発が可能です。）
+
+
+### Link
+See Developer’s info
+日) 開発者情報を見る
+
+### List
+#### Title
+A case of collaborating with E2D3
+日) E2D3と共同制作した事例
+
+#### List
+Sep. 2016　NHK news web, US presidential election
+Sep. 2016　Yahoo! news, Kumamoto earthquake seen from search data
+Nov. 2014    Asahi Newspaper Digital, on the chart moving the House of Representatives election
+Sep. 2012　withnews, House of Representatives election on graph
+日) 2016/09　NHK news web, アメリカ大統領選2016
+2016/09　Yahoo!ニュース, 検索データから見る熊本地震
+2015/08　goo スマホ部, ドコモ圧勝！iPhone 6s発売日に速度調査（大阪環状線）
+2014/12　朝日新聞デジタル, 衆院選を動くグラフに　激増する無効・棄権票
+2014/12　withnews, 得票率１割台で政権取る可能性　グラフで見る衆院選
+
+
+
+## CONT 06
+### CONT Title
+Events
+日) イベント情報
+
+### Title
+Let’s Enjoy Data Visualization Together!
+日) 一緒にデータビジュアライズを楽しみませんか？
+
+### Text
+E2D3 not only shares software and the latest information, but also holds events through which everyone can learn and enjoy data visualization. We holds workshops, hackathons, and offer lectures given by guest speakers. It is not only for engineers and designers, but also for elementary school students, sales staff, housewives, university students; as such for people of all backgrounds.
+If you are interested in data visualization, please feel free to join us!
+日) E2D3は、データビジュアライゼーションの最新情報を共有するだけでなく、誰もがデータビジュアライゼーションを学び、楽しめるイベントを開催しています。ゲストを招いての講演会やワークショップ、ハッカソンなど開催中！
+エンジニアだけでなく、デザイナーや営業、主婦、小学生、大学生など様々なバックグラウンドの方に楽しんでいただいてます。ぜひお気軽にご参加ください。
+
+
+
+## CONT07
+### Title
+Twitter, Facebook
+
+### Body Copy
+We show the activity of E2D3 and world’s data visualization information on Twitter and Facebook.
+日) E2D3の活動情報や、世界のデータビジュアライズ情報を配信中！
+
+
+## CONT 08
+### Title
+Looking For Development Members!
+日)開発メンバー募集中！
+
+### Text
+E2D3 is looking for development members. Would you like to participate in developments within your field of expertise such as engineering, UI/UX design, document composition, workshop facilitation, etc?
+日）E2D3は、開発メンバーを募集しています。エンジニアリング、UI･UXデザイン、論文執筆、ワークショップファシリテートなど、あなたの得意分野で開発に参加しませんか。
+
+
+### BTN
+Developing Method
+Source Code
+Wiki
+
+
