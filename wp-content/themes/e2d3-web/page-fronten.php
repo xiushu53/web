@@ -4,7 +4,7 @@ Template Name: front-page-en
 */
 ?>
 
-<?php get_header(); ?>
+<?php get_header("en"); ?>
 
     <main class="main">
 
@@ -40,8 +40,8 @@ Template Name: front-page-en
                 <p class="buttonLink"><a href="#anchor-detailE2D3" class="button light anchor-link">About our community</a></p>
                 <img src="<?php echo esc_attr(get_template_directory_uri() . '/images/illust-about.png'); ?>" alt="">
                 <h2>What is Data Visualization?</h2>
-                <p>It is to express numerical data in an easy to understand and impressive manner by using graphs and diagrams.<br>
-                There are lots of fun that you can operate on a computer, move with animation, not on a handwritten graph!</p>
+                <p>It is to express numerical data in an easy to understand<br>and impressive manner by using graphs and diagrams.<br>
+                There are lots of fun that you can operate on a computer,<br>move with animation, not on a handwritten graph!</p>
             </div>
         </section>
 
